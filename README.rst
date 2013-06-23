@@ -1,0 +1,1 @@
+Contains a collection of programs that explains everything about javascript.
