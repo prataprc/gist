@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            document.onload( function(){
+                console.log([
+                    body,       // body of the document.
+                    cookie,     // read/write the document cookie.
+                    domain,     // where was the document served.
+                    forms,      // array of all forms in the document.
+                    images,     // array of all images in the document.
+                    referrer,   // who pointed to this document.
+                    URL,        // url of the document.
+
+                    getElementById('egid'), // single element with `egid`
+                    getElementByName('nm'), // array of elem. with `egname`
+                    getElementByTagName('body'), // array of elem.
+                ]).
+            });
+        </script>
+    </head>
+    <body id="egid" name="nm" class="egcls"> hello world </body>
+</html>
