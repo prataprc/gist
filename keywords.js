@@ -11,7 +11,9 @@ Date();                     //  that bakes date like object data-type
 typeof(a);          // return a string denoting typeof a
 
 obj = { 'first-name': 'arun', 'age': 22 };
+arr = [10,20]
 delete obj['first-name']    // delete the key `first-name` from obj
+delete arr[10]              // object or array ??
 
 return;     // return value from function, otherwise function implicitly
             // returns `undefined`.
