@@ -20,4 +20,4 @@ try {                       // try .. catch .. finally
     console.log('Execute this in any case');
 }
 
-
+true ? 'it was true' : 'it was false'   // ternary conditional operatory
