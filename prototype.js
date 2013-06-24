@@ -25,3 +25,12 @@ bar1.constructor.prototype.value = 24;
 console.log(bar2.value);    // => 24
 bar2.value = 12;
 console.log(bar1.value);    // => 24
+
+/* The resulting prototype chain
+    test [instance of Bar]
+        Bar.prototype [instance of Foo]
+            { foo: 'Hello World' }
+            Foo.prototype
+                { method: ... }
+                Object.prototype
+                    { toString: ...  } */
