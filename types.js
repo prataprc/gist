@@ -24,3 +24,7 @@ var n = Number(10)      // is same as literal 10,
 var m = new Number(10)  // is literal 10 wrapped inside an object.
 n == m      // => true
 n === m     // => false
+
+10 instanceof Number                // => false
+Number(10) instanceof Number        // => false
+new Number(10) instanceof Number    // => true
