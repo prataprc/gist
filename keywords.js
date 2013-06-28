@@ -1,4 +1,4 @@
-var a;                                  // variable declaration - global
+var a;                                  // variable declaration
 fn = function hw() { return arguments}  // function definition
                                         //  return a list of arguments passed
 Number(10);                             // keyword that bakes numeric data-type
@@ -16,7 +16,7 @@ Number(100) instanceof Number;          // => false
 obj = { 'first-name': 'arun', 'age': 22 };
 arr = [10,20]
 delete obj['first-name']    // delete the key `first-name` from obj
-delete arr[10]              // object or array ??
+delete arr[0]               // object or array ??
 
 return;     // return value from function, otherwise function implicitly
             // returns `undefined`.
