@@ -1,0 +1,1 @@
+-- how to know precision of integer and types.
