@@ -1,7 +1,7 @@
-foo();              // Works because foo was created before this code runs
+foo();  // Works because foo was created before this code runs
 function foo() {}
 
-bar();              // Fails : TypeError
+bar();  // Fails : TypeError
 var bar = function() { console.log('anonymous'); };
 
 var mat = function bar( bool ) {
