@@ -1,0 +1,4 @@
+package checkinit
+
+func init() {
+}
