@@ -38,4 +38,5 @@ func main() {
     var i interface{}
     i = m
     fmt.Println(i.(X))
+
 }
