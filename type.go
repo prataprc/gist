@@ -14,6 +14,7 @@ func main() {
         s string            // String
 
         ar [10]int          // Array
+        ars []int           // Slice
         p *int              // Pointer
         m map[string]int    // Map
         fn func(int) int    // Function
