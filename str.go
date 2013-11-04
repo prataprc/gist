@@ -29,6 +29,8 @@ func main() {
     fmt.Println(spanish[4:5], spanish[4:6])
 
     passby(spanish)
+
+    fmt.Printf("%020v\n", 100)
 }
 
 func passby(str string) {
