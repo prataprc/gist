@@ -3,6 +3,11 @@ package main
 import "fmt"
 import "unsafe"
 
+type bkey struct {
+    a int
+    b int
+}
+
 func main() {
     fmt.Println( "Sizeof" )
     fmt.Println( "------" )
