@@ -1,12 +1,12 @@
 package main
 
-var x int8 = 10;
+var x int8 = 10
 
 // A value x is assignable to a variable of type T ("x is assignable to T") in
 // any of these cases:
 
 // x's type is identical to T.
-var r int8 = x;
+var r int8 = x
 
 // x's type V and T have identical underlying types and at least one of V or T
 // is not a named type.
