@@ -1,14 +1,14 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 )
 
 type Node interface {
-    prin()
+	prin()
 }
 
 func main() {
-    m := make(map[int64]Node)
-    fmt.Println(m[0] != nil)
+	m := make(map[int64]Node)
+	fmt.Println(m[0] != nil)
 }

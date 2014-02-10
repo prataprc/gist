@@ -1,7 +1,8 @@
 package main
+
 import (
-    "encoding/json"
-    "fmt"
+	"encoding/json"
+	"fmt"
 )
 
 var val = `{ "name": "Franklin",
@@ -9,9 +10,9 @@ var val = `{ "name": "Franklin",
 "language": "python" }`
 
 func main() {
-    // Map of interfaces can receive any value types
-    value := map[string]interface{}{}
+	// Map of interfaces can receive any value types
+	value := map[string]interface{}{}
 
-    fmt.Println(json.Unmarshal([]byte(val), &value))
-    fmt.Println(value)
+	fmt.Println(json.Unmarshal([]byte(val), &value))
+	fmt.Println(value)
 }
