@@ -4,11 +4,11 @@ import (
 	"fmt"
 )
 
-type Node interface {
-	prin()
+type A struct {
+	a int
 }
 
 func main() {
-	m := make(map[int64]Node)
-	fmt.Println(m[0] != nil)
+	m := make(map[int64]A)
+	fmt.Println(m[0])
 }

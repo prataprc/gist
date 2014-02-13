@@ -2,45 +2,27 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"strconv"
 	"time"
 )
 
 func main() {
 	flag.Parse()
-	what := flag.Args()[0]
-	switch what {
-	case "slice":
-		fmt.Println(sliceAlloc())
-	case "alloc":
-		fmt.Println(randAlloc())
+	count, _ := strconv.Atoi(flag.Args()[0])
+	for i := 0; i < count; i++ {
+		go randAlloc(1000000, 1000)
 	}
+	time.Sleep(1000 * time.Second)
 }
 
-func sliceAlloc() []int64 {
-	var sl = []int64{1, 2, 3}
-	for {
-		sl = append(sl, []int64{3, 2, 1}...)
-		sl = sl[3:]
-	}
-	return sl
-}
-
-func randAlloc() [][]byte {
+func randAlloc(count, maxsize int) [][]byte {
 	var sl [][]byte
-	count := 1000
-	for i := 0; i < 1000000; i++ {
-		sl = append(sl, make([]byte, i%count))
+	for i := 0; i < count; i++ {
+		sl = append(sl, make([]byte, i%maxsize))
 	}
 	i := 0
-	go func() {
-		for {
-			<-time.After(time.Second)
-			fmt.Println(i)
-		}
-	}()
 	for {
-		sl = append(sl, make([]byte, i%count))
+		sl = append(sl, make([]byte, i%maxsize))
 		sl = sl[1:]
 		i++
 	}
