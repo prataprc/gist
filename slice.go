@@ -9,7 +9,7 @@ func main() {
 	var sl = []byte{1, 2, 3, 4, 5, 6}
 	var cl = []byte{1, 2, 3, 4, 5, 6}
 
-	fmt.Println(sl[1:])
+	fmt.Println(sl[8:])
 	fmt.Println(unsafe.Pointer(&sl), len(sl), cap(sl))
 	sl_ := sl[2:4]
 	fmt.Println(unsafe.Pointer(&sl_), len(sl_), cap(sl_))
