@@ -33,6 +33,8 @@ func main() {
 	passby(spanish)
 
 	fmt.Printf("%020v\n", 100)
+	fmt.Println("a\x00b")
+	fmt.Println([]byte("a\x00b"))
 }
 
 func passby(str string) {
