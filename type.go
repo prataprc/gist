@@ -34,6 +34,7 @@ func main() {
 	fmt.Printf("string    %T\n", s)
 	fmt.Printf("bool      %T\n", b)
 	fmt.Printf("array     %T\n", ar)
+	fmt.Printf("slice     %T\n", ars)
 	fmt.Printf("map       %T\n", m)
 	fmt.Printf("pointer   %T\n", p)
 	fmt.Printf("function  %T\n", fn)

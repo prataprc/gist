@@ -1,4 +1,5 @@
 // this is single line comment.
 
-/* And this one is 
+/* And this one is
    multi-line comment */
+package main
