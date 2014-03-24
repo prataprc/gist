@@ -1,9 +1,9 @@
 package main
 
-a = 10
-_x9 = 'hello'
-ThisVariableIsExported = '2.1'
-αβ = 'identifiers can be unicoded as well'
+var a = 10
+var _x9 = "hello"
+var ThisVariableIsExported = "2.1"
+var αβ = "identifiers can be unicoded as well"
 
 // identifier predeclared as Types --------
 // bool bool byte complex64 complex128 error float32 float64
@@ -19,4 +19,3 @@ ThisVariableIsExported = '2.1'
 // identifier predeclared as Functions -------
 // append cap close complex copy delete imag len make new panic print
 // println real recover
-
