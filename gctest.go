@@ -2,7 +2,6 @@ package main
 
 import (
     "flag"
-    "fmt"
     "time"
 )
 
@@ -19,7 +18,6 @@ func main() {
     flag.Parse()
     ch := make(chan bool)
     count := 200000 * 1000 / options.maxsize
-    fmt.Println(count)
     for i := 0; i < options.n; i++ {
         go alloc(options.loop, int64(count), int64(options.maxsize), ch)
     }
