@@ -3,7 +3,7 @@ package perf
 import "testing"
 
 type tValue struct {
-    tt byte
+    tt  byte
     val interface{}
 }
 
