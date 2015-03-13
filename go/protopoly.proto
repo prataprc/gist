@@ -1,0 +1,24 @@
+message Animal {
+    extensions 100 to max;
+    enum Type {
+        Cat = 1;
+        Dog = 2;
+    }
+    required Type type = 1;
+}
+
+message Cat {
+    extend Animal {
+        required Cat animal = 100; // Unique Animal extension number
+    }
+    // These fields can use the full number range.
+    optional bool declawed = 1;
+}
+
+message Dog {
+    extend Animal {
+        required Dog animal = 101; // Unique Animal extension number
+    }
+    // These fields can use the full number range.
+    optional uint32 bones_buried = 1;
+}
