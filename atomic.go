@@ -1,9 +1,9 @@
 package main
 
 import (
-    "fmt"
-    "sync/atomic"
-    "unsafe"
+	"fmt"
+	"sync/atomic"
+	"unsafe"
 )
 
 var x = 10
@@ -14,12 +14,12 @@ var y = 20
 var s = "hello world"
 
 func main() {
-    m["yes"] = "minister"
-    m["monty"] = "python"
-    fmt.Println(&m, &x, &y, &s)
-    fmt.Println(len(m), unsafe.Sizeof(m))
+	m["yes"] = "minister"
+	m["monty"] = "python"
+	fmt.Println(&m, &x, &y, &s)
+	fmt.Println(len(m), unsafe.Sizeof(m))
 
-    opp := atomic.LoadPointer(&keys)
-    old := (*map[string]string)(opp)
-    fmt.Println(&m, keys, opp, old)
+	opp := atomic.LoadPointer(&keys)
+	old := (*map[string]string)(opp)
+	fmt.Println(&m, keys, opp, old)
 }

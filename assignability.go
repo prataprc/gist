@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 var x int8 = 10
 
 // A value x is assignable to a variable of type T ("x is assignable to T") in
@@ -22,5 +24,29 @@ var r int8 = x
 // x is an untyped constant representable by a value of type T.
 // Any value may be assigned to the blank identifier.
 
+type X struct {
+	a int
+}
+
 func main() {
+	var newx X
+	m := map[string]X{"x": X{10}}
+	newx = m["x"]
+	newx.a = 20
+	fmt.Println(m["x"], newx)
+	fmt.Println(m["x"], passByValue(m["x"]))
+	retnewx := returnByValue(&newx)
+	fmt.Println(m["x"], retnewx)
+	newx.a = 50
+	fmt.Println(newx, retnewx)
+}
+
+func passByValue(x X) *X {
+	x.a = 30
+	return &x
+}
+
+func returnByValue(x *X) X {
+	x.a = 40
+	return *x
 }
