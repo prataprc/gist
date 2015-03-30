@@ -1,0 +1,1721 @@
+09:09:25.632075 [Info] KVSender::sendShutdownTopic Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.632744 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:09:25.632759 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.633569 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:09:25.633585 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.634187 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:09:25.637518 [Info] KVSender::sendShutdownTopic Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.637793 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:09:25.637809 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.638143 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:09:25.638171 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+09:09:25.638445 [Info] KVSender::closeMutationStream Treating TopicMissing As Success
+09:10:17.507591 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+
+09:10:18.034515 [Info] KVSender::sendMutationTopicRequest 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+
+09:10:18.054101 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+
+09:10:18.579369 [Info] KVSender::sendMutationTopicRequest 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+
+09:10:18.599257 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+
+09:10:19.228057 [Info] KVSender::sendMutationTopicRequest 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:49.198488 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:49.648156 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:49.666647 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:50.150859 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:50.172968 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:50.636309 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+    127.0.0.1:54249: default:  683.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.061466 [Info] KVSender::sendAddInstancesRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+    127.0.0.1:54249: default:  683.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.068644 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+    127.0.0.1:54249: default:  683.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.075332 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54242: default:  0.341
+    127.0.0.1:54245: default:  342.682
+    127.0.0.1:54249: default:  683.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.111527 [Info] KVSender::sendShutdownTopic Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.122092 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:10:52.133114 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:11:14.317463 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1023
+
+09:11:15.660827 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.339
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1022
+
+09:11:15.667068 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1022
+
+09:11:16.425923 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1021
+
+09:11:16.434019 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1021
+
+09:11:16.490197 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1021
+
+09:11:17.491738 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.898
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1019
+
+09:11:17.798107 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1018
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1018
+
+09:11:17.995505 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1018
+    127.0.0.1:54968: default:  1019.1022
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1018
+
+09:11:19.095163 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1016
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1016
+
+09:11:19.180883 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1016
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1016
+
+09:11:19.227635 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1016
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1016
+
+09:11:19.291956 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:19.299745 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:19.428814 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:19.489315 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: default:  1019.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:19.786464 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:20.019845 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1015
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1015
+
+09:11:20.029431 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.123258 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.163894 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.237747 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.245160 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.435801 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.439848 [Info] KVSender::sendAddInstancesRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1014
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1014
+
+09:11:20.446110 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1013
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1013
+
+09:11:20.452708 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1013
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1013
+    127.0.0.1:54984: 
+
+09:11:20.471946 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1013
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1013
+    127.0.0.1:54984: 
+
+09:11:20.487125 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1013
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1013
+    127.0.0.1:54984: 
+
+09:11:20.620923 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1013
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1013
+    127.0.0.1:54984: default:  1014.1023
+
+09:11:21.082436 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1012
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1012
+    127.0.0.1:54984: default:  1014.1023
+
+09:11:21.488417 [Info] KVSender::sendAddInstancesRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1011
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1011
+    127.0.0.1:54984: 
+
+09:11:21.500691 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1011
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1011
+    127.0.0.1:54984: 
+
+09:11:21.528659 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1011
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1011
+    127.0.0.1:54984: 
+
+09:11:21.586698 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1011
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1011
+    127.0.0.1:54984: 
+
+09:11:22.207189 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: 
+
+09:11:22.211576 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: 
+
+09:11:22.299888 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: 
+
+09:11:22.306460 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: 
+
+09:11:22.363560 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: default:  10131013
+
+09:11:22.409597 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: default:  10131013
+
+09:11:22.450206 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: default:  10131013
+
+09:11:22.508433 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: default:  10131013
+
+09:11:22.515833 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1010
+    127.0.0.1:54968: default:  1016.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1010
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.635053 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.785065 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.875334 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.892404 [Info] KVSender::sendAddInstancesRequest Projector 192.168.1.69:10000 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.904907 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10001 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.918688 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10002 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.932021 [Info] KVSender::sendAddInstancesRequest Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.990440 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:23.999987 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:24.144194 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:24.193596 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1007
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1007
+    127.0.0.1:54984: default:  10131013
+
+09:11:24.500636 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1006
+    127.0.0.1:54968: default:  1008.1022
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1006
+    127.0.0.1:54984: default:  10131013
+
+09:11:25.517088 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1004
+    127.0.0.1:54968: default:  1008.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1004
+    127.0.0.1:54984: default:  10131013
+
+09:11:26.074701 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1003
+    127.0.0.1:54968: default:  1008.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1003
+    127.0.0.1:54984: 
+
+09:11:26.659690 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1001
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1001
+    127.0.0.1:54984: 
+
+09:11:26.969280 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1001
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1001
+    127.0.0.1:54984: default:  1005.1012,1014.1021
+
+09:11:27.073595 [Info] KVSender::sendMutationTopicRequest Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1001
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1001
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.150770 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1001
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1001
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.166175 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1001
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1001
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.216121 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.325842 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  10041004
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.327133 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  1004.1006
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.345242 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  1004.1007
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.444141 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  1004.1007
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.465829 [Info] KVSender::sendMutationTopicRequest Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  1004.1007
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:27.591788 [Info] KVSender::sendMutationTopicRequest 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.1000
+    127.0.0.1:54968: default:  1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.1000
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:30.071270 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.995
+    127.0.0.1:54968: default:  1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.995
+    127.0.0.1:54984: default:  1005.1012,1014.1023
+
+09:11:30.422231 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.994
+    127.0.0.1:54968: default:  1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.994
+    127.0.0.1:54984: 
+
+09:11:31.201128 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.993
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.993
+    127.0.0.1:54984: 
+
+09:11:31.368283 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.992
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.992
+    127.0.0.1:54984: default:  996.1004,10131013
+
+09:11:31.489888 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.992
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.992
+    127.0.0.1:54984: default:  996.1004,10131013
+
+09:11:31.617770 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.991
+    127.0.0.1:54968: default:  995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.991
+    127.0.0.1:54984: default:  996.1004,10131013
+
+09:11:34.460987 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.986
+    127.0.0.1:54968: default:  995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.986
+    127.0.0.1:54984: default:  996.1004,10131013
+
+09:11:34.719017 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.985
+    127.0.0.1:54968: default:  995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.985
+    127.0.0.1:54984: 
+
+09:11:35.600045 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.983
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.983
+    127.0.0.1:54984: 
+
+09:11:35.890708 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.983
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.983
+    127.0.0.1:54984: default:  987.995,1005.1012,1014.1015
+
+09:11:35.901186 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.983
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.983
+    127.0.0.1:54984: default:  987.995,1005.1012,1014.1023
+
+09:11:36.139042 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.982
+    127.0.0.1:54968: default:  986.994,1001.1010
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.982
+    127.0.0.1:54984: default:  987.995,1005.1012,1014.1023
+
+09:11:39.026429 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.977
+    127.0.0.1:54968: default:  986.994,1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.977
+    127.0.0.1:54984: default:  987.995,1005.1012,1014.1023
+
+09:11:39.244083 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.976
+    127.0.0.1:54968: default:  986.994,1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.976
+    127.0.0.1:54984: 
+
+09:11:40.103327 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.975
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.975
+    127.0.0.1:54984: 
+
+09:11:40.286705 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.975
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.975
+    127.0.0.1:54984: default:  978.986,996.1004,10131013
+
+09:11:40.336823 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.975
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.975
+    127.0.0.1:54984: default:  978.986,996.1004,10131013
+
+09:11:40.655345 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.974
+    127.0.0.1:54968: default:  977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.974
+    127.0.0.1:54984: default:  978.986,996.1004,10131013
+
+09:11:43.399353 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.968
+    127.0.0.1:54968: default:  977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.968
+    127.0.0.1:54984: default:  978.986,996.1004,10131013
+
+09:11:43.755431 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.967
+    127.0.0.1:54968: default:  977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.967
+    127.0.0.1:54984: 
+
+09:11:44.572523 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.966
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.966
+    127.0.0.1:54984: 
+
+09:11:44.795755 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.965
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.965
+    127.0.0.1:54984: default:  969.977,987.995,1005.1012,1014.1023
+
+09:11:44.973892 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.965
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.965
+    127.0.0.1:54984: default:  969.977,987.995,1005.1012,1014.1023
+
+09:11:45.244159 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.964
+    127.0.0.1:54968: default:  968.976,986.994,1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.964
+    127.0.0.1:54984: default:  969.977,987.995,1005.1012,1014.1023
+
+09:11:47.950724 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  968.976,986.994,1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  969.977,987.995,1005.1012,1014.1023
+
+09:11:48.350083 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  968.976,986.994,1001.1023
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: 
+
+09:11:49.064751 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: 
+
+09:11:49.258557 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.968,978.986,996.1004,10131013
+
+09:11:49.489775 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.968,978.986,996.1004,10131013
+
+09:11:49.780899 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  960.961
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.968,978.986,996.1004,10131013
+
+09:11:52.369683 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  960.967,977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.968,978.986,996.1004,10131013
+
+09:11:52.564620 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  960.967,977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:52.920738 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  960.967,977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:53.076294 [Info] KVSender::sendRestartVbuckets 
+server: 9121
+    127.0.0.1:54932: default:  0.341
+    127.0.0.1:54947: default:  342.682
+    127.0.0.1:54951: default:  683.959
+    127.0.0.1:54968: default:  960.970,977.985,995.1000
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:59.158503 [Info] KVSender::sendShutdownTopic Projector 192.168.1.69:10000 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:59.173083 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10001 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:59.191780 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10002 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:11:59.201458 [Info] KVSender::sendShutdownTopic Projector 127.0.0.1:10005 Topic INIT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.959
+    127.0.0.1:54984: default:  960.1023
+
+09:12:00.566021 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.955
+    127.0.0.1:54984: default:  960.1023
+
+09:12:01.657551 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.953
+    127.0.0.1:54984: 
+
+09:12:01.871146 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.953
+    127.0.0.1:54984: default:  956.959
+
+09:12:04.978336 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.943
+    127.0.0.1:54984: default:  956.959
+
+09:12:06.277725 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.940
+    127.0.0.1:54984: 
+
+09:12:06.655622 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.940
+    127.0.0.1:54984: default:  944.955,960.1023
+
+09:12:09.751349 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.932
+    127.0.0.1:54984: default:  944.955,960.1023
+
+09:12:10.881123 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.929
+    127.0.0.1:54984: 
+
+09:12:11.028447 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.929
+    127.0.0.1:54984: default:  933.943,956.959
+
+09:12:14.113890 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.921
+    127.0.0.1:54984: default:  933.943,956.959
+
+09:12:15.510109 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.919
+    127.0.0.1:54984: 
+
+09:12:15.757017 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.917
+    127.0.0.1:54984: default:  922.932,944.955,960.1023
+
+09:12:18.895881 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.910
+    127.0.0.1:54984: default:  922.932,944.955,960.1023
+
+09:12:20.008572 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.907
+    127.0.0.1:54984: 
+
+09:12:20.303281 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.906
+    127.0.0.1:54984: default:  911.921,933.943,956956
+
+09:12:23.374901 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.891
+    127.0.0.1:54984: default:  911.921,933.943,956.959
+
+09:12:24.664414 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.884
+    127.0.0.1:54984: 
+
+09:12:24.998827 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.883
+    127.0.0.1:54984: default:  892.910,922.932,944.955,960.973
+
+09:12:28.073468 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.869
+    127.0.0.1:54984: default:  892.910,922.932,944.955,960.1023
+
+09:12:29.208443 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.864
+    127.0.0.1:54984: 
+
+09:12:29.473120 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.863
+    127.0.0.1:54984: default:  870.891,911.921,933.943,956.959
+
+09:12:32.658122 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.850
+    127.0.0.1:54984: default:  870.891,911.921,933.943,956.959
+
+09:12:34.127499 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.843
+    127.0.0.1:54984: 
+
+09:12:34.395415 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.842
+    127.0.0.1:54984: default:  851.869,892.910,922.932,944.955,960.1004
+
+09:12:37.478010 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.828
+    127.0.0.1:54984: default:  851.869,892.910,922.932,944.955,960.1023
+
+09:12:38.644748 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.823
+    127.0.0.1:54984: 
+
+09:12:38.957258 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.821
+    127.0.0.1:54984: default:  829.850,870.891,911.921,933.943,956.959
+
+09:12:42.051574 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.807
+    127.0.0.1:54984: default:  829.850,870.891,911.921,933.943,956.959
+
+09:12:43.312648 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.802
+    127.0.0.1:54984: 
+
+09:12:43.668041 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.802
+    127.0.0.1:54984: default:  808.828,851.869,892.910,922.932,944.955,960.1007
+
+09:12:46.767758 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.789
+    127.0.0.1:54984: default:  808.828,851.869,892.910,922.932,944.955,960.1023
+
+09:12:48.114683 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.784
+    127.0.0.1:54984: 
+
+09:12:48.363583 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.783
+    127.0.0.1:54984: default:  790.807,829.850,870.881
+
+09:12:51.430631 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.771
+    127.0.0.1:54984: default:  790.807,829.850,870.891,911.921,933.943,956.959
+
+09:12:52.720621 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.767
+    127.0.0.1:54984: 
+
+09:12:53.199308 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.765
+    127.0.0.1:54984: default:  772.789,808.828,851.869,892.910,922.932,944.955,960.1023
+
+09:12:56.259846 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.751
+    127.0.0.1:54984: default:  772.789,808.828,851.869,892.910,922.932,944.955,960.1023
+
+09:12:57.463129 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.746
+    127.0.0.1:54984: 
+
+09:12:57.817639 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.745
+    127.0.0.1:54984: default:  752.771,790.807,829.850,870.891,911.921,933.943,956.959
+
+09:13:00.887201 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.731
+    127.0.0.1:54984: default:  752.771,790.807,829.850,870.891,911.921,933.943,956.959
+
+09:13:02.379546 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.724
+    127.0.0.1:54984: 
+
+09:13:02.783440 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.723
+    127.0.0.1:54984: default:  732.751,772.789,808.828,851.869,892.910,922.932,944.955,960.1014
+
+09:13:05.867267 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.709
+    127.0.0.1:54984: default:  732.751,772.789,808.828,851.869,892.910,922.932,944.955,960.1023
+
+09:13:07.253271 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.703
+    127.0.0.1:54984: 
+
+09:13:07.573593 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.703
+    127.0.0.1:54984: default:  710.731,752.771,790.807,829.850,870.891,911.921,933.943,956.959
+
+09:13:10.645819 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: default:  683.688
+    127.0.0.1:54984: default:  710.731,752.771,790.807,829.850,870.891,911.921,933.943,956.959
+
+09:13:12.150339 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: 
+    127.0.0.1:54984: 
+
+09:13:12.529358 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: 
+    127.0.0.1:54984: default:  689.709,732.751,772.789,808.828,851.869,892.910,922.932,944.955,960.1009
+
+09:13:15.572566 [Info] KVSender::sendRestartVbuckets Projector 127.0.0.1:10005 Topic MAINT_STREAM_TOPIC_b7:fd:ec:a2:4d:51:87:cd 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: 
+    127.0.0.1:54984: default:  689.709,732.751,772.789,808.828,851.869,892.910,922.932,944.955,960.1023
+
+09:13:15.763055 [Info] KVSender::sendRestartVbuckets 
+server: 9123
+    127.0.0.1:54099: default:  0.341
+    127.0.0.1:54104: default:  342.682
+    127.0.0.1:54109: 
+    127.0.0.1:54984: default:  683.1023
+
