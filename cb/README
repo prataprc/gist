@@ -1,0 +1,55 @@
+To uninstall couchbase server from all nodes,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cb_uninstall
+
+To setup nodes for fabric operations,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py setup
+
+To install couchbase server on all nodes, we can use the installer link
+that provides the dpkg of couchbase-server and couchbase-server-dbg,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cb_install:url=http://54.251.41.134/installer-25.03-08.17.tar
+
+To initialize the cluster
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cluster_init
+
+To start/stop/restart couchbase server on all nodes,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cb_service:do=start
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cb_service:do=stop
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cb_service:do=restart
+
+To checkout latest indexing unstable,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py indexing_unstable
+
+To checkout latest indexing master,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py indexing_master
+
+To checkout patch local commits to remote, will format patches starting from
+but not including <from-rev>
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py patch_target:R1=<from-rev>
+
+To checkout patch local uncommited changes to remote
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py patch_target
+
+To build/rebuild forestdb
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py rebuild_forestdb
+
+To checkout patch local commits to remote, will format patches starting from
+but not including <from-rev>
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py patch_target:R1=<from-rev>
+
+To checkout patch local commite/uncommited changes to remote and build
+indexer and projector
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py rebuild_indexing:R1=<from-rev>
+
+To clean /opt/* directories,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py cleanall
+
+To generate load on the cluster, the following will, generate N documents for
+each of M routines parallely from each node in the cluster. So the final doc
+count should look like N * M * number-of-nodes,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py loadgen:count=N,par=M
+
+Finally,
+$ fab -i ~/.ssh/aws/blrcluster.pem -f bin/fabinstaller.py -l
+
+will list all the commands.
+
