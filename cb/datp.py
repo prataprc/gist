@@ -9,23 +9,6 @@ if len(sys.argv) < 2 :
 
 servers = {}
 
-def pprint() :
-    for server, sval in sorted(servers.items()) :
-        print("server: %s" % server)
-        for raddr, rval in sorted(sval.items()) :
-            print("   ", "%s: " % raddr, end="")
-            for bucket, vbnos in sorted(rval.items()) :
-                vbnos.sort()
-                if len(vbnos) == 0 : continue
-                s = "%s" % vbnos[0]
-                for x, y in zip(vbnos, vbnos[1:]) :
-                    s += (y-x > 1 and "%s,%s" % (x,y)) or \
-                         ((y-x == 1 and s[-1] != "." and ".") or "")
-                s += "%s" % vbnos[-1]
-                print("%s: " % bucket, s, end="")
-            print("")
-    len(servers) > 0 and print("")
-
 def handler_datp_1(server) :
     #print("datp_1 `%s`" % server)
     servers.setdefault(server, {})
@@ -40,7 +23,7 @@ def handler_datp_3(server, raddr, bucket, vbno) :
 
 def handler_datp_4(server, raddr) :
     #print("datp_4 `%s` `%s` " % (server, raddr))
-    raddr in servers[server] and servers[server].pop(raddr)
+    server in servers and raddr in servers[server] and servers[server].pop(raddr)
 
 def handler_datp_5(server) :
     #print("datp_5 `%s` " % server)
@@ -52,7 +35,21 @@ def handler_datp_6(server, raddr, bucket, vbno) :
 
 def handler_marker(line) :
     print(line)
-    pprint()
+    for server, sval in sorted(servers.items()) :
+        print("server: %s" % server)
+        for raddr, rval in sorted(sval.items()) :
+            print("   ", "%s: " % raddr, end="")
+            for bucket, vbnos in sorted(rval.items()) :
+                vbnos.sort()
+                if len(vbnos) == 0 : continue
+                s = "%s." % vbnos[0]
+                for x, y in zip(vbnos, vbnos[1:]) :
+                    s += (y-x > 1 and "%s,%s." % (x,y)) or \
+                         ((y-x == 1 and s[-1] != "." and ".") or "")
+                s += "%s" % vbnos[-1]
+                print("%s: " % bucket, s, end="")
+            print("")
+    len(servers) > 0 and print("")
 
 matchers = [
   [ re.compile(r'.*\[Info\] DATP\[->dataport ":([0-9]+)"\] started ...'),
