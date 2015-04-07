@@ -27,10 +27,10 @@ func alignedCall(m map[string]uint64, i int, counters [257]uint64) uint64 {
 func main() {
 	s := X{}
 
-	atomic.AddUint64(&s.a, 1)   // no panic
+	atomic.AddUint64(&s.a, 1) // no panic
 	//atomic.AddUint64(&s.c, 1) // panic on 32-bit machine
-	s.e = new(uint64)           // on 32-bit mach, will it be 64-bit aligned ??
-	atomic.AddUint64(s.e, 1)    // no panic, if 64-bit aligned
+	s.e = new(uint64)        // on 32-bit mach, will it be 64-bit aligned ??
+	atomic.AddUint64(s.e, 1) // no panic, if 64-bit aligned
 	// atomic.AddUint64(&s.unalign.j, 1) // panic on 32-bit machine
 	atomic.AddUint64(&s.align.m, 1) // no panic
 	//atomic.AddUint64(&s.align.o, 1) // panic on 32-bit machine
