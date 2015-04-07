@@ -1,6 +1,7 @@
 package main
 
 import "sync/atomic"
+import "fmt"
 
 type X struct {
 	a       uint64 // will be 64-bit aligned, no panic
@@ -19,8 +20,10 @@ type X struct {
 	}
 }
 
-func alignedCall(m map[string]uint64, i int, counters [257]uint64) uint64 {
-	v := atomic.LoadUint64(&counters[i]) // Will counters be 64-bit aligned
+// arguments are always 64-bit aligned in stack.
+func alignedCall(b bool, i uint64) uint64 {
+	v := atomic.LoadUint64(&i)
+	fmt.Printf("alignedCall(%p, %p)\n", &b, &i)
 	return v
 }
 
@@ -34,7 +37,8 @@ func main() {
 	// atomic.AddUint64(&s.unalign.j, 1) // panic on 32-bit machine
 	atomic.AddUint64(&s.align.m, 1) // no panic
 	//atomic.AddUint64(&s.align.o, 1) // panic on 32-bit machine
-	m := map[string]uint64{"a": 10}
-	counters := [257]uint64{}
-	alignedCall(m, 10, counters)
+	y := uint64(10)
+	x := alignedCall(true, y)
+	fmt.Printf("%p: %v\n", &y, y)
+	fmt.Printf("%p: %v\n", &x, x)
 }
