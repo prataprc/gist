@@ -25,12 +25,11 @@ func main() {
 
 	atomic.AddUint64(&s.a, 1)         // no panic
 	atomic.AddUint64(&s.c, 1)         // panic on 32-bit machine
-	atomic.AddUint64(&s.e, 1)         // no panic
+	s.e = new(uint64)                 // on 32-bit mach, will it be 64-bit aligned ??
+	atomic.AddUint64(s.e, 1)          // no panic
 	atomic.AddUint64(&s.Aligned.m, 1) // no panic
 	atomic.AddUint64(&s.Aligned.o, 1) // panic on 32-bit machine
 	m := map[string]uint64{"a": 10}
 	counters := [257]uint64{}
 	alignedCall(m, 10, counters)
-	x := new(uint64) // on 32-bit mach, will it be 64-bit aligned ??
-	atomic.LoadUint64(x)
 }
