@@ -2,13 +2,16 @@ package main
 
 import "sync/atomic"
 import "fmt"
+import "unsafe"
 
 type X struct {
 	a       uint64 // will be 64-bit aligned, no panic
 	b       bool
 	c       uint64 // will cause panic in 32-bit machine
 	d       bool
-	e       *uint64 // won't cause panic, if new(uint64) is 64 bit algined
+	e       *uint64 // won't cause panic if allocated using new(uint64)
+	f       bool
+	g       unsafe.Pointer // won't case panic if allocated using new(uint64)
 	unalign struct {
 		j uint64 // will cause panic in 32-bit machine
 	}
@@ -34,6 +37,8 @@ func main() {
 	//atomic.AddUint64(&s.c, 1) // panic on 32-bit machine
 	s.e = new(uint64)        // on 32-bit mach, will it be 64-bit aligned ??
 	atomic.AddUint64(s.e, 1) // no panic, if 64-bit aligned
+	s.g = unsafe.Pointer(new(uint64))
+	atomic.AddUint64((*uint64)(s.g), 1)
 	// atomic.AddUint64(&s.unalign.j, 1) // panic on 32-bit machine
 	atomic.AddUint64(&s.align.m, 1) // no panic
 	//atomic.AddUint64(&s.align.o, 1) // panic on 32-bit machine
