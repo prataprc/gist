@@ -47,7 +47,7 @@ def handler_marker(line) :
                     s += (y-x > 1 and "%s,%s." % (x,y)) or \
                          ((y-x == 1 and s[-1] != "." and ".") or "")
                 s += "%s" % vbnos[-1]
-                print("%s: " % bucket, s, end="")
+                print("%s: " % bucket, s, end=" ")
             print("")
     len(servers) > 0 and print("")
 
