@@ -1,41 +1,41 @@
 cli=~/0cb/install/bin/couchbase-cli
 
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket1 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket2 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket3 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket4 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket5 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket6 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket7 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket8 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
-#$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
-#    --password=asdasd --bucket=bucket9 --bucket-password="" \
-#    --bucket-ramsize=100 --bucket-replica=0 \
-#    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket1 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket2 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket3 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket4 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket5 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket6 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket7 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket8 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
+$cli bucket-create --cluster=127.0.0.1:9000 --user=Administrator \
+    --password=asdasd --bucket=bucket9 --bucket-password="" \
+    --bucket-ramsize=100 --bucket-replica=0 \
+    --bucket-type=couchbase --enable-flush=1 --wait
 
 repo=/Users/prataprc/devgo/src/github.com/couchbase/indexing/secondary
 
