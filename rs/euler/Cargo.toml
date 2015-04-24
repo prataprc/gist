@@ -1,0 +1,7 @@
+[package]
+name = "euler"
+version = "0.1.0"
+authors = ["prataprc <prataprc@gmail.com>"]
+
+[dependencies.getopts]
+getopts = "0.2.4"

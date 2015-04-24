@@ -1,2 +1,3 @@
 *.swp
 *.pyc
+rs/euler/target/debug/
