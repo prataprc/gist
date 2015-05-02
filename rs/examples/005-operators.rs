@@ -11,6 +11,12 @@ fn main() {
     // integer subraction
     println!("1 - 2 = {}", 1i32 - 2);
 
+    // integer multiplication
+    println!("2 * 2 = {}", 2i32 * 2);
+
+    // integer division
+    println!("2 / 2 = {}", 2i32 / 2);
+
     // short-circuiting boolean logic
     println!("");
     println!("true AND false is {}", true && false);
@@ -26,7 +32,7 @@ fn main() {
     println!("0x80(i32) >> 2 is {:x}", 0x80i32 >> 2);
     println!("0x80(i8) >> 2 is {:x}", 0x80u8 as i8 >> 2);
 
-    // module operation
+    // modulo operation
     println!("");
     println!("10(i8) % 3 is {}", 10i8 % 3);
     println!("-10(i8) % 3 is {}", 10i8 % 3);
