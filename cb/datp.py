@@ -34,7 +34,6 @@ def handler_datp_6(server, raddr, bucket, vbno) :
     servers[server][raddr][bucket].remove(int(vbno))
 
 def handler_marker(line) :
-    print(line)
     for server, sval in sorted(servers.items()) :
         print("server: %s" % server)
         for raddr, rval in sorted(sval.items()) :
@@ -49,6 +48,7 @@ def handler_marker(line) :
                 s += "%s" % vbnos[-1]
                 print("%s: " % bucket, s, end=" ")
             print("")
+    print(line)
     len(servers) > 0 and print("")
 
 matchers = [
