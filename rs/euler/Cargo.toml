@@ -5,3 +5,9 @@ authors = ["prataprc <prataprc@gmail.com>"]
 
 [dependencies.getopts]
 getopts = "0.2.4"
+
+[dependencies.time]
+time = "0.1.25"
+
+[profile.dev]
+opt-level = 3
