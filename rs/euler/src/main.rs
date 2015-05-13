@@ -99,8 +99,8 @@ fn p4() {
 }
 
 fn is_palindrome<T>(x: &[T]) -> bool {
-    let i = x.len();
-    println!("{:?}", &x[..i].iter().zip(&x[i..]).rev().iter());
+    let i = x.len()/2;
+    println!("{:?}", &x[..i].iter().zip(&x[i..].rev()));
     true
 }
 
