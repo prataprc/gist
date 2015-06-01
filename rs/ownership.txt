@@ -1,0 +1,19 @@
+An owner has some privileges. It may:
+
+* control resource deallocation,
+* lend the resource, immutably (multiple borrows) or mutably (exclusive)
+* hand over the ownership (with a move).
+
+An owner has some restrictions, too:
+
+* During a borrow, the owner may NOT (a) mutate the resource,
+  or (b) mutably lend the resource.
+* During a mutable borrow, the owner may NOT (a) access the resource,
+  or (b) lend the resource.
+
+A borrower has some privileges, too. In addition to accessing or mutating
+the borrowed resource, a borrower may also share the borrow further:
+
+* A borrower may share (copy) an immutable borrow.
+* A mutable borrower may hand over (move) the mutable borrow.
+  (Note that mutable reference is moved by default.)
