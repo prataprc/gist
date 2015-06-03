@@ -44,11 +44,15 @@ fn main() {
             solve("p2", p2);
             solve("p3", p3);
             solve("p4", p4);
+            solve("p5", p5);
+            solve("p6", p6);
         },
         "p1" => solve("p1", p1),
         "p2" => solve("p2", p2),
         "p3" => solve("p3", p3),
         "p4" => solve("p4", p4),
+        "p5" => solve("p5", p5),
+        "p6" => solve("p6", p6),
         _ => {println!("supply problem number !!"); process::exit(2);},
     };
 }
@@ -82,11 +86,10 @@ fn p2() {
 }
 
 fn p3() {
-    let mut max = 0_i64;
-    { let f = |n: i64| if n > max { max = n };
-      factors(600851475143_i64, f);
-    }
-    println!("largest prime factor of the number 600851475143: {}", max);
+    //let max = prime_factors(600851475143_i64)
+    //    .iter()
+    //    .fold(0, |max, n| if (n > max) {n} else {max});
+    println!("largest prime factor of the number 600851475143: {:?}", 10);
 }
 
 fn p4() {
@@ -104,17 +107,60 @@ fn p4() {
     println!("largest palindrome made from the product of two 3-digit numbers {}", result);
 }
 
+fn p5() {
+    let primes = vec![2,3,5,7,11,13,17,19];
+    let mut result = primes.iter().fold(1, |a, x| a * x);
+    for x in vec![4,6,8,10,12,14,15,16,18,20] {
+        let mut val = result;
+        for p in prime_factors(x) {
+            if (val % p) == 0 { val /= p } else { result *= p }
+        }
+    }
+    println!("smallest positive number that is evenly divisible \
+             by all of the numbers from 1 to 20 {}", result);
+}
+
+fn p6() {
+    let s1 = (1..101).map(|x| x*x).fold(0, |a, x| a+x);
+    let s2 = (1..101).fold(0, |a, x| a+x);
+    println!("difference between the sum of the squares of the first \
+              one hundred natural numbers and the square of the sum: {}", (s2*s2)-s1);
+}
+
 fn is_palindrome<T: Eq>(x: &[T]) -> bool {
     let i = x.len()/2;
     (&x[..i]).iter().zip((&x[i..]).iter().rev()).all(|(a,b)| a == b)
 }
 
-fn factors<F>(num: i64, mut f: F) where F: FnMut(i64) {
+fn prime_factors(num: i64) -> Vec<i64> {
+    let mut number = num;
+    let mut pfactors = Vec::new();
+    let mut candidate = 2;
+    while number > 1 {
+        while number % candidate == 0 {
+            pfactors.push(candidate);
+            number /= candidate;
+        }
+        candidate += 1;
+    }
+    return pfactors;
+}
+
+#[allow(dead_code)]
+fn is_prime(num: i64) -> bool {
+    let till: i64 = ((num as f64).sqrt() as i64) + 1;
+    let mut fs = Vec::new();
+    (2..till).fold(true, |_, i| {if (num % i) == 0 {fs.push(i)}; true});
+    fs.len() == 0
+}
+
+#[allow(dead_code)]
+fn factors_cb<F>(num: i64, mut f: F) where F: FnMut(i64) {
     let till: i64 = ((num as f64).sqrt() as i64) + 1;
     for i in 2..till {
         if (num % i) == 0 {
             f(i);
-            factors(num / i, f);
+            factors_cb(num / i, f);
             return
         }
     }
