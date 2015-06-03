@@ -40,6 +40,7 @@ fn main() {
     match options.free[0].as_ref() {
         "all" => {
             solve("p1", p1);
+            solve("p1", p1);
             solve("p2", p2);
             solve("p3", p3);
             solve("p4", p4);
@@ -85,23 +86,27 @@ fn p3() {
     { let f = |n: i64| if n > max { max = n };
       factors(600851475143_i64, f);
     }
-    println!("the largest prime factor of the number 600851475143: {}", max);
+    println!("largest prime factor of the number 600851475143: {}", max);
 }
 
 fn p4() {
+    let mut result: u64 = 0;
     for i in (99..1000).rev() {
-        for j in (99..i).rev() {
-            let num = (i*j).to_string();
-            is_palindrome(num.as_bytes());
-            break
+        for j in (i..1000).rev() {
+            let num = i * j;
+            if is_palindrome(num.to_string().as_bytes()) {
+                if result < num {
+                    result = num;
+                }
+            }
         }
     }
+    println!("largest palindrome made from the product of two 3-digit numbers {}", result);
 }
 
-fn is_palindrome<T>(x: &[T]) -> bool {
+fn is_palindrome<T: Eq>(x: &[T]) -> bool {
     let i = x.len()/2;
-    println!("{:?}", &x[..i].iter().zip(&x[i..].rev()));
-    true
+    (&x[..i]).iter().zip((&x[i..]).iter().rev()).all(|(a,b)| a == b)
 }
 
 fn factors<F>(num: i64, mut f: F) where F: FnMut(i64) {
