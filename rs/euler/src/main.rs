@@ -6,7 +6,7 @@ use getopts::Options;
 use std::env;
 use std::process;
 use std::convert::AsRef;
-use std::ops::Sub;
+use std::ops::{Sub};
 
 fn print_usage(program: &str, opts: Options) {
     let summary = format!("Usage: {} [options]", program);
@@ -46,6 +46,7 @@ fn main() {
             solve("p4", p4);
             solve("p5", p5);
             solve("p6", p6);
+            solve("p7", p7);
         },
         "p1" => solve("p1", p1),
         "p2" => solve("p2", p2),
@@ -53,6 +54,7 @@ fn main() {
         "p4" => solve("p4", p4),
         "p5" => solve("p5", p5),
         "p6" => solve("p6", p6),
+        "p7" => solve("p7", p7),
         _ => {println!("supply problem number !!"); process::exit(2);},
     };
 }
@@ -126,6 +128,27 @@ fn p6() {
     println!("difference between the sum of the squares of the first \
               one hundred natural numbers and the square of the sum: {}", (s2*s2)-s1);
 }
+
+fn p7() {
+    let mut primes: Vec<i64> = vec![2,3,5,7,11,13,17,19];
+    let mut candidate = 20;
+    while primes.len() < 10001 {
+        let till: i64 = ((candidate as f64).sqrt() as i64) + 1;
+        let is_prime = {
+            primes.iter()
+                .take_while(|&p| *p < till)
+                .skip_while(|&p| candidate % *p != 0 ).next().is_none()
+        };
+        if is_prime { primes.push(candidate) }
+        candidate += 1;
+    }
+    println!("{:?}", &primes[10000]);
+}
+
+//#[inline]
+//fn is_divisible<T>(dividend: T, divisor: T) -> bool where T: Rem+Eq {
+//    (dividend % divisor) == 0
+//}
 
 fn is_palindrome<T: Eq>(x: &[T]) -> bool {
     let i = x.len()/2;
