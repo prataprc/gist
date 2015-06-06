@@ -3,11 +3,11 @@ name = "euler"
 version = "0.1.0"
 authors = ["prataprc <prataprc@gmail.com>"]
 
-[dependencies.getopts]
-getopts = "0.2.4"
-
-[dependencies.time]
+[dependencies]
 time = "0.1.25"
+
+[dependencies.getopts]
+git = "file:///Users/prataprc/store/oss/rust-lang/getopts/.git"
 
 [profile.dev]
 opt-level = 3

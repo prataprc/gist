@@ -2,7 +2,7 @@
 name = "euler"
 version = "0.1.0"
 dependencies = [
- "getopts 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
+ "getopts 0.2.11 (git+file:///Users/prataprc/store/oss/rust-lang/getopts/.git)",
  "time 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -13,8 +13,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "getopts"
-version = "0.2.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.2.11"
+source = "git+file:///Users/prataprc/store/oss/rust-lang/getopts/.git#2978772ec44356e16e6f0bb1b16e81405f6cb8f0"
 dependencies = [
  "log 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

@@ -1,3 +1,5 @@
+#![feature(zero_one)]
+
 extern crate getopts;
 extern crate time;
 
@@ -6,7 +8,20 @@ use getopts::Options;
 use std::env;
 use std::process;
 use std::convert::AsRef;
-use std::ops::{Sub};
+use std::ops::{Sub,Add,Rem};
+use std::num::{Zero};
+
+static CHAR2DIGIT: [i64; 256] = [
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+];
 
 fn print_usage(program: &str, opts: Options) {
     let summary = format!("Usage: {} [options]", program);
@@ -47,6 +62,8 @@ fn main() {
             solve("p5", p5);
             solve("p6", p6);
             solve("p7", p7);
+            solve("p8", p8);
+            solve("p9", p9);
         },
         "p1" => solve("p1", p1),
         "p2" => solve("p2", p2),
@@ -55,6 +72,8 @@ fn main() {
         "p5" => solve("p5", p5),
         "p6" => solve("p6", p6),
         "p7" => solve("p7", p7),
+        "p8" => solve("p8", p8),
+        "p9" => solve("p9", p9),
         _ => {println!("supply problem number !!"); process::exit(2);},
     };
 }
@@ -145,10 +164,67 @@ fn p7() {
     println!("{:?}", &primes[10000]);
 }
 
-//#[inline]
-//fn is_divisible<T>(dividend: T, divisor: T) -> bool where T: Rem+Eq {
-//    (dividend % divisor) == 0
-//}
+fn p8() {
+    let inp = "73167176531330624919225119674426574742355349194934\
+               96983520312774506326239578318016984801869478851843\
+               85861560789112949495459501737958331952853208805511\
+               12540698747158523863050715693290963295227443043557\
+               66896648950445244523161731856403098711121722383113\
+               62229893423380308135336276614282806444486645238749\
+               30358907296290491560440772390713810515859307960866\
+               70172427121883998797908792274921901699720888093776\
+               65727333001053367881220235421809751254540594752243\
+               52584907711670556013604839586446706324415722155397\
+               53697817977846174064955149290862569321978468622482\
+               83972241375657056057490261407972968652414535100474\
+               82166370484403199890008895243450658541227588666881\
+               16427171479924442928230863465674813919123162824586\
+               17866458359124566529476545682848912883142607690042\
+               84580156166097919133875499200524063689912560717606\
+               05886116467109405077541002256983155200055935729725\
+               71636269561882670428252483600823257530420752963450";
+    let max = (0..(inp.len()-13))
+        .map(|i| {
+            let bytes = (&inp[i..i+13]).bytes();
+            bytes.fold(1, |a, x| a * (CHAR2DIGIT[x as usize] as i64))
+            // ???
+            //(&inp[i..i+13]).bytes().fold(1, |a, x| a * (CHAR2DIGIT[x as usize] as i64))
+        }).max().unwrap();
+    println!("thirteen adjacent digits in the 1000-digit number \
+             that have the greatest product: {}", max);
+}
+
+fn p9() {
+    let squares: Vec<i32> = (0..1001).map(|x| x*x).collect();
+    for x in squares[0..1001].iter().enumerate() {
+        for y in squares[0..1001].iter().enumerate() {
+            let (i, j) = ((x.0) as i32, (y.0) as i32);
+            if i + j >= 1000 { break }
+            let k = ((x.1 + y.1) as f64).sqrt();
+            if k == k.floor() {
+                let p = i * j * (k as i32);
+                if (i + j + (k as i32)) == 1000  &&  p > 0 {
+                    println!("pythagorean triplet's sum = 1000, product = {}",p);
+                    return;
+                }
+            }
+        }
+    }
+}
+
+#[allow(dead_code)]
+fn is_divisible<T>(dividend: T, divisor: T) -> bool
+    where T: Rem<Output=T> + PartialEq + Zero
+{
+    (dividend % divisor) == T::zero()
+}
+
+#[allow(dead_code)]
+fn is_triplet<T>(squares: &[T], a: usize, b: usize, c: usize) -> bool
+    where T: Copy + Add<Output=T> + PartialEq
+{
+    (squares[a] + squares[b]) == squares[c]
+}
 
 fn is_palindrome<T: Eq>(x: &[T]) -> bool {
     let i = x.len()/2;
