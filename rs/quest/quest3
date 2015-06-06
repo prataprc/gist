@@ -1,0 +1,36 @@
+Demonstration of associated traits
+----------------------------------
+
+The following implementation throws the error,
+=> error: binary operation `==` cannot be applied to type `<T as core::ops::Rem>::Output`
+
+    fn is_divisible<T>(dividend: T, divisor: T) -> bool
+        where T: Rem + PartialEq
+    {
+            (dividend % divisor) == 0
+    }
+
+Now, changing it a bit to include Rem::Output, throws the error
+=> error: mismatched types: because 0 is not castable to `T`.
+
+    fn is_divisible<T>(dividend: T, divisor: T) -> bool
+        where T: Rem<OutPut=T> + PartialEq
+    {
+            (dividend % divisor) == 0
+    }
+
+Now, changing this further to, throws the error.
+=> error: cannot move out of type `[T]`, a non-copy fixed-size array
+
+    fn is_divisible<T>(dividend: T, divisor: T) -> bool
+        where T: Rem<Output=T> + PartialEq + Zero
+    {
+        (dividend % divisor) == T::zero();
+    }
+
+Similarly, a generic function that calculates pythogorean triplets.
+    fn is_triplet<T>(squares: &[T], a: usize, b: usize, c: usize) -> bool
+        where T: Copy + Add<Output=T> + PartialEq
+    {
+        (squares[a] + squares[b]) == squares[c]
+    }
