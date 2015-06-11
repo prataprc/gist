@@ -20,4 +20,6 @@ fn main() {
     println!("size of bool/{}", mem::size_of::<bool>());
     println!("size of ()/{}", mem::size_of::<()>());
     println!("size of `struct Foo`/{}", mem::size_of::<Foo>());
+    println!("size of `Box::new(5: u32)`/{}", mem::size_of::<Box<u32>>());
+    println!("size of `Box::new(5: u8)`/{}", mem::size_of::<Box<u8>>());
 }
