@@ -22,4 +22,7 @@ fn main() {
     println!("size of `struct Foo`/{}", mem::size_of::<Foo>());
     println!("size of `Box::new(5: u32)`/{}", mem::size_of::<Box<u32>>());
     println!("size of `Box::new(5: u8)`/{}", mem::size_of::<Box<u8>>());
+    println!("size of Option<()>/{}", mem::size_of::<Option<()>>());
+    println!("size of Option<u16>/{}", mem::size_of::<Option<u16>>());
+    println!("size of Option<u64>/{}", mem::size_of::<Option<u64>>());
 }
