@@ -1,0 +1,150 @@
+{noformat}
+
+I think this should be proposed as Request For Comment instead of a solution.
+
+The WHERE clause is a boolean predicate expression that return a boolean
+value `true` or `false`. The boolean expression can in turn be composed of
+several sub-expressions evaluating to a bool and composed using AND, OR and
+NOT operators.
+
+The problem
+-----------
+
+The problem in hand is that we propose to use WHERE clause not only for
+filtering documents based on the predicate, but also, to partition the
+data-set across several indexer nodes, each indexer node hosting the
+partition as an independant index. Because of this, projector from
+every KV node, when evaluates WHERE clause for an index as false,
+had to route a DELETE message to subscribed indexer. For example,
+
+Indexer-A is hosting Index-1 with following DDL,
+CREATE INDEX bucket1_age ON default(`age`) WHERE type == "user" USING GSI
+
+Indexer-B is hosting Index-2 with following DDL,
+CREATE INDEX bucket1_age ON default(`item`) WHERE type == "order" USING GSI
+
+In the above case all documents with type == "order" will evaluate as
+`false` for Index-1, still projector will have to send a DELETE message
+to Indexer-A because projector does not know the old-value of `type`
+field, and this does not help to optimize mutation traffic to indexer
+nodes.
+
+Immutable and Required fields
+-----------------------------
+
+Immutable fields, if presetn in a document, are expected to be defined
+once and never changes for the lifetime of the document. Which means if
+WHERE expression is exclusively made up of immutable fields and
+evaluates a document to `false`, projector can safely assume that it
+always evaluates to false and avoid the DELETE messages, which otherwise
+will have to be sent to indexer nodes.
+
+Required fields, if present in a document, are always expected to be
+present and never gets removed for the lifetime of the document. Which
+means if WHERE expression has a required field that is `missing`,
+projector can safely avoid the DELETE messages, which otherwise will
+have to be sent to indexer nodes.
+
+    =========================================================
+    But what if a WHERE expression is made up of ZERO or more
+    immutable fields and/or ZERO or more required fields ?
+    while they can be arbitrarily nested !
+    =========================================================
+
+Proposed extension
+------------------
+
+Before getting to the proposal let us first try to get a better
+understanding on the WHERE expression.
+* a WHERE expression is boolean expression which evaluates to a boolean
+  value `true` or `false`.
+* a WHERE expression may contain several sub-expressions that are composed
+  using AND, OR and NOT operators.
+* thus a WHERE expression can be visualized as a tree of boolean expression
+  composed using AND, OR and NOT operators, and whose leaf nodes are
+  made up of N1QL expression that evaluates to boolen value.
+
+The proposed extension involves two parts,
+* one, a new type called Trinity which, unlike a boolean type, can have
+  three possible value - `true`, `false` and `skip`.
+* two, the WHERE expression, when deconstructed as a tree will be
+  made up of TrinityExpression. Each node casted as a TrinityExpression,
+  shall evaluate to Trinity type - one of the three possible values.
+
+In short,
+
+   eval(TrinityExpression) -> Trinity
+
+NOT transformation
+------------------
+
+Transforming the where-clause's AST (abstract syntax tree) so that
+intermediate nodes whose composing operator NOT will be pushed all
+the way down to leaf nodes using De-Morgan's law,
+
+a. NOT (A AND B) == (NOT A) OR (NOT B)
+b. NOT (A OR B)  == (NOT A) AND (NOT B)
+
+If A and B themself are intermediate nodes composing AND/OR operators
+the law can be recursively applied until NOT is pushed all the way
+down to the leaf nodes.
+
+Leaf Node evaluation
+--------------------
+
+As proposed above, all nodes including leaf nodes, are casted for
+trinity-evaluation. trinity-expressions are evaluated similar to
+boolean expression, NOT operator if applicable is applied on the
+result and subsequently following rules are applied,
+
+a. if expression contains only immutable fields, and the expression
+   evaluates to boolean `false`, then it is emitted as `trinity-skip`.
+b. if expression contains one or more required fields and atleast one
+   of them is missing, then expression emits a `trinity-skip`.
+c. otherwise, the original boolean value is casted as the trinity value
+   and emitted as result.
+
+Evaluating non leaf nodes
+-------------------------
+
+Non leaf nodes are essentially composed of either AND operator or OR
+operator. And applying the following truth table should suffice,
+
+Truth table for AND
+
+operand1    operand2    result
+  skip        xxx        skip
+  false       skip       skip
+  false       true       false
+  false       false      false
+  true        skip       skip
+  true        false      false
+  true        true       true
+
+Truth table for OR
+
+operand1    operand2    result
+  skip        true       true
+  skip        false      false
+  skip        skip       skip
+  false       skip       false
+  false       true       true
+  false       false      false
+  true        skip       true
+  true        false      true
+  true        true       true
+
+How will projector handle Trinity-evaluation
+--------------------------------------------
+
+As explained above a WHERE clause expression shall be casted for trinity
+evaluation whose result can be,
+
+true - Send UPSERT message to subscribed downstream indexer.
+false - Send UPSERT-DELETE message to subscribed dowstream indexer.
+skip - Do nothing.
+
+Note, we use UPSERT-DELETE as the opcode instead of DELETE, because we
+use the later to describe document-deleted.
+
+{noformat}

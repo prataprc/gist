@@ -1,0 +1,68 @@
+{noformat}
+
+Refactoring consistency design for GsiClient.
+
+As of today GsiClient supports the following three consistency options,
+
+AnyConsistency
+    AnyConsistency indexer would return the most current data available
+    at the moment.
+
+SessionConsistency
+    SessionConsistency indexer would query the latest timestamp from
+    each KV node. It will ensure that the scan result is at least as
+    recent as the KV timestamp. In other words, this option ensures the
+    query result is at least as recent as what the user session has
+    observed so far.
+
+QueryConsistency
+    QueryConsistency indexer would accept a timestamp vector,
+    and make sure to return a stable data-set that is atleast as
+    recent as the timestamp-vector.
+
+To support SessionConsistency, GsiClient willl have to get the latest
+vector of {vbno, seqno, vbuuid} using memcached's STATS command,
+and following is how it performs for single node and 1024 vbuckets,
+
+> getCurrentKVTs: 131.460526ms
+
+Alternately there is a new DCP command called GET_SEQNOS that gives
+a performance of,
+
+> getCurrentKVTs: 1.566925ms
+
+Following is a proposal to,
+
+a. use DCP GET_SEQNOS as much as possible.
+b. use memcached STATS command only when required.
+c. avoid sending Vbuuid payload from kv->GsiClient and GsiClient->Indexer
+   as much as possible.
+
+For that,
+
+1. GsiClient will maintian a local cache of full set of vbucket-vbuuids.
+2. A hash variable initialized to ZERO shall be attached to the vbuuid set.
+
+When ever a new query comes to GsiClient with SessionConsistency,
+
+1. if hash variable is ZERO, memcached STATS command will be used to fetch
+   the full set of {vbno, seqno, vbuuid} and HASH will be computed on the
+   vbuuid.
+2. A query packet will be framed using query parameters, consistency
+   timestamp as {vbno, seqno}, and the HASH of all vbuuids.
+3. If server responds with `PossibleRollback` error message, GsiClient will
+   re-initialize local HASH variable to ZERO and fail the query by bubbling
+   up the error message to N1QL engine.
+
+When ever a new query comes with AnyConsistency,
+
+1. A query packet will be framed using query parameters and nothing else.
+
+When ever a new query comes to GsiClient with QueryConsistency,
+
+1. A query packet will be framed using queryparameters, supplied consistency
+   vector (which can be full set of vbuckets or partial set) and nothing else.
+2. If server responds with `PossibleRollback` error message, GsiClient will
+   re-initialize local HASH variable to ZERO and fail the query to bubbling
+   up the error message to N1QL engine.
+{noformat}
