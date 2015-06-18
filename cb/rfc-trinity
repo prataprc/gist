@@ -47,7 +47,7 @@ have to be sent to indexer nodes.
 
     =========================================================
     But what if a WHERE expression is made up of ZERO or more
-    immutable fields and/or ZERO or more required fields ?
+    mutable fields and/or ZERO or more non-required fields ?
     while they can be arbitrarily nested !
     =========================================================
 
