@@ -1,0 +1,25 @@
+- setup latest cluster_run.
+- pull from gerrit the changeset.
+  - create a `git diff` patch
+  - scp
+  - git apply patch
+  - build using
+
+- start cluster_run 2-node 1024
+- cluster_connect
+- loadgen with 1M docs to `default`
+- create an index for `default` bucket
+
+run parallel
+  - run loadgen (1 core)
+  - run cbindexperf with {client, concurrency, repeat} in consistency, lookup
+
+Commands
+
+repo init -u git://github.com/couchbase/manifest.git -m sherlock.xml
+
+GOPATH=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps GOBIN=/home/ubuntu/0cb/goproj/bin:/home/ubuntu/0cb/godeps/bin ./build.sh  && mv cmd/indexer/indexer cmd/projector/projector /home/ubuntu/0cb/install/bin && rm bin/{indexer,projector}
+
+GOPATH=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps: GOBIN=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps: go build
+
+GOMAXPROCS=8 go run loadgen.go -auth Administrator:asdasd -bagdir /home/ubuntu/devgo/src/github.com/prataprc/monster/bags  -count 100000 -par 10 -buckets default -prods /home/ubuntu/devgo/src/github.com/prataprc/monster/prods/projects.prod localhost:9000

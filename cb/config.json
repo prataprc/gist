@@ -1,0 +1,36 @@
+{
+   "Concurrency" : 1,
+   "Clients": 1,
+   "ScanSpecs" : [
+      {
+         "Type" : "Lookup",
+         "Bucket" : "beer-sample",
+         "Id" : 7962660343139546135,
+         "Index" : "dname",
+         "Lookups" : [ ["563 Stout"] ],
+         "Inclusion" : 3,
+         "Limit" : 0,
+         "Repeat" : 0
+      },
+      {
+         "Type" : "All",
+         "Id" : 9475044663643373520,
+         "Bucket" : "beer-sample",
+         "Index" : "dtype",
+         "Limit" : 100,
+         "Repeat" : 0
+      },
+      {
+         "Type" : "Range",
+         "Id" : 7962660343139546135,
+         "Bucket" : "beer-sample",
+         "Index" : "dname",
+         "Low" : [ "A" ],
+         "High" : [ "Z" ],
+         "Inclusion" : 3,
+         "Limit" : 0,
+         "Repeat" : 0
+      }
+   ]
+}
+

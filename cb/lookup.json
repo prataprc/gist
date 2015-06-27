@@ -1,0 +1,16 @@
+{
+   "Concurrency" : 30,
+   "Clients": 1,
+   "ScanSpecs" : [
+      {
+         "Type" : "Lookup",
+         "Bucket" : "beer-sample",
+         "Id" : 7962660343139546135,
+         "Index" : "dname",
+         "Lookups" : [ ["563 Stout"] ],
+         "Limit" : 1,
+         "Repeat" : 50000,
+         "Consistency": true
+      }
+   ]
+}
