@@ -18,8 +18,24 @@ Commands
 
 repo init -u git://github.com/couchbase/manifest.git -m sherlock.xml
 
-GOPATH=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps GOBIN=/home/ubuntu/0cb/goproj/bin:/home/ubuntu/0cb/godeps/bin ./build.sh  && mv cmd/indexer/indexer cmd/projector/projector /home/ubuntu/0cb/install/bin && rm bin/{indexer,projector}
+GOPATH="" GOBIN="" make
 
-GOPATH=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps: GOBIN=/home/ubuntu/0cb/goproj/:/home/ubuntu/0cb/godeps: go build
+sudo apt-get install libaio-devel cmake libsnappy-dev
 
-GOMAXPROCS=8 go run loadgen.go -auth Administrator:asdasd -bagdir /home/ubuntu/devgo/src/github.com/prataprc/monster/bags  -count 100000 -par 10 -buckets default -prods /home/ubuntu/devgo/src/github.com/prataprc/monster/prods/projects.prod localhost:9000
+GOPATH=/mnt/0cb/goproj/:/mnt/0cb/godeps GOBIN=/mng/0cb/goproj/bin:/mnt/0cb/godeps/bin ./build.sh  && mv cmd/indexer/indexer cmd/projector/projector /mnt/0cb/install/bin && rm bin/{indexer,projector}
+
+rm -rf logs data/n_0/data/@2i data/n_1/data/@2i && COUCHBASE_NUM_VBUCKETS=1024 ./cluster_run -n1 --loglevel error &>out &
+
+./cluster_connect -n1 -s 7500 -T n0:kv+n1ql+index
+
+GOMAXPROCS=8 go run loadgen.go -auth Administrator:asdasd -bagdir /home/ubuntu/devgo/src/github.com/prataprc/monster/bags  -count 10000000 -par 1 -buckets default -prods /home/ubuntu/devgo/src/github.com/prataprc/monster/prods/projects.prod localhost:9000
+
+GOPATH=/mnt/0cb/goproj/:/mnt/0cb/godeps: GOBIN=/mnt/0cb/goproj/:/mnt/0cb/godeps: go build
+
+curl -X POST -u Administrator:asdasd http://localhost:9102/settings --data @settings
+
+./cbindex -server 10.151.136.252:9000 -auth Administrator:asdasd -type create -bucket default -index iname -fields=name
+
+GOMAXPROCS=8 cbindexperf -cluster 127.0.0.1:9000 -configfile ~/devgit/gist/cb/lookup-1.json -resultfile result.json > o
+
+curl http://Administrator:asdasd@localhost:9102/settings | json_pp > settings
