@@ -1,4 +1,7 @@
-- setup latest cluster_run.
+- repo init
+- repo sync
+- make
+- cd forestdb; mkdir build; cd build; cmake ..; sudo make install
 - pull from gerrit the changeset.
   - create a `git diff` patch
   - scp
@@ -32,6 +35,13 @@ GOMAXPROCS=8 go run loadgen.go -auth Administrator:asdasd -bagdir /home/ubuntu/d
 
 GOPATH=/mnt/0cb/goproj/:/mnt/0cb/godeps: GOBIN=/mnt/0cb/goproj/:/mnt/0cb/godeps: go build
 
+settings:
+{
+   "indexer.settings.log_level" : "info",
+   "indexer.settings.max_cpu_percent" : 400,
+   "indexer.settings.inmemory_snapshot.interval" : 100,
+   "indexer.settings.persisted_snapshot.interval" : 2500
+}
 curl -X POST -u Administrator:asdasd http://localhost:9102/settings --data @settings
 
 ./cbindex -server 10.151.136.252:9000 -auth Administrator:asdasd -type create -bucket default -index iname -fields=name

@@ -1,0 +1,25 @@
+I am trying to understand John’s proposal on untangling read path
+and write path.
+
+At present the time-keeper take account of SNAPSHOT markers (from DCP) and
+mutations seqnos from indexer data-path, and generates a snapshot-timestamp
+that will be supplied to the flusher to flush data from mutation queue
+to FDB and the same snapshot-timestamp will be used to acquire a in-memory
+snapshot, subsequently storage_manager notifies the waiting scan-queries
+on the availability of the new-snapshot.
+
+If I understand correctly, John's proposal is to continuously flush the
+mutations from mutation queue to FDB, meanwhile, the time-keeper will
+genereate MARKER aligned snapshots like before and notify waiting queries.
+When ever snapshotWaiter sees a new `snapTs` from time-keeper, it will
+gather all queries that can be satisfied with the snapTs and use that
+snapshot to create an in-memory snapshot from FDB and subsequently use
+that to service the query.
+
+I think this will eliminate the batch flushing of items from
+mutation-queue on the mutation-path.
+
+As an addendum I like to ask why we create snapshot ?
+a. for scan-queries
+b. for index to recover from a known reference, with respect to KV.
+?? anything else ??
