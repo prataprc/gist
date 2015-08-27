@@ -1,5 +1,5 @@
 {
-   "Concurrency" : 6,
+   "Concurrency" : 120,
    "Clients": 1,
    "ScanSpecs" : [
       {
@@ -7,9 +7,9 @@
          "Bucket" : "default",
          "Id" : 7962660343139546135,
          "Index" : "iname",
-         "Lookups" : [ ["Jeannie"] ],
+         "Lookups" : [ ["Wendell"] ],
          "Limit" : 1,
-         "Repeat" : 5000,
+         "Repeat" : 100000,
          "Consistency": true
       }
    ]
