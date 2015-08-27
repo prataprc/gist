@@ -1,0 +1,116 @@
+26011e2 Avoid crash while setting keepalive if the connection to the server fails.
+    2i/dcp: not required.
+ff610ec MB-15840. Check for nil pointer in getConnPools
+    2i/dcp: need review (but looks like buggy).
+811f1c5 MB-15651: Add function to check for KEY_EEXIST error
+    2i/dcp: not required.
+e67c0e7 GOCBC-19: informs people about the offical Golang SDK
+    2i/dcp: not required.
+2fbd45a MB-15591: Use a read/writer lock to synchronize access to the nodeList We should have the need for a using this lock since we use atomic.Load/store Pointer operations to set and fetch the nodelist. However the golang race detector still spews a race warning for such accesses. With this change such, possibly spurious, race warnings are not seen any more.
+    2i/dcp: not required (handled by cluster-info).
+0bdf306 MB-15554: Copy wrapper for sync/atomic from indexing repo to here
+    2i/dcp: not required.
+a8709df MB-15153. When a bucket is refreshed avoid destroying and re-creating the connection pool. Preseve the connection pool for the servers that are unchanged during a rebalance
+    2i/dcp: not required (we only connect with local host).
+bb0f3a1 MB-15412: Return with error if vbucket map is smaller than the requested vbucket
+    2i/dcp: already handled in common/dcp_seqno.go
+2d711ec MB-15442: Provide an interface to set/cas flags
+    2i/dcp: not required.
+08f6c32 MB-15442. CAS API that accepts flags and expiry
+    2i/dcp: not required.
+3a27961 Add GetBulkUnmarshalled and GetBulkRaw
+    2i/dcp: not required.
+50d56d1 fix starting count in create document mode
+    2i/dcp: not required.
+dd241e8 perf example to measure performance of bulkGet
+    2i/dcp: not required.
+5591656 MB-15091: Proper fix for the crash reported in getConnPool The problem stems from the fact that there is no master node available for a particular vbucket and therefore the nodeId in the vbucketmap is -1. We don't seem to be checking for this negative value and therefore all breaks lose.
+    2i/dcp: already handled in common/dcp_seqno.go.
+8fc84e1 Fix placement of defer/recover routine
+    2i/dcp: duplicate of 5591656
+8aca432 MB-15091. Panic in getConnPool possibly due to a weird race condition Add a defer function to catch the panic and print debug information
+    2i/dcp: duplicate of 5591656
+e797ef5 MB-15140: Retry on bounds error
+    2i/dcp: not required (related to KV op).
+9ee30e7 MB-15208 go-couchbase Bucket.StartUprFeed should allow consumer to config output channel length and DEFAULT_WINDOW_SIZE
+    2i/dcp: already handled.
+e0dd367 MB-14986: Increase connection pool size and provide API to change it on the fly CBSE-1762: Provide API to enable TCP Keepalive on memcached connections
+    2i/dcp: already handled (pool size handled via config)
+    2i/dcp: not required (TCPKeepalive).
+d026522 Implement bucket streaming API for getting configuration updates from the couchbase server
+    2i/dcp: not required (handled in cluster-info).
+d485f95 MB-14917. Close feed if bucket refresh fails
+    2i/dcp: not required (already handled).
+7547a30 cbdatasource fix send on closed channel
+    2i/dcp: not required.
+884e1e0 MB-14452: Provide API to set clusterwide View parameters
+    2i/dcp: not required.
+6c40717 MB-14255: Avoid race condition between Refresh() and pool.Return Refreshing a bucket will cause the connection pool to be recycled so returning an old connection to the connection pool following a refresh is incorrect.
+    2i/dcp: need review.
+a94f5d9 Log details of non-healthy nodes in Bucket.HealthyNodes(). MB-13998.
+    2i/dcp: not required (handled by cluster-info).
+e24e703 Add panic recovery if typecast fails in IsNotFoundError
+    2i/dcp: not required (related to 633bb33).
+ddd3080 MB-14421: Add some log messages to debug crash in UprCloseStream
+    2i/dcp: not required (already handled).
+ff402e0 MB-13738 : Retry http request when connection reset error is hit Note: Tried to implement this with net.OpError but it seems that OpError is not set for requests made with httpClient
+    2i/dcp: not required.
+5406cdd cbdatasource: go fmt
+    2i/dcp: not required.
+2fbb633 cbdatasource: use uuid from failOverLog with largest seq
+    2i/dcp: not required.
+633bb33 Implement function to return true if the memcached operation resulted in a KEY_NOT_FOUND. Needed for MB-14227
+    2i/dcp: not required (error handle KV op)
+8d2533e MB-13738 & MB-13878  : Retry http requests due to network failure
+    2i/dcp: not required (retry KV or Views ops)
+77abeba MB-13770: Support bucket-names that can contain special characters The fix ensures that the urls that are used for bucket and views APIs are not auto-escaped multiple times.
+    2i/dcp: not required (refactoring url composition)
+cb6ff56 Cycle through the list of available servers while retryingi. -Always start with a random node. - number of retries is equal to the number of available nodes but cannot be less than 3 or more than 10
+    2i/dcp: not required (related to views)
+8681b20 Refresh bucket if a Connection error is seen during pool.Get in doBulkGet
+    2i/dcp: need review.
+1845a79 Needed for MB-13949 Query needs to know the list of healthy nodes in the cluster
+    2i/dcp: not required (handled by cluster-info).
+5c9406c Handle response body close on retry and match the number of retries to equal the number of nodes in the cluste
+    2i/dcp: not required (related to view definition)
+94213df CBD-1513: Rename all couchbaselabs Go projects to github.com/couchbase.
+    2i/dcp: already handled
+0632c53 Add functions GetDDocWithRetry and GetDDocsWithRetry This is a workaround for issue MB-13567.
+    2i/dcp: not required (handled in cluster-info)
+6fd10eb cbdatasource: DCP rollback seqNum is in body, not the extras
+    2i/dcp: not required.
+f209822 MB-13331: Go-couchbase UPR panic in some shutting down sequence
+    2i/dcp: not required (already handled.)
+8b578c9 set feed.outputClosed to true when closing the feed
+    2i/dcp: not required (already handled.)
+467f1dd Avoid writing to output feed if it has been closed Checkin the correct file this time
+    2i/dcp: not required (already handled.)
+c6f2b95 MB-13109. Add retry logic to views APIs
+    2i/dcp: not required (related to design doc).
+fc49065 implemented more flexible auth for http requests
+    2i/dcp: supported.
+23aca03 implemented more flexible auth support
+    2i/dcp: supported.
+c7d2dae Close uprfeed if there is an error connecting to the bucket
+    2i/dcp: not required (already handled.)
+a633b96 Avoid sending the same err message twice on the err channel
+    2i/dcp: not required (kv related).
+d13d8e7 cb_auth integration
+    2i/dcp: supported.
+cc116de Remove offending test check from cbdatasource_test.go
+    2i/dcp: not required.
+280f889 Running go fmt
+    2i/dcp: not required.
+2abb624 Loosened cbdatasource test case in case there's races.
+    2i/dcp: not required.
+e9c308b Moved cbdatasource into go-couchbase/cbdatasource subdir.
+    2i/dcp: not required.
+7b0579c Merge pull request #23 from lundin/master
+    2i/dcp: not required (related to views-parameter) .
+5f61c5c Merge pull request #27 from couchbaselabs/sync_gateway
+    2i/dcp: not required (related to sync-gateway) .
+f64e550 MB-12811. Re-add bucketInfo struct. Used by goxdcr
+    2i/dcp: not required (already handled).
+a973294 Add GetBucketWithAuth to enable access to SASL buckets
+    2i/dcp: supported
+
