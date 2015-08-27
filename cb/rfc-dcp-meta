@@ -1,0 +1,20 @@
+following are the fields that are coming from DCP_MUTATION message
+  * key
+  * by-seqno
+  * rev-seqno
+  * flags
+  * expiration
+  * lock-time
+  * nmeta (I think extended meta-data is not applicable to mutations)
+  * nru
+
+All or some of the above fields might constitute as meta fields for
+a document. Honestly, I don't know the meaning of each and every fields
+but eventually the projector will call N1QL's expression evaluator as,
+
+>    context := qexpr.NewIndexContext()
+>    docval := qvalue.NewValue(doc)
+>    key, err := expr.Evaluate(docval, context)
+
+I would like to know whether or how the signature of expr.Evaluate()
+will change to accomodate meta-fields for document evaluation.
