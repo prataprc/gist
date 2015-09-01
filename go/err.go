@@ -8,5 +8,5 @@ import (
 var egerr = errors.New("closed")
 
 func main() {
-	fmt.Println(egerr == egerr)
+	fmt.Println(egerr == errors.New("closed"))
 }

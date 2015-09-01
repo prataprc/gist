@@ -1,9 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"unsafe"
-)
+import "fmt"
+import "unsafe"
 
 type String struct {
 	pointer uint64
@@ -11,6 +9,9 @@ type String struct {
 }
 
 func main() {
+	// escapes
+	escapes()
+
 	s := "hello world" // same string
 	x := "hello world" // stored in different locations
 	y := "long string ......................................................."
@@ -35,9 +36,26 @@ func main() {
 	fmt.Printf("%020v\n", 100)
 	fmt.Println("a\x00b")
 	fmt.Println([]byte("a\x00b"))
+
+	unicode()
 }
 
 func passby(str string) {
 	sp := (*String)(unsafe.Pointer(&str))
 	fmt.Println(&str, sp)
+}
+
+func unicode() {
+	s := `"汉语 / 漢語; Hàn\b \t\uef24yǔ "`
+	for i, ch := range s {
+		fmt.Printf("%v %v; ", i, ch)
+	}
+	fmt.Println()
+}
+
+func escapes() {
+	s := "\"hello\xffworld\""
+	b := []byte(s)
+	fmt.Println(len(s), s)
+	fmt.Println(len(b), b)
 }
