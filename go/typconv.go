@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 import "reflect"
+import "log"
+import "strconv"
 
 type SecondaryKeys []interface{}
 
@@ -11,7 +13,16 @@ func main() {
 	bs := []byte(Bs)
 	fmt.Println(Bs, bs)
 
+	int64Touint64()
 	dumpTypes()
+}
+
+func int64Touint64() {
+	s := "9223372036854775808"
+	a, err := strconv.Atoi(s) // Atoi: value out of range
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func dumpTypes() {
