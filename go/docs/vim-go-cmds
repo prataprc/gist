@@ -1,0 +1,22 @@
+GoPath {path}  sets and overrides GOPATH with {path}
+GoImport[!]    ensures that the {path} is imported
+GoDrop         Remove the import line for {path}
+GoLint [pkgs]  golint for the current Go file/packages
+GoImports      Filter the current Go buffer via goimports
+[range]GoPlay  Share snippet to play.golang.org
+GoVet[!]       `go vet` for the directory
+GoRun[!]       Build and run your current main package
+GoBuild[!]     Build your package with `go build`
+GoGenerate[!]  `go generate` for auto-generated files
+GoInstall[!]   Install your package with `go install`
+GoTest[!]      Run tests files in your current directory
+GoTestFunc[!]  but only on single function under cursor
+GoCoverage[!]  coverage profile.
+GoErrCheck     list unchecked errors in you current package
+GoFiles        source files that depends for current pkg
+GoDeps         Show dependencies for the current package
+GoRename [to]  Rename identifier under cursor to new name
+
+:GoOracleScope [path1] [path2] ...
+:GoInstallBinaries
+:GoUpdateBinaries

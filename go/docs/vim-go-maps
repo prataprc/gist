@@ -1,0 +1,13 @@
+\w    (go-doc-browser)
+\m    `godoc ...` in new tab  -  Ctrl-w,S-T; Ctrl-w,S-H
+\l    golint
+\i    type information for the word under the cursor
+\h    describe selected syntax: definition, methods ...
+\g    Goto declaration/definition
+\s    all refs to entity denoted by selected identifier
+\n    interfaces that type under the cursor implements.
+\c    possible callers of selected function
+\d    call targets for the type under the cursor
+\k    path from callgraph root to selected function
+\v    free variables of selection
+\p    send/receive corresponding to selected channel op
