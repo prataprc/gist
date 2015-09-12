@@ -4,7 +4,6 @@ struct GenTup<T>(T,);
 impl GenTup<i32> {
     fn value(&self) -> &i32 {
         let &GenTup (ref val) = self;
-
         val
     }
 }
@@ -13,7 +12,6 @@ impl GenTup<i32> {
 impl GenTup<f64> {
     fn value(&self) -> &f64 {
         let &GenTup (ref val) = self;
-
         val
     }
 }
