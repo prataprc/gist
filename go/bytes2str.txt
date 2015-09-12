@@ -1,0 +1,5 @@
+I have a byte slice pointing to a block of memory, and I know that the byte
+slice is going to remain immutable in its scope.
+
+I have to pass this byte slice to another API which can only accept it as
+a string. So I am going to do this as 

@@ -27,4 +27,14 @@ func main() {
 	fmt.Println("another_map before:", another_map)
 	another_map.mutate("this", 10)
 	fmt.Println("another_map after:", another_map)
+
+	nilmap(nil)
+}
+
+func nilmap(m map[string]interface{}) {
+	fmt.Println("looping on nil map")
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+	fmt.Println("Done")
 }
