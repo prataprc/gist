@@ -1,0 +1,13 @@
+package protobuf;
+
+message A2BRequired {
+    required uint64 field1 = 1;
+    optional uint64 field2 = 2;
+    required uint64 field3 = 3; // new field from A
+}
+
+message A2BOptional {
+    required uint64 field1 = 1;
+    optional uint64 field2 = 2;
+    optional uint64 field3 = 3; // new field from B
+}
