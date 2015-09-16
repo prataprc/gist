@@ -1,0 +1,15 @@
+{
+   "Clients" :4,
+   "Concurrency" : 3000,
+   "ScanSpecs" : [
+      {
+         "Bucket" : "default",
+         "Consistency": false,
+         "Id" : 1,
+         "Limit" : 1,
+         "Repeat" : 100000,
+         "Type" : "All",
+         "Index" : "first_name"
+      }
+   ]
+}
