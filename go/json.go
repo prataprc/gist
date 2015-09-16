@@ -3,11 +3,22 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 )
 
 func main() {
+	controlCharsInStrings()
 	//tryUnmarshalGenericy()
-	marshalInterface()
+	//marshalInterface()
+}
+
+func controlCharsInStrings() {
+	var val interface{}
+	s := `"hello\bworld"`
+	if err := json.Unmarshal([]byte(s), &val); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("controlCharsInStrings/unmarshal: %q\n", val)
 }
 
 func tryUnmarshalGenericy() {
