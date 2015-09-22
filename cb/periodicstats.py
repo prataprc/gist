@@ -17,7 +17,10 @@ args.params = args.params.split(",")
 
 stats = []
 
-def handler_periodicstats(line, dstr) :
+def handler_periodicstats(lines, line, dstr) :
+    lines = [ line.strip("\n") for line in lines ]
+    dstr = dstr.strip("\n")
+    dstr = dstr + "".join(lines[1:])
     val = json.loads(dstr)
     nval = {}
     for param, value in val.items() :
@@ -30,37 +33,56 @@ def handler_periodicstats(line, dstr) :
                 nval[param] = int(x[1].strip()) / int(x[0].strip())
     stats.append(nval)
 
+re_log = re.compile(r'^[0-9]{4}-[0-9]{2}-[0-9]{2}T.*')
 matchers = [
   [ re.compile(r'.*\[Info\].*PeriodicStats = (.*)'),
     handler_periodicstats ],
 ]
 
-for line in open(sys.argv[1]).readlines() :
+def exec_matchers(lines) :
+    if len(lines) == 0 :
+        return
     for regx, fn in matchers :
-        m = regx.match(line)
-        if m : fn(m.group(), *m.groups())
+        m = regx.match(lines[0])
+        if m :
+            fn(lines, m.group(), *m.groups())
+
+print("parsing lines ...")
+loglines = []
+for line in open(args.logfile[0]).readlines() :
+    if re_log.match(line) :
+        exec_matchers(loglines)
+        loglines = []
+    loglines.append(line)
+exec_matchers(loglines)
+
 
 def indexerGraph() :
-    params = {}
+    x, params, scatters = {}, {}, []
+    print("gathering data ...")
     if len(args.params) == 1 and args.params[0] == "all" :
         for i, m in enumerate(stats) :
             for param, value in m.items() :
                 params.setdefault(param, []).append(int(value))
+                x.setdefault(param, []).append(i)
     else :
         for i, m in enumerate(stats) :
             for param_patt in args.params :
                 for param, value in m.items() :
                     if re.compile(param_patt).match(param) :
-                        params.setdefault(param, []).append(int(m[param]))
+                        x.setdefault(param, []).append(i)
+                        params.setdefault(param, []).append(m[param])
 
-    x = list(range(1, len(stats)+1))
     mode, line = "lines+markers", Line(shape='spline')
-    scatters = []
+    print("composing plot ...")
+    print("parameters: %s" % ",".join(params.keys()))
     for param, value in params.items() :
-        name = "indexer-%s" % param
-        s = Scatter(x=x, y=value, mode=mode, name=name, line=line)
+        s = Scatter(x=x[param], y=value, mode=mode, name=param, line=line)
         scatters.append(s)
     data = Data(scatters)
-    print(py.plot(data, filename='indexer-graph'))
+    if len(data) > 0 :
+        print(py.plot(data, filename='indexer-graph'))
+    else :
+        print("warn: no data to plot !!")
 
 indexerGraph()
