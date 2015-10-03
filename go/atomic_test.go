@@ -17,3 +17,10 @@ func Benchmark_loadpointer(b *testing.B) {
 		atomic.LoadPointer(&valp)
 	}
 }
+
+func Benchmark_Addint64(b *testing.B) {
+	var x int64
+	for i := 0; i < b.N; i++ {
+		atomic.AddInt64(&x, 1)
+	}
+}
