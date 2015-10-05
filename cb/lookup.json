@@ -1,16 +1,16 @@
 {
-   "Concurrency" : 120,
-   "Clients": 1,
+   "Concurrency" : 100,
+   "Clients": 4,
    "ScanSpecs" : [
       {
          "Type" : "Lookup",
-         "Bucket" : "default",
+         "Bucket" : "beer-sample",
          "Id" : 7962660343139546135,
-         "Index" : "iname",
-         "Lookups" : [ ["Wendell"] ],
+         "Index" : "abv1",
+         "Lookups" : [ [1.0] ],
          "Limit" : 1,
-         "Repeat" : 100000,
-         "Consistency": true
+         "Repeat" : 1000000,
+         "Consistency": false
       }
    ]
 }
