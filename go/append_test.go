@@ -19,7 +19,7 @@ func BenchmarkAppend(b *testing.B) {
 }
 
 func BenchmarkCopy(b *testing.B) {
-	var src, dst [10 * 1]byte
+	var src, dst [30 * 1024 * 1024]byte
 	for i := 0; i < len(src); i++ {
 		src[i] = byte(i)
 	}
