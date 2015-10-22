@@ -1,16 +1,19 @@
 HOST=ec2-54-151-143-42.ap-southeast-1.compute.amazonaws.com
 UP=Administrator:asdasd
 
+./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx1 -fields=name -using memdb
+
 go build
 ./cbindex -server $HOST:8091 -auth Administrator:asdasd -type nodes
 ./cbindex -server $HOST:8091 -auth Administrator:asdasd -type list
 #
 # CREATE
 #
-./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index '#primary' -fields=name -primary -using memdb
-#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx1 -fields=members -where type=project -using memdb
-#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx2 -fields=name,language -with '{"defer_build": true}' -using memdb
-#./cbindex -server $HOST:8091 -auth $UP -type=build -indexes default:idx2 -using memdb
+#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx1 -fields=name -with '{"defer_build": true}' -using memdb
+#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx2 -fields=language -with '{"defer_build": true}' -using memdb
+#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx3 -fields=members -with '{"defer_build": true}' -using memdb
+#./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx4 -fields=type -with '{"defer_build": true}' -using memdb
+#./cbindex -server $HOST:8091 -auth $UP -type build -indexes default:idx1,default:idx2,default:idx3,default:idx4
 #
 # SCAN
 #
