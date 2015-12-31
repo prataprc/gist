@@ -1,0 +1,16 @@
+installation:
+
+https://www.raspberrypi.org/help/noobs-setup/
+https://www.raspberrypi.org/downloads/
+https://www.raspberrypi.org/downloads/raspbian/
+https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
+https://wiki.ubuntu.com/ARM/RaspberryPi
+http://www.techjawab.com/2013/06/how-to-setup-mount-auto-mount-usb-hard.html
+http://www.howtogeek.com/142044/how-to-turn-a-raspberry-pi-into-an-always-on-bittorrent-box/
+http://www.instructables.com/id/Raspberry-Pi-Media-Server-MiniDLNA/?ALLSTEPS
+http://blog.scphillips.com/posts/2013/01/using-a-raspberry-pi-with-android-phones-for-media-streaming/
+http://www.bubblesoftapps.com/bubbleupnpserver/#download_and_installation
+http://lesbonscomptes.com/pages/raspmpd.html
+
+For images that are > 4G use this following in OSX.
+    $ ditto -x -k 2015-09-24-raspbian-jessie.zip .
