@@ -11,57 +11,28 @@ go build
 # CREATE
 #
 
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx1 -fields=type -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx2 -fields=type -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx3 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx4 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx5 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx6 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx7 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx8 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx9 -fields=type -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx10 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx11 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx12 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx13 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx14 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx15 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx16 -fields=type -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx17 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx18 -fields=name -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx19 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx20 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx21 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket default -index idx22 -fields=language -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket1 -index idx1 -fields=type -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket1 -index idx2 -fields=name -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket1 -index idx3 -fields=age -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket1 -index idx4 -fields=field1 -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket1 -index idx5 -fields=picture -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket2 -index idx1 -fields=type -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket2 -index idx2 -fields=name -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket2 -index idx3 -fields=age -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket2 -index idx4 -fields=field1 -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket2 -index idx5 -fields=picture -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket3 -index idx1 -fields=type -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket3 -index idx2 -fields=name -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket3 -index idx3 -fields=age -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket3 -index idx4 -fields=field1 -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type create -bucket bucket3 -index idx5 -fields=picture -with '{"defer_build": true}' -using memdb
+./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type build -indexes bucket1:idx1,bucket1:idx2,bucket1:idx3,bucket1:idx4,bucket1:idx5,bucket2:idx1,bucket2:idx2,bucket2:idx3,bucket2:idx4,bucket2:idx5,bucket3:idx1,bucket3:idx2,bucket3:idx3,bucket3:idx4,bucket3:idx5
 
-./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx2 -fields=language -with '{"defer_build": true}' -using memdb
-./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx3 -fields=members -with '{"defer_build": true}' -using memdb
-./cbindex -server $HOST:8091 -auth $UP -type create -bucket default -index idx4 -fields=type -with '{"defer_build": true}' -using memdb
-
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type build -indexes default:idx2,default:idx3,default:idx4,default:idx5,default:idx6,default:idx7,default:idx9,default:idx10,default:idx11,default:idx12,default:idx13,default:idx14
-
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx1
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx2
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx3
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx4
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx5
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx6
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx7
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx8
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx9
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx10
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx11
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx12
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx13
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx14
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx15
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx16
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx17
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx18
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx19
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx20
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx21
-./cbindex -server ec2-54-151-146-15.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd  -type drop -bucket default -index idx22
+for bucket in bucket1 bucket2 bucket3; do
+    for index in idx1 idx2 idx3 idx4 idx5; do
+        ./cbindex -server ec2-54-151-161-68.ap-southeast-1.compute.amazonaws.com:8091 -auth Administrator:asdasd -type drop -bucket $bucket -index $index
+    done
+done
 
 #
 # SCAN
@@ -76,3 +47,16 @@ go build
 #./cbindex -server $HOST:8091 -auth $UP -type drop -bucket default -index #primary
 #./cbindex -server $HOST:8091 -auth $UP -type drop -bucket default -index idx1
 #./cbindex -server $HOST:8091 -auth $UP -type drop -bucket default -index idx2
+
+# cbq
+
+CREATE INDEX pv_ndx_00 ON comm(UserId,meta().id,Type) WHERE Type='pv' AND TONUMBER(UserId)%4 = 0 USING GSI WITH {"defer_build":true};
+CREATE INDEX pv_ndx_01 ON comm(UserId,meta().id,Type) WHERE Type='pv' AND TONUMBER(UserId)%4 = 1 USING GSI WITH {"defer_build":true};
+CREATE INDEX pv_ndx_02 ON comm(UserId,meta().id,Type) WHERE Type='pv' AND TONUMBER(UserId)%4 = 2 USING GSI WITH {"defer_build":true};
+CREATE INDEX pv_ndx_03 ON comm(UserId,meta().id,Type) WHERE Type='pv' AND TONUMBER(UserId)%4 = 3 USING GSI WITH {"defer_build":true};
+
+BUILD INDEX ON comm(pv_ndx_00,pv_ndx_01,pv_ndx_02,pv_ndx_03) USING GSI;
+
+curl -v http://localhost:9499/query/service -d 'statement=select * from default&scan_consistency=at_plus&scan_vector={"512":{"guard":"90891046896681","value":1}}'
+curl -v http://localhost:9499/query/service -d 'statement=select * from default&scan_consistency=request_plus'
+curl -v http://localhost:9499/query/service -d 'statement=select * from default&scan_consistency=not_bounded'
