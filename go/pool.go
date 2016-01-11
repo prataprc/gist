@@ -19,7 +19,7 @@ func main() {
 	fmt.Printf("1s get: cap=%v len=%v\n", cap(slice), len(slice))
 	slice = append(slice, 10)
 	fmt.Printf("1s append: cap=%v len=%v\n", cap(slice), len(slice))
-	prefixPool.Put(slice[:0])
+	prefixPool.Put(slice)
 
 	slice = prefixPool.Get().([]byte)
 	fmt.Printf("2s get: cap=%v len=%v\n", cap(slice), len(slice))
