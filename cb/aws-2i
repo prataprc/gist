@@ -47,4 +47,5 @@ watch -n 1 'curl -s http://Administrator:asdasd@ec2-46-137-193-46.ap-southeast-1
 go tool pprof -inuse_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofi.svg
 go tool pprof -alloc_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofa.svg
 go tool pprof -alloc_objects -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofao.svg
+go tool pprof -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/profile > pprof.svg
 
