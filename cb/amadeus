@@ -1,0 +1,35 @@
+go build; GOMAXPROCS=20 ./loadgen -auth Administrator:asdasd -bagdir /home/prataprc/devgo/src/github.com/prataprc/monster/bags -count 100000 -par 100 -buckets default -prods /Users/prataprc/devgo/src/github.com/prataprc/monster/prods/amadeus.prod -ratio=0,0,0 http://apple:8091
+
+CREATE INDEX idxname1 ON default(chain_code) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname2 ON default(reservation_id) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname3 ON default(chain_code, criteria_for_search.creation_time) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname4 ON default(chain_code, criteria_for_search.modification_time) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname5 ON default(chain_code, criteria_for_search.checkOutDates, criteria_for_search.checkInDates) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname6 ON default(chain_code) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idxname7 ON default(reservation_id) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+
+CREATE INDEX idx6 ON default(chain_code, criteria_for_search.guestsLastName) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idx6 ON default(chain_code, criteria_for_search.guestsLastName) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idx7 ON default(chain_code, criteria_for_search.groupName) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idx8 ON default(chain_code, criteria_for_search.profileIds) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idx9 ON default(chain_code, criteria_for_search.optionDate) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+CREATE INDEX idx10 ON default(chain_code, criteria_for_search.pnrNumber) USING GSI WITH {"defer_build":true, "index_type" : "memory_optimized"};
+
+BUILD INDEX ON default(idxname1,idxname2,idxname3,idxname4,idxname5);
+BUILD INDEX ON default(idxname7);
+
+
+SELECT chain_code,criteria_for_search.groupName FROM default WHERE chain_code > "G" LIMIT 1000;
+SELECT chain_code FROM default WHERE chain_code > "G" LIMIT 1000;
+
+SELECT COUNT(*) FROM default WHERE chain_code >= "GA" AND chain_code <= "GC";
+SELECT chain_code FROM default WHERE chain_code > "G" and chain_code < "P" LIMIT 10;
+
+SELECT reservation_id,meta.id() FROM default WHERE reservation_id = 2082109111952970200 ;
+docid: -amadeus.prod-0:0:0:b5:9:ff:1c:c5-95-69725
+
+SELECT chain_code, criteria_for_search.creation_time FROM default WHERE chain_code > "G" LIMIT 10;
+
+SELECT criteria_for_search.modification_time FROM default WHERE criteria_for_search.modification_time > "2008-01-19T07:12:56Z";
+
+SELECT chain_code FROM default WHERE chain_code > "G" LIMIT 10;
