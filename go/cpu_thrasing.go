@@ -5,9 +5,9 @@ import "runtime"
 import "fmt"
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
-	fmt.Println("cpus: ", runtime.NumCPU())
-	n := 10
+	n := runtime.NumCPU()
+	runtime.GOMAXPROCS(n)
+	fmt.Println("cpus: ", n)
 	for i := 0; i < n; i++ {
 		go percore()
 	}
