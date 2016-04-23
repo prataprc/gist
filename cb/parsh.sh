@@ -18,8 +18,8 @@ fi
 
 for i in $1; do
   echo "$i: Running $2"
-  #(sshpass -p couchbase ssh -q -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" root@$i "$2" 2>&1 | sed "s/^/$i: /") &
-  (ssh -q -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" couchbase@$i "$2" 2>&1 | sed "s/^/$i: /") &
+  (sshpass -p couchbase ssh -q -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" root@$i "$2" 2>&1 | sed "s/^/$i: /") &
+  #(ssh -q -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" couchbase@$i "$2" 2>&1 | sed "s/^/$i: /") &
 done
 
 wait

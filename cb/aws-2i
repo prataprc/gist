@@ -1,43 +1,37 @@
 Data:
-ec2-54-151-207-232.ap-southeast-1.compute.amazonaws.com
-54.151.207.232
-172.23.123.29,172.23.123.30,172.23.123.31,172.23.123.32
+ec2-52-221-227-114.ap-southeast-1.compute.amazonaws.com
+52.221.227.114
 
 Index:
-ec2-54-179-37-217.ap-southeast-1.compute.amazonaws.com
-54.179.37.217
+ec2-52-221-233-195.ap-southeast-1.compute.amazonaws.com
+52.221.233.195
 
-Loadgen:
-ec2-122-248-194-138.ap-southeast-1.compute.amazonaws.com
-122.248.194.138
-
-54.151.207.232,54.179.37.217,122.248.194.138
+Client/Loadgen:
+ec2-52-221-227-110.ap-southeast-1.compute.amazonaws.com
+52.221.227.110
 
 Setup:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.151.207.232 cb_uninstall setup cb_install:url="http://ci2i-unstable.northscale.in/installer-30.12-05.30.tar"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.227.114,52.221.233.195,52.221.227.110 cb_uninstall setup
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.227.114,52.221.233.195 cb_install:tar="http://ci2i.northscale.in/installer-23.04.2016-05.30.tar"
 
 Cluster_init:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 172.23.123.32 cluster_init:services="data;index;query",ramsize=6000
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-52-221-227-114.ap-southeast-1.compute.amazonaws.com cluster_init:services="data",ramsize=6000
 
 Server_add:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H ec2-54-251-23-136.ap-southeast-1.compute.amazonaws.com,ec2-54-179-62-201.ap-southeast-1.compute.amazonaws.com,services="data"
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H ec2-54-179-37-217.ap-southeast-1.compute.amazonaws.com server_add:cluster=ec2-54-151-207-232.ap-southeast-1.compute.amazonaws.com,services="index;query"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-52-221-233-195.ap-southeast-1.compute.amazonaws.com server_add:cluster=ec2-52-221-227-114.ap-southeast-1.compute.amazonaws.com,services="index"
 
 Pull2i:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.151.207.232,54.179.37.217,122.248.194.138 pull2i:branch=unstable
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.227.114,52.221.233.195,52.221.227.110 pull2i:branch=unstable
 
 CreateBucket:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.151.207.232 create_buckets:buckets="default",ramsize=50000
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.179.62.201 create_buckets:buckets="bucket2",ramsize=50000
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.179.62.201 create_buckets:buckets="bucket3",ramsize=50000
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-52-221-227-114.ap-southeast-1.compute.amazonaws.com create_buckets:buckets="default",ramsize=50000
 
 Settings:
 curl -X POST http://Administrator:asdasd@54.179.37.217:9102/settings --data @ ~/tmp/triage/perf-2015Nov4/small-2/settings_memdb
 
+
 loadgen:
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.179.117.99,54.179.81.61,54.179.34.190,54.179.26.144,54.151.163.162,175.41.172.206,54.151.153.124,122.248.211.196,54.251.20.200,54.179.34.140 loadgen:cluster=54.179.62.201:8091,procs=16,par=500,count=100000,buckets="bucket1",prods="index1K.prod",ratio="0;0;0",randkey=False
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.179.117.99,54.179.81.61,54.179.34.190,54.179.26.144,54.151.163.162,175.41.172.206,54.151.153.124,122.248.211.196,54.251.20.200,54.179.34.140 loadgen:cluster=54.179.62.201:8091,procs=16,par=500,count=100000,buckets="bucket2",prods="index1K.prod",ratio="0;0;0",randkey=False
-fab -i ~/.ssh/aws/prataprc-sandbox.pem -f 2ifab.py -u ubuntu -H 54.179.117.99,54.179.81.61,54.179.34.190,54.179.26.144,54.151.163.162,175.41.172.206,54.151.153.124,122.248.211.196,54.251.20.200,54.179.34.140 loadgen:cluster=54.179.62.201:8091,procs=16,par=500,count=100000,buckets="bucket3",prods="index1K.prod",ratio="0;0;0",randkey=False
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.227.114,52.221.233.195,52.221.227.110 loadgen:cluster=52.221.227.114"8091,procs=16,par=20,count=350000,buckets="default",prods="projects.prod",ratio="0;0;0",randkey=False
 
 datapath:
 GOMAXPROCS=20 ./datapath -coorendp="" -endpoints <local>:9020 <kv>:8091,<kv>:8091
@@ -48,4 +42,3 @@ go tool pprof -inuse_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193
 go tool pprof -alloc_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofa.svg
 go tool pprof -alloc_objects -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofao.svg
 go tool pprof -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/profile > pprof.svg
-

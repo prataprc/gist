@@ -6,10 +6,10 @@
          "Type" : "Lookup",
          "Bucket" : "default",
          "Id" : 7962660343139546135,
-         "Index" : "idx1",
-         "Lookups" : [ ["SUPPORTAL"] ],
+         "Index" : "index_eyeColor",
+         "Lookups" : [ ["brown"] ],
          "Limit" : 1,
-         "Repeat" : 1000000,
+         "Repeat" : 100000000,
          "Consistency": false
       }
    ]

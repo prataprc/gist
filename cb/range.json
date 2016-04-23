@@ -1,0 +1,22 @@
+{
+       "Concurrency" : 100,
+       "Clients" : 1,
+       "ScanSpecs" : [
+          {
+             "Limit" : 1000000,
+             "Low" : [
+                "A"
+             ],
+             "Type" : "Range",
+             "Bucket" : "default",
+             "High" : [
+                "z"
+             ],
+             "Id" : 1,
+             "Inclusion" : 3,
+             "Index" : "idx",
+             "Repeat" : 100,
+             "Consistency" : false
+           }
+       ]
+}
