@@ -1,27 +1,27 @@
-ec2-54-179-140-154.ap-southeast-1.compute.amazonaws.com,ec2-54-169-204-217.ap-southeast-1.compute.amazonaws.com,ec2-54-169-72-127.ap-southeast-1.compute.amazonaws.com
-54.179.140.154,54.169.204.217,54.169.72.127
+ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com,ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com,ec2-54-254-230-170.ap-southeast-1.compute.amazonaws.com
+54.254.227.199,54.254.226.52,54.254.230.170
 
 Data:
-ec2-54-179-140-154.ap-southeast-1.compute.amazonaws.com
-54.179.140.154
+ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com
+54.254.227.199
 
 Index:
-ec2-54-169-204-217.ap-southeast-1.compute.amazonaws.com
-54.169.204.217
+ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com
+54.254.226.52
 
 Client/Loadgen:
-ec2-54-169-72-127.ap-southeast-1.compute.amazonaws.com
-54.169.72.127
+ec2-54-254-230-170.ap-southeast-1.compute.amazonaws.com
+54.254.230.170
 
 Setup:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.179.140.154,54.169.204.217,54.169.72.127 fix_dpkg cb_uninstall setup pull2i:branch=unstable
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.179.140.154,54.169.204.217 cb_install:tar="http://ci2i.northscale.in/installer-28.04.2016-07.48.tar"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.254.227.199,54.254.226.52,54.254.230.170 cb_uninstall setup pull2i:branch=unstable
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.254.227.199,54.254.226.52 cb_install:tar="http://ci2i.northscale.in/installer-04.05.2016-05.30.tar"
 
 Cluster_init:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-179-140-154.ap-southeast-1.compute.amazonaws.com cluster_init:services="data",ramsize=48000
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com cluster_init:services="data",ramsize=48000
 
 Server_add:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-169-204-217.ap-southeast-1.compute.amazonaws.com server_add:cluster=ec2-54-179-140-154.ap-southeast-1.compute.amazonaws.com:8091,services="index"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com server_add:cluster=ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com:8091,services="index"
 
 CreateBucket:
 fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-179-140-111.ap-southeast-1.compute.amazonaws.com create_buckets:buckets="default",ramsize=50000
@@ -42,3 +42,4 @@ go tool pprof -inuse_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193
 go tool pprof -alloc_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofa.svg
 go tool pprof -alloc_objects -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofao.svg
 go tool pprof -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/profile > pprof.svg
+
