@@ -1,5 +1,5 @@
 {
-       "Concurrency" : 100,
+       "Concurrency" : 1,
        "Clients" : 1,
        "ScanSpecs" : [
           {
@@ -15,7 +15,7 @@
              "Id" : 1,
              "Inclusion" : 3,
              "Index" : "idx",
-             "Repeat" : 100,
+             "Repeat" : 1,
              "Consistency" : false
            }
        ]

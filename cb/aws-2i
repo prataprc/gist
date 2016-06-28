@@ -1,30 +1,24 @@
-ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com,ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com,ec2-54-254-230-170.ap-southeast-1.compute.amazonaws.com
-54.254.227.199,54.254.226.52,54.254.230.170
+ec2-52-221-239-150.ap-southeast-1.compute.amazonaws.com,ec2-54-169-27-90.ap-southeast-1.compute.amazonaws.com,ec2-54-169-137-216.ap-southeast-1.compute.amazonaws.com
+52.221.239.150,54.169.27.90,54.169.137.216
 
 Data:
-ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com
-54.254.227.199
 
 Index:
-ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com
-54.254.226.52
 
 Client/Loadgen:
-ec2-54-254-230-170.ap-southeast-1.compute.amazonaws.com
-54.254.230.170
 
 Setup:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.254.227.199,54.254.226.52,54.254.230.170 cb_uninstall setup pull2i:branch=unstable
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.254.227.199,54.254.226.52 cb_install:tar="http://ci2i.northscale.in/installer-04.05.2016-05.30.tar"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.169.108.203 fix_dpkg cb_uninstall setup:gover=142 pull2i:branch=unstable
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.239.150,54.169.27.90,54.169.137.216 cb_install:debs="http://latestbuilds.hq.couchbase.com/couchbase-server/sherlock/5005/couchbase-server-enterprise_4.1.0-5005-ubuntu14.04_amd64.deb"
 
 Cluster_init:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com cluster_init:services="data",ramsize=48000
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.239.150 cluster_init:services="data;query;index",ramsize=6000
 
 Server_add:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-254-226-52.ap-southeast-1.compute.amazonaws.com server_add:cluster=ec2-54-254-227-199.ap-southeast-1.compute.amazonaws.com:8091,services="index"
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.229.140,52.77.215.73 server_add:cluster=52.221.239.150:8091,services="data;query;index"
 
 CreateBucket:
-fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H ec2-54-179-140-111.ap-southeast-1.compute.amazonaws.com create_buckets:buckets="default",ramsize=50000
+fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 54.169.109.37 create_buckets:buckets="default",ramsize=5000
 
 Settings:
 curl -X POST http://Administrator:asdasd@54.179.37.217:9102/settings --data @ ~/tmp/triage/perf-2015Nov4/small-2/settings_memdb
@@ -36,10 +30,10 @@ fab -i ~/.ssh/aws/prataprc-perf.pem -f 2ifab.py -u ubuntu -H 52.221.227.114,52.2
 datapath:
 GOMAXPROCS=20 ./datapath -coorendp="" -endpoints <local>:9020 <kv>:8091,<kv>:8091
 
-export GOPATH=/opt/goproj GOROOT=/usr/local/go PATH=/usr/local/go/bin:$PATH
+export GOPATH=/home/ubuntu/sherlock/godeps:/home/ubuntu/sherlock/goproj GOROOT=/usr/local/go PATH=/usr/local/go/bin:$PATH
 watch -n 1 'curl -s http://Administrator:asdasd@ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/stats | json_pp | grep -e "num\|size"'
 go tool pprof -inuse_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofi.svg
 go tool pprof -alloc_space -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofa.svg
 go tool pprof -alloc_objects -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/heap > mprofao.svg
-go tool pprof -svg /opt/couchbase/bin/indexer http://ec2-46-137-193-46.ap-southeast-1.compute.amazonaws.com:9102/debug/pprof/profile > pprof.svg
 
+go tool pprof -svg /opt/couchbase/bin/indexer http://52.221.229.140:9102/debug/pprof/profile > pprof.svg
