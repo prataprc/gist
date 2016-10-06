@@ -16,6 +16,8 @@ func (m mapType) mutate(name string, value interface{}) {
 }
 
 func main() {
+	m1 := make(map[int64]bool)
+	fmt.Println(m1[0])
 	m := make(map[int64]A)
 	fmt.Println(m[0])
 	mi := make(map[string]interface{})
