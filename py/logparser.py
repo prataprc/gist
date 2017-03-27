@@ -3,6 +3,7 @@
 import argparse
 import sys
 import time
+import re
 
 parser = argparse.ArgumentParser(description='parser redis log file')
 parser.add_argument('--logfile', dest='logfile', action='store',
@@ -13,10 +14,19 @@ parser.add_argument('--till', dest='tilltime', action='store',
                     default='', help='provide redis logfile')
 args = parser.parse_args(sys.argv[1:])
 
+def cureline(line) :
+    patt = r'([^ ]+)[ ]+([0-9]+)[ ]+([0-9]+:[0-9]+:[0-9]+).*'
+    m = re.match(patt, line)
+    return ' '.join(m.groups())
+
+def parseline(line) :
+    timestr = cureline(line)
+    return time.strptime(timestr, '%b %d %H:%M:%S')
+
 if args.fromtime != '' :
-    fromtm = time.strptime(args.fromtime, '%b %d %H:%M:%S')
+    fromtm = parseline(args.fromtime)
 if args.tilltime != '' :
-    tilltm = time.strptime(args.tilltime, '%b %d %H:%M:%S')
+    tilltm = parseline(args.tilltime)
 
 def compare(at) :
     if args.fromtime != '' and at < fromtm :
@@ -30,7 +40,7 @@ def parselines() :
         tokens = line.split(' ')
         if len(tokens) < 3 :
             continue
-        at = time.strptime(' '.join(tokens[:3]), '%b %d %H:%M:%S')
+        at = parseline(line)
         if compare(at) == 0 :
             print line
 
