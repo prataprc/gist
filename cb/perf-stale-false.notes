@@ -1,0 +1,56 @@
+Number of nodes: 1 (c3.4xlarge)
+
+Stale=false with no background mutation
+indexer settings
+  { "indexer.settings.log_level" : "info",
+    "indexer.settings.max_cpu_percent" : 1000 }
+everything else is default.
+
+clients : 1
+total scan per client : 1M
+total concurrent connections : 30
+throughput (scan/s) : 1.25K
+ave scan latency at indexer : -
+approx scan latency at client : -
+cpu utilization {client,kv,indexer}: {210%,40%,105%}
+
+clients : 2
+total scan per client : 1M
+total concurrent connections : 60
+throughput (scan/s) : 2.26K
+ave scan latency at indexer : -
+approx scan latency at client : -
+cpu utilization {client,kv,indexer}: {410%,75%,190%}
+
+clients : 3
+total scan per client : 1M
+total concurrent connections : 90
+throughput (scan/s) : 3.1K
+ave scan latency at indexer :  -
+approx scan latency at client : -
+cpu utilization {client,kv,indexer}: {580%,100%,270%}
+
+clients : 4
+total scan per client : 1M
+total concurrent connections : 120
+throughput (scan/s) : 3.7K
+ave scan latency at indexer :  -
+approx scan latency at client : -
+cpu utilization {client,kv,indexer}: {740%,140%,310%}
+
+stale=false (7K mutation)
+-------------------------
+indexer settings is all default including log_level and cpu_percent
+everything else is default.
+clients : 2
+total scan per client : 500
+total concurrent connections : 60
+
+I am seeing a latency of 3-5 seconds per request.
+and after a while it climbs upto 15-16 seconds
+and after a while it climbs upto 25 seconds.
+and then to 30 seconds
+and then to 40 seconds
+and then to 50 seconds
+
+cpu utilization {client,kv,indexer}: {1%,180%,250%}

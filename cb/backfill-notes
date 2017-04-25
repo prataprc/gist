@@ -1,0 +1,67 @@
+== Lookup, that is, Range scan with limit set to 1.
+
+without backfill code.
+
+l2015-12-10T13:13:07.077+05:30 [Info] [Queryport-connpool:127.0.0.1:9107] open new connection ...
+2015-12-10T13:13:07.077+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection (create) from pool
+2015-12-10T13:13:07.084+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:59351" reclaimed to pool
+2015-12-10T13:13:07.084+05:30 [Verbose] Range 12453534669719064250 - elapsed(8.90361ms) err(<nil>)
+limit=1,chsize=1; received 1 items; took 8.994962ms
+
+with backfill code, though backfill logic won't be exercised here.
+
+2015-12-10T14:20:40.334+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection (create) from pool
+2015-12-10T14:20:40.338+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:51048" reclaimed to pool
+2015-12-10T14:20:40.338+05:30 [Verbose] Range 12453534669719064250 - elapsed(6.171898ms) err(<nil>)
+limit=1,chsize=1; received 1 items; took 6.271801ms
+
+
+== Range scan with limit set to 1000000, and o/p channel size is 1000000.
+
+without backfill code.
+
+2015-12-10T13:13:07.093+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection from pool
+2015-12-10T13:13:09.538+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:59351" reclaimed to pool
+2015-12-10T13:13:09.538+05:30 [Verbose] Range 12453534669719064250 - elapsed(2.445328203s) err(<nil>)
+limit=1000000,chsize=1000000; received 463620 items; took 2.445402067s
+
+with backfill code, though backfill logic won't be exercised here.
+
+2015-12-10T14:20:40.35+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection from pool
+2015-12-10T14:20:42.607+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:51048" reclaimed to pool
+2015-12-10T14:20:42.607+05:30 [Verbose] Range 12453534669719064250 - elapsed(2.257552841s) err(<nil>)
+limit=1000000,chsize=1000000; received 463620 items; took 2.257651747s
+
+
+== Range scan with limit set to 1000000, and o/p channel size is 256.
+
+without backfill code.
+
+2015-12-10T13:13:09.538+05:30 [Debug] Scan port 127.0.0.1:9107 for index defnID 12453534669719064250 of equivalent index defnId 12453534669719064250
+2015-12-10T13:13:09.538+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection from pool
+2015-12-10T13:13:12.683+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:59351" reclaimed to pool
+2015-12-10T13:13:12.683+05:30 [Verbose] Range 12453534669719064250 - elapsed(3.145177288s) err(<nil>)
+limit=1000000,chsize=256; received 463620 items; took 3.145221643simit=1000000,chsize=256; received 463620 items; took 2.535936122s
+
+with backfill code, backfill logic is getting exercised here.
+
+2015-12-10T14:20:42.607+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection from pool
+2015-12-10T14:20:43.427+05:30 [Debug] new backfill file ... /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill102829044
+2015-12-10T14:20:43.428+05:30 [Debug] started backfill for /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill102829044 ...
+2015-12-10T14:20:45.205+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:51048" reclaimed to pool
+2015-12-10T14:20:45.205+05:30 [Verbose] Range 12453534669719064250 - elapsed(2.598253192s) err(<nil>)
+2015-12-10T14:20:45.206+05:30 [Debug] finished backfill for /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill102829044 ...
+2015-12-10T14:20:45.206+05:30 [Debug] removing backfill file /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill102829044 ...
+limit=1000000,chsize=256; received 463620 items; took 2.59882085s
+
+== Backfill errors out if disk size exceed 10 MB
+
+2015-12-10T14:22:51.438+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] new connection from pool
+2015-12-10T14:22:51.767+05:30 [Debug] new backfill file ... /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456
+2015-12-10T14:22:51.767+05:30 [Debug] started backfill for /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456 ...
+Scan error: backfill file /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456 exceeded limit 1048576 - cause: backfill file /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456 exceeded limit 1048576
+2015-12-10T14:22:51.87+05:30 [Debug] [Queryport-connpool:127.0.0.1:9107] connection "127.0.0.1:51319" reclaimed to pool
+2015-12-10T14:22:51.87+05:30 [Verbose] Range 12453534669719064250 - elapsed(431.250364ms) err(<nil>)
+2015-12-10T14:22:51.87+05:30 [Debug] finished backfill for /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456 ...
+2015-12-10T14:22:51.87+05:30 [Debug] removing backfill file /var/folders/3z/qp066jn148dbpy_b83cl9rxw0000gn/T/scan-backfill582016456 ...
+limit=1000000,chsize=256; received 76905 items; took 431.39203ms

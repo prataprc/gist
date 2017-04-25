@@ -1,0 +1,1 @@
+/query/service method=GET contents="statement=SELECT * from default where company = \"QUADEEBO\";"
