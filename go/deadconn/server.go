@@ -16,12 +16,13 @@ func main() {
 			log.Println(err)
 		}
 		log.Println("connection accepted")
-		buf, n := []byte{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 0
+		buf, n := make([]byte, 10000), 0
 		for i := 0; i < 10000000000; i++ {
 			x, err := conn.Write(buf)
+			n += x
 			if err != nil {
 				log.Println(err)
-			} else if x != 10 {
+			} else if x != len(buf) {
 				log.Printf("wrote only %v\n", x)
 			} else {
 				fmt.Printf("written %v\n", n)
