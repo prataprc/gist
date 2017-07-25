@@ -7,9 +7,29 @@ import (
 )
 
 func main() {
-	controlCharsInStrings()
+	simpleMarshal()
+	indentMarshal()
+	//controlCharsInStrings()
 	//tryUnmarshalGenericy()
 	//marshalInterface()
+}
+
+func simpleMarshal() {
+	m := map[string]interface{}{"a": 10, "b": 20}
+	if data, err := json.Marshal(m); err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(string(data))
+	}
+}
+
+func indentMarshal() {
+	m := map[string]interface{}{"a": 10, "b": 20}
+	if data, err := json.MarshalIndent(m, "", "  "); err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(string(data))
+	}
 }
 
 func controlCharsInStrings() {
