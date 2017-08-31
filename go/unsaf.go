@@ -21,6 +21,7 @@ func main() {
 		"10.0         ", unsafe.Sizeof(10.0), "\n",
 		"10.0 float32 ", unsafe.Sizeof(float32(10.0)), "\n",
 		"10.0 float64 ", unsafe.Sizeof(float64(10.0)), "\n",
+		"false bool   ", unsafe.Sizeof(false), "\n",
 	)
 	fmt.Println("Alignof")
 	fmt.Println("------")
