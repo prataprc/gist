@@ -3,19 +3,20 @@ package main
 import (
 	"fmt"
 	"hash/crc32"
-	"time"
 )
 
 func main() {
-	var data = make([]byte, 8*1024)
-	for i := 0; i < len(data); i++ {
-		data[i] = byte(i)
-	}
+	msga := []byte("hello world")
+	msgb := []byte("user a")
+	msgc := []byte("user b")
+
 	tbl := crc32.MakeTable(crc32.IEEE)
-	fmt.Println(time.Now())
-	crc := crc32.Checksum(data, tbl)
-	for i := 0; i < 100000; i++ {
-		crc = crc32.Update(crc, tbl, data)
-	}
-	fmt.Println(time.Now())
+	crc := crc32.Checksum(msga, tbl)
+	crc = crc32.Update(crc, tbl, msgb)
+	crc = crc32.Update(crc, tbl, msgc)
+	fmt.Println(crc)
+	crc = crc32.Checksum(msgc, tbl)
+	crc = crc32.Update(crc, tbl, msga)
+	crc = crc32.Update(crc, tbl, msgb)
+	fmt.Println(crc)
 }
