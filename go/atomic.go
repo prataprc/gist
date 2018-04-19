@@ -22,4 +22,19 @@ func main() {
 	opp := atomic.LoadPointer(&keys)
 	old := (*map[string]string)(opp)
 	fmt.Println(&m, keys, opp, old)
+
+	var snapspin uint64
+	l := atomic.AddUint64(&snapspin, 1)
+	x := atomic.AddUint64(&snapspin, ^uint64(0))
+	fmt.Printf("snapspin %x %x\n", l, x)
+
+	snapspin = 0x8000000000000002
+	l = atomic.AddUint64(&snapspin, 1)
+	x = atomic.AddUint64(&snapspin, ^uint64(0))
+	fmt.Printf("snapspin %x %x\n", l, x)
+
+	snapspin = 0xc000000000000001
+	l = atomic.AddUint64(&snapspin, 1)
+	x = atomic.AddUint64(&snapspin, ^uint64(0))
+	fmt.Printf("snapspin %x %x\n", l, x)
 }
