@@ -1,3 +1,4 @@
 *.swp
 *.pyc
 rs/euler/target/
+rs/guessing_game/target/
