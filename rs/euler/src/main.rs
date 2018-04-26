@@ -54,12 +54,6 @@ fn is_triplet<T>(squares: &[T], a: usize, b: usize, c: usize) -> bool
 }
 
 #[allow(dead_code)]
-fn is_palindrome<T: Eq>(x: &[T]) -> bool {
-    let i = x.len()/2;
-    (&x[..i]).iter().zip((&x[i..]).iter().rev()).all(|(a,b)| a == b)
-}
-
-#[allow(dead_code)]
 fn is_prime(num: i64) -> bool {
     let till: i64 = ((num as f64).sqrt() as i64) + 1;
     let mut fs = Vec::new();

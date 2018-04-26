@@ -2,7 +2,7 @@ extern crate num;
 
 use std::iter::{Iterator};
 use std::ops::{Rem,Div,Add};
-use self::num::FromPrimitive;
+use self::num::{ToPrimitive,FromPrimitive};
 use std::fmt::{Display,Debug};
 
 pub struct Primes<T> {
@@ -14,9 +14,10 @@ pub struct Primes<T> {
 }
 
 impl<T> Primes<T>
-    where T:Copy+Default+PartialEq+PartialOrd+
-            Display+Debug+FromPrimitive+
-            Add<Output=T>+Rem<Output=T>+Div<Output=T>
+    where T:Display + Debug +
+            Copy + Default + PartialEq + PartialOrd +
+            Add<Output=T> + Rem<Output=T> + Div<Output=T> +
+            FromPrimitive + ToPrimitive
 {
     pub fn new(till: T) -> Primes<T> {
         let one = T::from_u32(1).unwrap();
@@ -26,8 +27,12 @@ impl<T> Primes<T>
     }
 
     pub fn is_prime(num: T, primes: &[T]) -> bool {
+        let ptill = num.to_f64().unwrap().sqrt() as i64 + 1;
+        let ptill = T::from_i64(ptill).unwrap();
         let zero = T::from_u32(0).unwrap();
-        let ok = primes.iter().any(|p| (num%(*p)) == zero);
+        let ok = primes.iter()
+                       .take_while(|p| *p < &ptill)
+                       .any(|p| (num%(*p)) == zero);
         //println!("isprime {} {}", num, !ok);
         !ok
     }
@@ -41,6 +46,7 @@ impl<T> Primes<T>
 
     pub fn prime_factors(&mut self, num: T, factors: &mut Vec<T>) {
         let mut num = num;
+        self.reload(num);
         loop {
             match self.next() {
                 Some(p) if num%p == T::default() => {
@@ -50,16 +56,17 @@ impl<T> Primes<T>
                     //println!("{} {}", p, num);
                 },
                 Some(_) => continue,
-                None => return
+                None => return,
             }
         }
     }
 }
 
 impl<T> Iterator for Primes<T>
-    where T: Copy+Default+PartialOrd+
-             Display+Debug+FromPrimitive+
-             Add<Output=T>+Rem<Output=T>+Div<Output=T>
+    where T:Display + Debug +
+            Copy + Default + PartialEq + PartialOrd +
+            Add<Output=T> + Rem<Output=T> + Div<Output=T> +
+            FromPrimitive + ToPrimitive
 {
     type Item=T;
 
