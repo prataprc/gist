@@ -4,10 +4,5 @@ version = "0.1.0"
 authors = ["prataprc <prataprc@gmail.com>"]
 
 [dependencies]
-time = "0.1.25"
-
-[dependencies.getopts]
-git = "file:///Users/prataprc/store/oss/rust-lang/getopts/.git"
-
-[profile.dev]
-opt-level = 3
+getopts = "0.2"
+num = "0.1"
