@@ -9,9 +9,10 @@ mod problem0005;
 mod problem0006;
 mod problem0007;
 mod problem0008;
+mod problem0009;
 
 #[allow(non_upper_case_globals)]
-pub const solutions: [fn(); 9] = [
+pub const solutions: [fn(); 10] = [
     || { println!("problem number starts with 1") },
     problem0001::solve,
     problem0002::solve,
@@ -21,4 +22,5 @@ pub const solutions: [fn(); 9] = [
     problem0006::solve,
     problem0007::solve,
     problem0008::solve,
+    problem0009::solve,
 ];
