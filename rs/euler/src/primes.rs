@@ -77,7 +77,7 @@ impl<T> Iterator for Primes<T>
             }
             while self.from < self.till {
                 self.from = self.from + T::from_u32(1).unwrap();
-                let num = self.from.clone();
+                let num = self.from;
                 if Self::is_prime(num, self.cached.as_slice()) {
                     self.idx += 1;
                     self.cached.push(self.from);
