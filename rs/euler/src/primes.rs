@@ -27,12 +27,12 @@ impl<T> Primes<T>
     }
 
     pub fn is_prime(num: T, primes: &[T]) -> bool {
-        let ptill = num.to_f64().unwrap().sqrt() as i64 + 1;
+        let ptill = (num.to_f64().unwrap().sqrt() as i64) + 1;
         let ptill = T::from_i64(ptill).unwrap();
         let zero = T::from_u32(0).unwrap();
         let ok = primes.iter()
-                       .take_while(|p| *p < &ptill)
-                       .any(|p| (num%(*p)) == zero);
+                       .take_while(|&&p| p < ptill)
+                       .any(|&p| (num%p) == zero);
         //println!("isprime {} {}", num, !ok);
         !ok
     }
