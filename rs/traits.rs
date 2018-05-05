@@ -1,34 +1,33 @@
-#![feature(custom_derive)] // for Borrow trait
-
 use std::ops::Add;
+//use std::borrow::Borrow;
 
 /*********************
 * operator overloading
 * *******************/
 
-#[derive(Copy, Clone, Debug, Borrow)]
-struct Foo(u8);
+#[derive(Copy,Clone,Debug)]
+struct Foo<T>(T);
 
-impl Add for Foo {
-    type Output = u8;
+impl<T> Add for Foo<T> where T: Add {
+    type Output=<T as std::ops::Add>::Output;
 
-    fn add(self, _rhs: Foo) -> Self::Output {
+    fn add(self, rhs: Self) -> Self::Output {
         println!("Adding! by value");
-        self.0 + self.0
+        self.0 + rhs.0
     }
 }
 
-impl<'a> Add for &'a Foo {
-    type Output = u8;
+impl<'a, T> Add for &'a Foo<T> where T: Add {
+    type Output=<T as std::ops::Add>::Output;
 
-    fn add(self, _rhs: &Foo) -> Self::Output {
+    fn add(self, rhs: &Foo<T>) -> Self::Output {
         println!("Adding! by reference");
-        (*self).0 + (*self).0
+        &self.0 + &rhs.0
     }
 }
 
 fn main() {
     let (x, y) = (Foo(10), Foo(20));
-    println!("Foo + Foo: {}", x + y);
-    println!("&Foo + Foo: {}", &x + &y);
+    println!("{:?} + {:?} {}", x, y, x + y);
+    //println!("&Foo + Foo: {}", &x + &y);
 }

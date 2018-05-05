@@ -6,3 +6,4 @@ authors = ["prataprc <prataprc@gmail.com>"]
 [dependencies]
 getopts = "0.2"
 num = "0.1"
+primal = "0.2"

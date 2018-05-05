@@ -23,6 +23,7 @@ impl<T> Primes<T>
         let one = T::from_u32(1).unwrap();
         let mut cached: Vec<T> = Vec::with_capacity(1000);
         cached.push(T::from_u32(2).unwrap());
+        cached.push(T::from_u32(3).unwrap());
         Primes{from: one, till, cached, idx: 0, one}
     }
 
@@ -30,11 +31,14 @@ impl<T> Primes<T>
         let ptill = (num.to_f64().unwrap().sqrt() as i64) + 1;
         let ptill = T::from_i64(ptill).unwrap();
         let zero = T::from_u32(0).unwrap();
-        let ok = primes.iter()
-                       .take_while(|&&p| p < ptill)
-                       .any(|&p| (num%p) == zero);
-        //println!("isprime {} {}", num, !ok);
-        !ok
+        for &p in primes {
+            if num%p == zero {
+                return false
+            } else if p >= ptill {
+                break;
+            }
+        }
+        true
     }
 
     pub fn reload(&mut self, till: T) {
@@ -71,24 +75,26 @@ impl<T> Iterator for Primes<T>
     type Item=T;
 
     fn next(&mut self) -> Option<T> {
-        if self.idx >= self.cached.len() {
-            if !self.cached.is_empty() {
-                self.from = self.cached[self.cached.len()-1];
-            }
-            while self.from < self.till {
-                self.from = self.from + T::from_u32(1).unwrap();
-                let num = self.from;
-                if Self::is_prime(num, self.cached.as_slice()) {
-                    self.idx += 1;
-                    self.cached.push(self.from);
-                    return Some(self.from);
-                }
-            }
-            return None
+        if self.idx < self.cached.len() {
+            let result = Some(self.cached[self.idx]);
+            // println!("from cache {}", self.cached[self.idx]);
+            self.idx += 1;
+            return result
         }
 
-        let result = Some(self.cached[self.idx]);
-        self.idx += 1;
-        result
+        if !self.cached.is_empty() {
+            self.from = self.cached[self.cached.len()-1];
+        }
+        while self.from < self.till {
+            self.from = self.from + T::from_u32(1).unwrap();
+            let num = self.from;
+            if Self::is_prime(num, self.cached.as_slice()) {
+                self.idx += 1;
+                self.cached.push(self.from);
+                // println!("compute {}", self.from);
+                return Some(self.from);
+            }
+        }
+        None
     }
 }

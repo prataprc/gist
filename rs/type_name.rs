@@ -1,10 +1,11 @@
 #![feature(core)]
 
-fn main() {
-    name(&10);
-}
+#[derive(Debug)]
+struct Other<T>(T, T, T);
 
-fn name<T>(_: T) -> &'static str {
-    let name = unsafe { std::intrinsics::type_name::<T>()};
-    name
+type MyType<T> = Other<T>;
+
+fn main() {
+    let x: MyType<u32> = Other(19, 29, 20);
+    println!("my type {:?}", x);
 }
