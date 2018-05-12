@@ -4,6 +4,9 @@ fn main() {
     println!("x: {:p}, &x: {:p}", x, &x);
     println!("y: {:p}, &y: {:p}", y, &y);
 
+    let z = x; // moved here.
+    println!("move x: {}", z);
+
     let mut a = 10;
     add_one_borrow(&mut a);
     println!("{}", a);

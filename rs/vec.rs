@@ -1,7 +1,26 @@
+#[derive(Debug)]
+struct MyT {
+    a: i32,
+}
 fn main() {
     let mut w = Vec::new(); // return Vec<T>
     w.push(10); // type inference works within blocks.
-    println!("{:?}", w);
+    println!("after push {:?}", w);
+
+    let w = vec![1,2,3];
+    let x: i32 = w[1];
+    println!("indexing into Vec<T> {} {:?}", x, w);
+
+    //error[E0507]: cannot move out of indexed content
+    //let w = vec![MyT{a:10}, MyT{a:20}];
+    //let x = w[0];
+    //println!("indexing that does not have Copy {:?} {:?}", x, w);
+
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("iterating vector {}", i);
+    }
+
 
     //let mut cached: Vec<u32> = newvec::<u32>();
     //cached.push(2);
