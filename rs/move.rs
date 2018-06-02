@@ -11,12 +11,13 @@ struct Y<'a> {
 fn main() {
     let m = X{a: 10};
     let n = m;
-    println!("{:?} {:?}", m, n);
+    println!("for type X m and n {:?} {:?}", m, n);
 
     let o = 10;
     {
         let m = Y{a: &o};
+        println!("for type Y address of m {:p}", &m);
         let n = m;
-        println!("{:?}", n);
+        println!("for type Y address of n {:p}", &n);
     }
 }

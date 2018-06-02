@@ -10,6 +10,8 @@ fn main() {
     let mut a = 10;
     add_one_borrow(&mut a);
     println!("{}", a);
+
+    borrow_box();
 }
 
 fn add_one_transfer_ownership(num: &Box<i32>) -> Box<i32> {
@@ -19,4 +21,14 @@ fn add_one_transfer_ownership(num: &Box<i32>) -> Box<i32> {
 
 fn add_one_borrow(num: &mut i32) {
     *num += 1;
+}
+
+fn borrow_box() {
+    let x = Box::new(5);
+
+    let z: &Box<i32> = &x;
+    println!("borrowes as &Box<i32>: {}", z);
+
+    let z: &i32 = &x;
+    println!("borrow as &i32: {}", z);
 }

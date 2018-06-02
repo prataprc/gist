@@ -18,9 +18,15 @@ fn main() {
     //let x = num();
     //let y = [20; 2];
     //println!("{} {:?}", x, y);
+
+    foo([1;10]);
 }
 
 fn num() -> u32 {
     let now = time::Instant::now();
     return now.elapsed().subsec_nanos()
+}
+
+fn foo(arr: [i32; 10]) {
+    println!("{:?}", arr);
 }
