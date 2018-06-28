@@ -6,6 +6,8 @@ struct X {
 }
 
 impl X {
+    const FOO: i32 = 1;
+
     fn add10(self) -> u32 {
         self.a + 10
     }
@@ -16,6 +18,14 @@ impl X {
         self.c += 30;
         self.c
     }
+}
+
+enum E {
+    T(&'static str),
+}
+
+impl E {
+    const FOO: i32 = 1;
 }
 
 fn main() {
