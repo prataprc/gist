@@ -8,7 +8,7 @@ import "math"
 var count int
 
 func BenchmarkMemcpy1K(b *testing.B) {
-	var dst, src [1024 * 1]byte
+	var dst, src [1000 * 1]byte
 	for i := 0; i < len(src); i++ {
 		src[i] = byte(i)
 	}
@@ -19,7 +19,29 @@ func BenchmarkMemcpy1K(b *testing.B) {
 }
 
 func BenchmarkMemcpy4K(b *testing.B) {
-	var dst, src [1024 * 4]byte
+	var dst, src [4 * 1000]byte
+	for i := 0; i < len(src); i++ {
+		src[i] = byte(i)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		copy(dst[:], src[:])
+	}
+}
+
+func BenchmarkMemcpy10K(b *testing.B) {
+	var dst, src [10 * 1000]byte
+	for i := 0; i < len(src); i++ {
+		src[i] = byte(i)
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		copy(dst[:], src[:])
+	}
+}
+
+func BenchmarkMemcpy1M(b *testing.B) {
+	var dst, src [1000000]byte
 	for i := 0; i < len(src); i++ {
 		src[i] = byte(i)
 	}
