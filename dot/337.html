@@ -1,0 +1,2164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="dj_gecko dj_ff3 dj_contentbox"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+    
+        
+    <title>GCC-ticket:337</title>
+
+        
+
+        
+    
+    <link href="337_files/dojo.css" rel="stylesheet" type="text/css">
+    <link href="337_files/ztundra.css" rel="stylesheet" type="text/css">
+    <link href="337_files/zdojo.css" rel="stylesheet" type="text/css">
+
+
+        
+
+        
+    
+    <script src="337_files/dojo.js" type="text/javascript"></script>
+    <script src="337_files/dijit.js" type="text/javascript"></script><title>G</title><title>337</title><title>184</title><title>337-&gt;184</title><title>315</title><title>337-&gt;315</title><title>275</title><title>337-&gt;275</title><title>86</title><title>337-&gt;86</title><title>126</title><title>337-&gt;126</title><title>307</title><title>315-&gt;307</title><title>255</title><title>315-&gt;255</title><title>321</title><title>86-&gt;321</title><title>325</title><title>307-&gt;325</title><title>G</title><title>24</title><title>337</title><title>24-&gt;337</title><style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+
+#firebugBody {
+    position: fixed;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    width:1px;
+    height:1px;
+    overflow:visible;
+}
+
+.firebugCanvas {
+    position:fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugHighlight {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: #3875d7;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483647;
+    position: absolute;
+    background-color: transparent;
+    border-top: 0 none;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px dashed #BBBBBB;
+    border-left: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugRuler {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugRulerH {
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url(chrome://firebug/skin/rulerH.png) repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url(chrome://firebug/skin/rulerV.png) repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483647;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+/*.firebugHighlightGroup .firebugLayoutBox {
+    background-color: transparent;
+}
+
+.firebugHighlightBox {
+    background-color: Blue !important;
+}*/
+
+.firebugLayoutLine {
+    z-index: 2147483647;
+    background-color: #000000;
+    opacity: 0.4;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutLineLeft,
+.firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop,
+.firebugLayoutLineBottom {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+</style></head><div FirebugVersion="1.4.5" style="display: none;" id="_firebugConsole"></div><body class="tundra"><textarea id="dijit._editor.RichText.savedContent" style="overflow: hidden; display: none; position: absolute; top: -100px; left: -100px; height: 3px; width: 3px;"></textarea>
+    <script src="337_files/DataGrid.js" type="text/javascript"></script>
+
+    <script src="337_files/zlib.js" type="text/javascript"></script>
+    <script src="337_files/zwidgets.js" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+    /********** Setup Ticket Grid **************/
+    
+
+    // Add empty component, milestone, version for select options
+    components  = {"": "", "6": "console", "7": "readline", "8": "e2p", "9": "parted-1", "10": "pcprofile"}
+    milestones  = {"": "", "5": "GCC-milestone2", "6": "GCC-milestone3", "7": "GCC-milestone1", "8": "GCC-milestone6", "9": "GCC-milestone7", "10": "GCC-milestone4", "11": "GCC-milestone5", "12": "GCC-milestone8", "13": "GCC-milestone9"}
+    versions    = {"": "", "5": "GCC-ver1"}
+
+    tck_typenames= ["blueprint", "clarification", "defect", "document", "enhancement", "feature"]
+    tck_severitynames= ["blocker", "critical", "major", "minor", "normal", "trivial"]
+    projusers   = ["indudeepdk", "sabeerpb", "abhilashabg", "balakrishnanjk", "halimaaf", "abhahi", "ajantagc", "rabinderuc"]
+
+    tckccodes   = [
+    [ "", "", "#fffce1" ],
+
+    [ "tck_statusname", "fixed", "#ebebeb" ],
+    [ "tck_statusname", "duplicate", "#ebebeb" ],
+    [ "tck_statusname", "wontfix", "#ebebeb" ],
+
+    [ "tck_severityname", "blocker", "#ffe1e1" ],
+    [ "tck_severityname", "critical" , "#ffe1e1" ],
+
+    [ "tck_statusname", "new" , "#fafafa" ],
+    [ "tck_statusname", "open" , "#fafafa" ],
+    [ "tck_statusname", "reopen", "#fafafa" ]
+
+]
+
+
+    function setup_ticket() {
+        var div_zticketpage= dojo.query( 'div.zticketpage' )[0];
+        var div_tcomments  = dojo.query( 'div#tcomments' )[0];
+
+        /* Setup the wiki goto list */
+        select_goto( dojo.query( '#selectticket' )[0] );
+
+        make_ifrs_tckcomments( '/p/GCC/t/337?jsonobj=tckcomments&view=js',
+                               items_tckcomments );
+        make_ifrs_tckrcomments( '/p/GCC/t/337?jsonobj=tckrcomments&view=js' );
+
+        /* Attachments */
+        new zeta.Attachments(
+                { user: [ '1', 'admin' ],
+                  id: 'tckattachblk',
+                  addform: [ 'addtckattachs', '/p/GCC/t/337?form=submit&formname=addtckattachs&view=js' ],
+                  delform: [ 'deltckattachs', '/p/GCC/t/337?form=submit&formname=deltckattachs&view=js' ],
+                  attachon: [ '337', 'ticket_id' ],
+                  editable: 1,
+                  url: '/p/GCC/t/337?jsonobj=tckattachs&view=js',
+                  attachs: {}
+                }, dojo.query( "div[name=tattachblk]" )[0]
+            )
+        /* Tags */
+        new zeta.Tags(
+                { user: [ '1', 'admin' ],
+                  id: 'tcktagblk',
+                  addform: [ 'addtcktags', '/p/GCC/t/337?form=submit&formname=addtcktags&view=js' ],
+                  delform: [ 'deltcktags', '/p/GCC/t/337?form=submit&formname=deltcktags&view=js' ],
+                  tagon: [ '337', 'ticket_id' ],
+                  editable: 1,
+                  url: '/p/GCC/t/337?jsonobj=tcktags&view=js',
+                  tags: {"PC": "PC"}
+                }, dojo.query( "div[name=ttagblk]" )[0]
+            )
+        /* Comment list */
+        new zeta.CommentContainer({
+                ifrs_comments: tckcomments,
+                ifrs_rcomments: tckrcomments,
+                crformid: 'createtcmt',
+                rpformid: 'replytcmt',
+                edformid: 'updatetcmt',
+                sortby: 'ticket_comment_id',
+                identity: 'ticket_comment_id'
+            }, div_tcomments );
+
+        // Widgetify forms for inline editing.
+        if( true ) {
+            new zeta.Form({ normalsub: true, formid: 'tcksummary' });
+            new zeta.Form({ normalsub: true, formid: 'tcktype' });
+            new zeta.Form({ normalsub: true, formid: 'tckseverity' });
+            new zeta.Form({ normalsub: true, formid: 'tckcomponent' });
+            new zeta.Form({ normalsub: true, formid: 'tckmilestone' });
+            new zeta.Form({ normalsub: true, formid: 'tckversion' });
+            new zeta.Form({ normalsub: true, formid: 'tckpromptuser' });
+            new zeta.Form({ normalsub: true, formid: 'tckparent' });
+            new zeta.Form({ normalsub: true, formid: 'tckblockedby' });
+            new zeta.Form({ normalsub: true, formid: 'tckblocking' });
+            new zeta.Form({ normalsub: true, formid: 'tckdescription' });
+
+            function createtstat_onsubmit( e ) {
+                submitform( form_createtstat, e );
+                dojo.stopEvent(e);
+                update_colorcode();
+            }
+            new zeta.Form({ onsubmit: createtstat_onsubmit,
+                            formid: 'createtstat' });
+        }
+
+        /* Inline Editing */
+        function update_colorcode() {
+            var st = form_createtstat ?
+                     dojo.query( 'select[name=tck_statusname]', form_createtstat
+                             )[0].value
+                     : null;
+            var sv = form_tckseverity ?
+                     dojo.query( 'input[name=tck_severityname]', form_tckseverity
+                             )[0].value
+                     : null;
+            var ty = form_tcktype ?
+                     dojo.query( 'input[name=tck_typename]', form_tcktype
+                             )[0].value
+                     : null;
+            var tckdetail = {
+                tck_statusname : st,
+                tck_severityname : sv,
+                tck_typename : ty,
+            }
+            var bgcolor = tckcolorcode( tckdetail, tckccodes );
+            dojo.publish( 'tckbrd_chbg', [ 'tckboard', bgcolor ] );
+        }
+
+        var inlines = []
+        if( true ) {
+            inlines = dojo.query( 'span.inedit', div_zticketpage );
+        }
+        function inline_onchange( formnode, field, value ) {
+            // Translate the component name into id
+            if( field == 'component_id' ) {
+                value = keyforvalue( components, value );
+            } else if ( field == 'milestone_id' ) {
+                value = keyforvalue( milestones, value );
+            } else if ( field == 'version_id' ) {
+                value = keyforvalue( versions, value );
+            }
+            dojo.query( 'input[name=' + field + ']', formnode 
+                      )[0].value = value;
+            submitform( formnode );
+            update_colorcode();
+        }
+        dojo.forEach(
+            inlines,
+            function (item) {
+                var name     = dojo.attr( item, 'name' );
+                var formnode = null;
+                if ( name == 'summary' ) {
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.TextBox",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tcksummary, 'summary' 
+                                    ),
+                        width : '40em'
+                    }, item )        
+                } else if ( name == 'tck_typename' ) {
+                    var store = create_ifrs_store( tck_typenames );
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tcktype, 'tck_typename'
+                                    ),
+                        editorParams : { class: "fntbold", store: store }
+                    }, item )        
+                } else if ( name == 'tck_severityname' ) {
+                    var store = create_ifrs_store( tck_severitynames );
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckseverity, 'tck_severityname'
+                                    ),
+                        editorParams : { store : store }
+                    }, item )        
+                } else if ( name == 'component_id' ) {
+                    var store = create_ifrs_store( values(components).sort() );
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckcomponent, 'component_id'
+                                    ),
+                        editorParams : { store : store }
+                    }, item )        
+                } else if ( name == 'milestone_id' ) {
+                    var store = create_ifrs_store( values(milestones).sort() );
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckmilestone, 'milestone_id'
+                                    ),
+                        editorParams : { store : store }
+                    }, item )        
+                } else if ( name == 'version_id' ) {
+                    var store = create_ifrs_store( values(versions).sort());
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckversion, 'version_id'
+                                    ),
+                        editorParams : { store : store }
+                    }, item )        
+                } else if ( name == 'promptuser' ) {
+                    var store = create_ifrs_store( projusers );
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.FilteringSelect",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckpromptuser, 'promptuser'
+                                    ),
+                        editorParams : { store : store }
+                    }, item )        
+                } else if ( name == 'parent_id' ) {
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.TextBox",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckparent, 'parent_id'
+                                    )
+                    }, item )        
+                } else if ( name == 'blockedby_ids' ) {
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.TextBox",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckblockedby, 'blockedby_ids'
+                                    )
+                    }, item )        
+                } else if ( name == 'blocking_ids' ) {
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.TextBox",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckblocking, 'blocking_ids'
+                                    )
+                    }, item )        
+                } else if ( name == 'description' ) {
+                    new dijit.InlineEditBox({
+                        editor : "dijit.form.Textarea",
+                        onChange  : dojo.hitch(
+                                        null, inline_onchange,
+                                        form_tckdescription, 'description'
+                                    )
+                    }, item )
+                }
+            }
+        );
+
+        /* Change status */
+        dojo.connect(
+            dojo.query( "span.togglest" )[0],
+            'onclick',
+            function( e ) {
+                dojo.toggleClass( dojo.query( 'div.changest' )[0],
+                                  'dispnone', false );
+                dojo.toggleClass( dojo.query( 'div.viewst' )[0],
+                                  'dispnone', true );
+                dojo.stopEvent( e );
+            }
+        );
+    }
+    </script>
+
+    
+        
+            <div class="fntsmall fntbold fgred bgred1 calign">This is only a demonstration site</div>
+        
+    <div id="metanav" class="ralign fntsmall">
+        admin |
+        
+                  <span name="quick-links" class="fntsmall pointer fgblue">
+                            quick-links<span class="fntxsmall vmiddle"> ▼</span></span>
+                
+                | <span name="myprojects" class="fntsmall pointer fgblue">
+                            myprojects<span class="fntxsmall vmiddle"> ▼</span></span>
+                
+                | <a style="margin: 0pt;" title="Your account preference" href="http://127.0.0.1:5000/u/admin/preference?form=request">preference</a>
+                
+                | <a style="margin: 0pt;" title="Sign out" href="http://127.0.0.1:5000/accounts/signout">signout</a>
+                
+                | <a style="margin: 0pt;" title="Site level administration" href="http://127.0.0.1:5000/siteadmin?form=request">site-admin</a>
+                
+                | <a style="margin: 0pt;" title="About Us" href="http://127.0.0.1:5000/aboutus">aboutus</a>
+                
+                | <a style="margin: 0pt;" title="Learn how to use ZetaDemo" href="http://127.0.0.1:5000/help">help</a>
+                
+    </div>
+
+        
+    
+    
+    <div id="flashblk" class="calign m10 flashbind z100" style="display: none;">
+        <div class="flash curvy4 bgyellow"></div>
+        <div class="flash curvy2 bgyellow"></div>
+        <div class="flash curvy1 bgyellow"></div>
+        <div id="flashmsg" class="flash fntsmall fwnormal bgyellow">Fetching ...</div>
+        <div class="flash curvy1 bgyellow"></div>
+        <div class="flash curvy2 bgyellow"></div>
+        <div class="flash curvy4 bgyellow"></div>
+    </div>
+
+        <div id="lthead" class="w100">
+        <div class="disptable w100"></div>
+        <div class="disptrow">
+            <div class="disptcell vtop pr5">
+                <div id="sitelogo">
+                <a class="nodec fggray fntcaption" href="http://127.0.0.1:5000/"><img alt="logo" style="max-width: 300px; max-height: 75px;" src="337_files/sitelogo.bin"></a>
+                </div>
+            </div>
+
+            <div class="disptcell vtop pt5 pb5">
+                
+    <span name="searchbox">
+        <form id="searchzeta" class="dispinln" action="/search" method="get">
+            
+    
+    <input class="fggray2" name="querystring" value="Search-Site" type="text">
+
+        </form>
+    </span>
+
+            </div>
+
+            <div class="disptcell vmiddle w100"></div>
+
+            <div class="disptcell vtop pt5 pb5">
+                    
+    <span name="searchbox">
+        <form id="searchproject" class="dispinln" action="/search" method="get">
+                
+    
+    <input name="project" value="GCC" type="hidden">
+
+            
+    
+    <input class="fggray2" name="querystring" value="Search-project" type="text">
+
+        </form>
+    </span>
+
+            </div>
+
+
+            <div class="disptcell vtop pl5">
+                <div id="prjlogo">
+                    <a class="nodec fggray fntcaption" href="http://127.0.0.1:5000/p/GCC"><img alt="logo" style="max-width: 300px; max-height: 75px;" src="337_files/38.html"></a>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+
+        
+    
+    <div id="breadcrumbs" class="ralign fntsmall mb5 ml5">
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/p/GCC/t/337">GCC-ticket:337</a></span>
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/p/GCC/t/345">GCC-ticket:345</a></span>
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/p/GCC/t">GCCticket:list</a></span>
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/p/GCC">GCC</a></span>
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/">ZetaDemo</a></span>
+             <span class="fgLCoral"><a href="http://127.0.0.1:5000/help/ZWExtensions">help/ZWExtensions</a></span>
+    </div>
+
+        
+    
+    
+    <div id="mainnav" class="fnt83">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="inactive ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="inactive mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="inactive mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC" title="GCCProject home">GCC-home</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="inactive ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="inactive mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="inactive mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC/wiki" title="Wiki Pages for GCC">Wiki</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="active ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="active mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="active mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC/t" title="Open Tickets and issues for GCC">Tickets</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="inactive ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="inactive mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="inactive mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC/s" title="Browse Source code for GCC">Source</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="inactive ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="inactive mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="inactive mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC/r" title="Manage project reviews GCC">Review</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+            <th>
+                <div class="curvy4 bggreen"></div>
+                <div class="curvy2 bggreen">
+                    <div class="inactive ml2 mr2" style="height: 1px;"></div>
+                </div>
+                <div class="curvy1 bggreen">
+                    <div class="inactive mr1 ml1" style="height: 1px;"></div>
+                </div>
+                <div class="bggreen">
+                    <div class="inactive mr1 ml1 pl10 pr10 pb2">
+                        <a class="nodec bb" href="http://127.0.0.1:5000/p/GCC/admin?form=request" title="Adminstration forGCC">Admin</a>
+                    </div>
+                </div>
+            </th>
+            <td><div style="width: 10px;"></div></td>
+        </tr>
+    </tbody></table>
+    </div>
+
+    
+    <script type="text/javascript">
+        function contexttooltip() {
+            var n_cont = dojo.byId( 'cont_tooltips' );
+            var n_trgr = dojo.byId( 'trgr_tooltips' );
+            if( n_cont ) {
+                new zeta.ToolTips({
+                    n_tooltip : n_trgr,
+                    tooltips: [["Help", "Tickets are helpful to track bugs, tasks, requirements etc ...\n<br/>\nThe three main attributes of a ticket are <b>type, status, severity</b>.\nType should give an idea about why? and what? of a ticket. Status actually\ntracks the flow of work or activity happening on a ticket. Severity, well tells\nhow severe the ticket is to the project (synonymous to priority).\n<br/>\nEvery ticket status change should provide the next status of the ticket and\ndue-date to act on the ticket state. The user who changes the ticket status\nwill become the new owner of the ticket.\n<br/>\nIf, in case the changed ticket status actually expects a response from a user\nother than the ticket owner, it can be indicated so using 'promptuser'\nattribute.\n<br/>\nUse ticket id, where ever the ticket needs to be referenced.\n"], ["Attachments", "Upload attachments by clicking on the iconized title. Clicking on the\nsame once again will hide it. Delete attachments by clicking on the cross-wire.\nUpload any number of attachments files to ticket.\n<br/><br/>\nEvery attached file, will have its \"id\" in paranthesis. Use the id value when\nrefering to the attachment.\n"], ["Tags", "Tag a ticket by clicking on the iconized title. Delete tags by clicking on\nthe cross-wire. Tag names should be 2 or more characters\n"], ["Favorites", "Registered users can pick ticket(s) as their favorite, provided the user\nhas got 'TICKET_VIEW' permission"], ["Vote", "Registered users can up-vote or down-vote a ticket."]]
+                }, n_cont )
+            }
+        };
+    </script>
+
+    <div class="bggrn1 ctxtnav pl5 fnt83" style="-moz-border-radius-topright: 5px;">
+            <div id="trgr_tooltips" title="Tips on how to use this page" class="posr floatr pt3 mr10 fntsmall fgblue pointer">
+                Tool-Tips
+            </div>
+
+            
+    <span name="favtck" title="add or delete as your favorite" class="ml5 pointer fntlarge fgwhite">✱</span>
+
+            
+    <span name="searchbox">
+        <form id="searchticket" class="dispinln" action="/search" method="get">
+                
+    
+    <input name="project" value="GCC" type="hidden">
+
+                
+    
+    <input name="ticket" value="1" type="hidden">
+
+            
+    
+    <input class="fggray2" name="querystring" value="Search-ticket" type="text">
+
+        </form>
+    </span>
+
+            
+    
+    <span class="ml5">
+        
+    
+    <select id="selectticket" name="selectticket">
+            <option value="">--Select-Ticket--</option>
+            <option value="/p/GCC/t/345">345</option>
+            <option value="/p/GCC/t/342">342</option>
+            <option value="/p/GCC/t/337" selected="selected">337</option>
+            <option value="/p/GCC/t/329">329</option>
+            <option value="/p/GCC/t/324">324</option>
+            <option value="/p/GCC/t/321">321</option>
+            <option value="/p/GCC/t/300">300</option>
+            <option value="/p/GCC/t/296">296</option>
+            <option value="/p/GCC/t/291">291</option>
+            <option value="/p/GCC/t/286">286</option>
+            <option value="/p/GCC/t/281">281</option>
+            <option value="/p/GCC/t/257">257</option>
+            <option value="/p/GCC/t/245">245</option>
+            <option value="/p/GCC/t/244">244</option>
+            <option value="/p/GCC/t/236">236</option>
+            <option value="/p/GCC/t/227">227</option>
+            <option value="/p/GCC/t/215">215</option>
+            <option value="/p/GCC/t/197">197</option>
+            <option value="/p/GCC/t/196">196</option>
+            <option value="/p/GCC/t/187">187</option>
+            <option value="/p/GCC/t/165">165</option>
+            <option value="/p/GCC/t/151">151</option>
+            <option value="/p/GCC/t/145">145</option>
+            <option value="/p/GCC/t/95">95</option>
+            <option value="/p/GCC/t/88">88</option>
+            <option value="/p/GCC/t/82">82</option>
+            <option value="/p/GCC/t/81">81</option>
+            <option value="/p/GCC/t/62">62</option>
+            <option value="/p/GCC/t/52">52</option>
+            <option value="/p/GCC/t/48">48</option>
+            <option value="/p/GCC/t/42">42</option>
+            <option value="/p/GCC/t/30">30</option>
+            <option value="/p/GCC/t/29">29</option>
+            <option value="/p/GCC/t/17">17</option>
+            <option value="/p/GCC/t/13">13</option>
+            <option value="/p/GCC/t/12">12</option>
+    </select>
+
+    </span>
+
+            <span class="ml10 fwnormal fntsmall"><a href="http://127.0.0.1:5000/p/GCC/t/createticket?form=request&amp;formname=createtck">Create</a></span>
+            <span class="ml10 fwnormal fntsmall"><a href="http://127.0.0.1:5000/p/GCC/t/timeline/337">Timeline</a></span>
+    </div>
+        <div widgetid="cont_tooltips" id="cont_tooltips" class="ml50 mr50 dispnone">      <div class="bgyellow1" style="font-family: Helvetica,sans-serif; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px;">           <div name="tabs" class="" style="border-bottom: 1px dotted rgb(214, 214, 214);"><span style="border-left: 1px dotted rgb(214, 214, 214); border-right: 1px dotted rgb(214, 214, 214); border-bottom: 1px solid rgb(255, 255, 184);" class="ml10 pl5 pr5 fntsmall fgblack fntbold pointer">Help</span><span class="ml10 pl5 pr5 fntsmall fgblack fntbold fgblue pointer">Attachments</span><span class="ml10 pl5 pr5 fntsmall fgblack fntbold fgblue pointer">Tags</span><span class="ml10 pl5 pr5 fntsmall fgblack fntbold fgblue pointer">Favorites</span><span class="ml10 pl5 pr5 fntsmall fgblack fntbold fgblue pointer">Vote</span></div>          <div name="content" class="pt5 fntsmall"><div class="ml20">Tickets are helpful to track bugs, tasks, requirements etc ...
+<br>
+The three main attributes of a ticket are <b>type, status, severity</b>.
+Type should give an idea about why? and what? of a ticket. Status actually
+tracks the flow of work or activity happening on a ticket. Severity, well tells
+how severe the ticket is to the project (synonymous to priority).
+<br>
+Every ticket status change should provide the next status of the ticket and
+due-date to act on the ticket state. The user who changes the ticket status
+will become the new owner of the ticket.
+<br>
+If, in case the changed ticket status actually expects a response from a user
+other than the ticket owner, it can be indicated so using 'promptuser'
+attribute.
+<br>
+Use ticket id, where ever the ticket needs to be referenced.
+</div><div class="dispnone ml20">Upload attachments by clicking on the iconized title. Clicking on the
+same once again will hide it. Delete attachments by clicking on the cross-wire.
+Upload any number of attachments files to ticket.
+<br><br>
+Every attached file, will have its "id" in paranthesis. Use the id value when
+refering to the attachment.
+</div><div class="dispnone ml20">Tag a ticket by clicking on the iconized title. Delete tags by clicking on
+the cross-wire. Tag names should be 2 or more characters
+</div><div class="dispnone ml20">Registered users can pick ticket(s) as their favorite, provided the user
+has got 'TICKET_VIEW' permission</div><div class="dispnone ml20">Registered users can up-vote or down-vote a ticket.</div></div>      </div>  </div>
+
+    <div id="bdy" class="w100">
+        <div class="fullpanel1">
+            <div>
+                    
+    <form widgetid="tckfav" id="tckfav" method="post" action="/p/GCC/t/337?form=submit&amp;formname=tckfav&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="addfavuser" value="admin" type="hidden">
+
+    </form>
+
+    <script type="text/javascript">
+        /* Setup favorite ticket for user */
+        function initform_tckfav() {
+            var n_span  = dojo.query( "span[name=favtck]" )[0];
+            var w_form  = new zeta.Form({ normalsub: true, formid: 'tckfav' });
+            var n_field = dojo.query( "input[name=addfavuser]", form_tckfav )[0];
+            if( n_span && n_field ) {
+                new ZFavorite( n_span, form_tckfav, n_field );
+            }
+        }
+    </script>
+
+                    
+    <form widgetid="votetck" id="votetck" method="post" action="/p/GCC/t/337?form=submit&amp;formname=votetck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="votedas" value="" type="hidden">
+
+    </form>
+
+    <script type="text/javascript">
+        /* Setup ticket voting form */
+        function initform_votetck() {
+            var n_span = dojo.query( "span[name=tckvote]" )[0];
+            if( n_span ) {
+                new zeta.Voting({
+                    upvotes: 4,
+                    downvotes: 6,
+                    currvote: '',
+                    formid: 'votetck'
+                }, n_span );
+            }
+        }
+    </script>
+
+                
+    
+    <div class="zticketpage mr5">
+        <div class="pb2" style="border-bottom: 1px solid gray; height: 1.5em;">
+            <div class="floatl">
+                <span class="fntbold ml10 mr10" style="font-size: 125%;">
+                    Ticket 337 :
+                </span>
+                <span widgetid="zeta_Voting_0" id="zeta_Voting_0" class="ml5 mr5">      <span name="upvote" class="pointer fntserif">▲ </span>      <span name="downvote" class="pointer fntserif">▼ </span>      <span name="upvotes" class="fggray">4 upvotes, </span>      <span name="downvotes" class="fgred">6 downvotes </span>  </span>
+            </div>
+            <div class="floatr dispinln">
+                <span name="depgraph" class="fgblue pointer mr5">Graph
+                <span name="hiergraph" class="fgblue pointer mr5">Tree
+                <a class="nodec mr5" href="#comments">Comments</a>
+            </span></span></div>
+        </div>
+        <div class="disptable w100">
+        <div class="disptrow">
+        <div class="disptcell">
+            <div class="pb2 pt2 mb10">
+                <div widgetid="tckattachblk" class="ml10 mt5 posr floatl" id="tckattachblk"><div><div class="curvy4 bgwhite"></div><div class="curvy2 bgwhite"><div style="margin: 0px 2px; height: 1px;" class="bggray1"></div></div><div class="curvy1 bgwhite"><div style="margin: 0px 1px; height: 1px;" class="bggray1"></div></div><div class="bgwhite"><div style="margin: 0px 1px;" class="p3 bggray1"><span style="background: transparent url(/zetaicons/attach.png) no-repeat scroll 0pt 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="pl18 fggray pointer undrln" name="iconadd">Upload</span><span name="attachspans" class="m2"></span><div name="attachbox" style="top: 2.2em;" class="posa dispnone z99"><div class="curvy4 bglsb"></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="bglsb"><div style="margin: 0px 1px;" class="p3 bgaliceblue"><div><form enctype="multipart/form-data" method="post" action="/p/GCC/t/337?form=submit&amp;formname=addtckattachs&amp;view=js" id="addtckattachs"><input value="1" name="user_id" type="hidden"><input value="337" name="ticket_id" type="hidden"><span><input name="attachfile" type="file"></span></form></div><div class="dispnone"><form method="post" action="/p/GCC/t/337?form=submit&amp;formname=deltckattachs&amp;view=js" id="deltckattachs"><input value="1" name="user_id" type="hidden"><input value="337" name="ticket_id" type="hidden"><input value="" name="attach_id" type="hidden"></form></div></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy4 bglsb"></div></div></div></div><div class="curvy1 bgwhite"><div style="margin: 0px 1px; height: 1px;" class="bggray1"></div></div><div class="curvy2 bgwhite"><div style="margin: 0px 2px; height: 1px;" class="bggray1"></div></div><div class="curvy4 bgwhite"></div></div></div>
+                <div widgetid="tcktagblk" class="ml10 mt5 posr floatl" id="tcktagblk"><div><div class="curvy4 bgwhite"></div><div class="curvy2 bgwhite"><div style="margin: 0px 2px; height: 1px;" class="bggrn2"></div></div><div class="curvy1 bgwhite"><div style="margin: 0px 1px; height: 1px;" class="bggrn2"></div></div><div class="bgwhite"><div style="margin: 0px 1px;" class="p3 bggrn2"><span style="background: transparent url(/zetaicons/tag_green.png) no-repeat scroll 0pt 50%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" class="pl18 fggray pointer undrln" name="iconadd">Tag</span><span name="tagspans" class="m2"><span style="border-left: 1px solid gray;" tagname="PC" class="ml5 pl5"><a href="http://127.0.0.1:5000/tag/PC" class="fntsmall nodec mr2">PC</a><a class="fntxsmall vsuper pointer">× </a></span></span><div name="tagbox" style="top: 2.2em;" class="posa dispnone z99"><div class="curvy4 bglsb"></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="bglsb"><div style="margin: 0px 1px;" class="p3 bgaliceblue"><div><form widgetid="addtcktags" id="addtcktags" method="post" action="/p/GCC/t/337?form=submit&amp;formname=addtcktags&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit"><input value="1" name="user_id" type="hidden"><input value="337" name="ticket_id" type="hidden"><span class="ftbox"><input size="16" name="tags" type="text"></span></form></div></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy4 bglsb"></div></div><div name="tagbox" style="top: 2.2em;" class="posa dispnone z99"><div class="curvy4 bglsb"></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="bglsb"><div style="margin: 0px 1px;" class="p3 bgaliceblue"><div><form widgetid="deltcktags" id="deltcktags" method="post" action="/p/GCC/t/337?form=submit&amp;formname=deltcktags&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit"><input value="1" name="user_id" type="hidden"><input value="337" name="ticket_id" type="hidden"><span class="ftbox"><input size="16" name="tags" type="text"></span></form></div></div></div><div class="curvy1 bglsb"><div style="margin: 0px 1px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy2 bglsb"><div style="margin: 0px 2px; height: 1px;" class="bgaliceblue"></div></div><div class="curvy4 bglsb"></div></div></div></div><div class="curvy1 bgwhite"><div style="margin: 0px 1px; height: 1px;" class="bggrn2"></div></div><div class="curvy2 bgwhite"><div style="margin: 0px 2px; height: 1px;" class="bggrn2"></div></div><div class="curvy4 bgwhite"></div></div></div>
+            </div>
+            <div class="bclear"></div>
+            <div class="ml50 mr10">
+                <div name="depgraph">
+<svg width="350pt" height="262pt" viewbox="0.00 0.00 350.00 262.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 258)">
+
+<polygon style="fill: white; stroke: white;" points="-4,4 -4,-258 346,-258 346,4 -4,4">
+<!-- 337 -->
+<g id="node1" class="node">
+<a xlink:title="337" target="_blank">
+<ellipse style="fill: white; stroke: black;" cx="171" cy="-235" rx="27" ry="18.3848">
+<text text-anchor="middle" x="171" y="-231.4" style="font-family: Times New Roman;">337</text>
+</ellipse></a>
+</g>
+<!-- 184 -->
+<g id="node3" class="node">
+<a xlink:href="/p/dojo/t/184" xlink:title="FIXED -  fix an accidental global reference in firebug lit..." target="_blank">
+<polygon style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" points="42,-180 12,-180 1.06581e-14,-168 7.10543e-15,-156 12,-144 42,-144 54,-156 54,-168 42,-180">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M12,-180C6,-180 1.24345e-14,-174 1.06581e-14,-168">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M7.10543e-15,-156C5.32907e-15,-150 6,-144 12,-144">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M42,-144C48,-144 54,-150 54,-156">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M54,-168C54,-174 48,-180 42,-180">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="42,-180 12,-180 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M12,-180C6,-180 1.24345e-14,-174 1.06581e-14,-168">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="1.06581e-14,-168 7.10543e-15,-156 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M7.10543e-15,-156C5.32907e-15,-150 6,-144 12,-144">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="12,-144 42,-144 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M42,-144C48,-144 54,-150 54,-156">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="54,-156 54,-168 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M54,-168C54,-174 48,-180 42,-180">
+<text text-anchor="middle" x="27" y="-158.4" style="font-family: Times New Roman;">184</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337&#45;&gt;184 -->
+<g id="edge2" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M149,-224C127,-212 91,-194 63,-180">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="64.5596,-176.863 54,-176 61.7166,-183.26 64.5596,-176.863">
+</polygon>
+<!-- 315 -->
+<g id="node5" class="node">
+<a xlink:href="/p/nose/t/315" xlink:title="WONTFIX -  Added camelCase variants for context fixture func..." target="_blank">
+<polygon style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" points="114,-180 84,-180 72,-168 72,-156 84,-144 114,-144 126,-156 126,-168 114,-180">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M84,-180C78,-180 72,-174 72,-168">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M72,-156C72,-150 78,-144 84,-144">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M114,-144C120,-144 126,-150 126,-156">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M126,-168C126,-174 120,-180 114,-180">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="114,-180 84,-180 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M84,-180C78,-180 72,-174 72,-168">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="72,-168 72,-156 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M72,-156C72,-150 78,-144 84,-144">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="84,-144 114,-144 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M114,-144C120,-144 126,-150 126,-156">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="126,-156 126,-168 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M126,-168C126,-174 120,-180 114,-180">
+<text text-anchor="middle" x="99" y="-158.4" style="font-family: Times New Roman;">315</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337&#45;&gt;315 -->
+<g id="edge4" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M156,-220C147,-210 135,-198 124,-187">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="126.546,-184.596 117,-180 121.596,-189.546 126.546,-184.596">
+</polygon>
+<!-- 275 -->
+<g id="node7" class="node">
+<a xlink:href="/p/dojo/t/275" xlink:title="ASSIGN -  dnd: minor cleanup.   Normalize whitespace/nbsp h..." target="_blank">
+<polygon style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" points="186,-180 156,-180 144,-168 144,-156 156,-144 186,-144 198,-156 198,-168 186,-180">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M156,-180C150,-180 144,-174 144,-168">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M144,-156C144,-150 150,-144 156,-144">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M186,-144C192,-144 198,-150 198,-156">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M198,-168C198,-174 192,-180 186,-180">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="186,-180 156,-180 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M156,-180C150,-180 144,-174 144,-168">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="144,-168 144,-156 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M144,-156C144,-150 150,-144 156,-144">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="156,-144 186,-144 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M186,-144C192,-144 198,-150 198,-156">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="198,-156 198,-168 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M198,-168C198,-174 192,-180 186,-180">
+<text text-anchor="middle" x="171" y="-158.4" style="font-family: Times New Roman;">275</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337&#45;&gt;275 -->
+<g id="edge6" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M171,-216C171,-208 171,-199 171,-190">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="174.5,-190 171,-180 167.5,-190 174.5,-190">
+</polygon>
+<!-- 86 -->
+<g id="node9" class="node">
+<a xlink:href="/p/nose/t/86" xlink:title="ASSIGN -  Fixed for 2.3  Possibly fixed twisted error under..." target="_blank">
+<polygon style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" points="258,-180 228,-180 216,-168 216,-156 228,-144 258,-144 270,-156 270,-168 258,-180">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M228,-180C222,-180 216,-174 216,-168">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M216,-156C216,-150 222,-144 228,-144">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M258,-144C264,-144 270,-150 270,-156">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M270,-168C270,-174 264,-180 258,-180">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="258,-180 228,-180 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M228,-180C222,-180 216,-174 216,-168">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="216,-168 216,-156 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M216,-156C216,-150 222,-144 228,-144">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="228,-144 258,-144 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M258,-144C264,-144 270,-150 270,-156">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="270,-156 270,-168 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M270,-168C270,-174 264,-180 258,-180">
+<text text-anchor="middle" x="243" y="-158.4" style="font-family: Times New Roman;">86</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337&#45;&gt;86 -->
+<g id="edge8" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M186,-220C195,-210 207,-198 218,-187">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="220.404,-189.546 225,-180 215.454,-184.596 220.404,-189.546">
+</polygon>
+<!-- 126 -->
+<g id="node11" class="node">
+<a xlink:href="/p/ply/t/126" xlink:title="ACCEPT -  It is important to note that the error token usua..." target="_blank">
+<polygon style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" points="330,-180 300,-180 288,-168 288,-156 300,-144 330,-144 342,-156 342,-168 330,-180">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M300,-180C294,-180 288,-174 288,-168">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M288,-156C288,-150 294,-144 300,-144">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M330,-144C336,-144 342,-150 342,-156">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M342,-168C342,-174 336,-180 330,-180">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="330,-180 300,-180 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M300,-180C294,-180 288,-174 288,-168">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="288,-168 288,-156 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M288,-156C288,-150 294,-144 300,-144">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="300,-144 330,-144 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M330,-144C336,-144 342,-150 342,-156">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="342,-156 342,-168 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M342,-168C342,-174 336,-180 330,-180">
+<text text-anchor="middle" x="315" y="-158.4" style="font-family: Times New Roman;">126</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337&#45;&gt;126 -->
+<g id="edge10" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M193,-224C215,-212 251,-194 279,-180">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="280.283,-183.26 288,-176 277.44,-176.863 280.283,-183.26">
+</polygon>
+<!-- 307 -->
+<g id="node13" class="node">
+<a xlink:href="/p/mako/t/307" xlink:title="REOPEN -  added getattr/hasattr test   further try/except A..." target="_blank">
+<polygon style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" points="78,-108 48,-108 36,-96 36,-84 48,-72 78,-72 90,-84 90,-96 78,-108">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M48,-108C42,-108 36,-102 36,-96">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M36,-84C36,-78 42,-72 48,-72">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M78,-72C84,-72 90,-78 90,-84">
+<path style="fill: rgb(255, 225, 225); stroke: rgb(255, 225, 225);" d="M90,-96C90,-102 84,-108 78,-108">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="78,-108 48,-108 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M48,-108C42,-108 36,-102 36,-96">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="36,-96 36,-84 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M36,-84C36,-78 42,-72 48,-72">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="48,-72 78,-72 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M78,-72C84,-72 90,-78 90,-84">
+<polyline style="fill: none; stroke: rgb(255, 225, 225);" points="90,-84 90,-96 ">
+<path style="fill: none; stroke: rgb(255, 225, 225);" d="M90,-96C90,-102 84,-108 78,-108">
+<text text-anchor="middle" x="63" y="-86.4" style="font-family: Times New Roman;">307</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 315&#45;&gt;307 -->
+<g id="edge12" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M90,-144C86,-136 81,-126 76,-117">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="79.2598,-115.717 72,-108 72.8631,-118.56 79.2598,-115.717">
+</polygon>
+<!-- 255 -->
+<g id="node15" class="node">
+<a xlink:href="/p/dojo/t/255" xlink:title="DUPLICATE -  Fixes #5767 (debugAtAllCosts working with dojo sv..." target="_blank">
+<polygon style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" points="150,-108 120,-108 108,-96 108,-84 120,-72 150,-72 162,-84 162,-96 150,-108">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M120,-108C114,-108 108,-102 108,-96">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M108,-84C108,-78 114,-72 120,-72">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M150,-72C156,-72 162,-78 162,-84">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M162,-96C162,-102 156,-108 150,-108">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="150,-108 120,-108 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M120,-108C114,-108 108,-102 108,-96">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="108,-96 108,-84 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M108,-84C108,-78 114,-72 120,-72">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="120,-72 150,-72 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M150,-72C156,-72 162,-78 162,-84">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="162,-84 162,-96 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M162,-96C162,-102 156,-108 150,-108">
+<text text-anchor="middle" x="135" y="-86.4" style="font-family: Times New Roman;">255</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 315&#45;&gt;255 -->
+<g id="edge14" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M108,-144C112,-136 117,-126 122,-117">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="125.137,-118.56 126,-108 118.74,-115.717 125.137,-118.56">
+</polygon>
+<!-- 321 -->
+<g id="node19" class="node">
+<a xlink:href="/p/GCC/t/321" xlink:title="VERIFY -  Daily bump.  Correct datestamp of my most recent ..." target="_blank">
+<polygon style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" points="258,-108 228,-108 216,-96 216,-84 228,-72 258,-72 270,-84 270,-96 258,-108">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M228,-108C222,-108 216,-102 216,-96">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M216,-84C216,-78 222,-72 228,-72">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M258,-72C264,-72 270,-78 270,-84">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M270,-96C270,-102 264,-108 258,-108">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="258,-108 228,-108 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M228,-108C222,-108 216,-102 216,-96">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="216,-96 216,-84 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M216,-84C216,-78 222,-72 228,-72">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="228,-72 258,-72 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M258,-72C264,-72 270,-78 270,-84">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="270,-84 270,-96 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M270,-96C270,-102 264,-108 258,-108">
+<text text-anchor="middle" x="243" y="-86.4" style="font-family: Times New Roman;">321</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 86&#45;&gt;321 -->
+<g id="edge18" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M243,-144C243,-136 243,-127 243,-118">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="246.5,-118 243,-108 239.5,-118 246.5,-118">
+</polygon>
+<!-- 325 -->
+<g id="node17" class="node">
+<a xlink:href="/p/nose/t/325" xlink:title="WONTFIX -  More work on doc generation: added module attribu..." target="_blank">
+<polygon style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" points="78,-36 48,-36 36,-24 36,-12 48,-5.52644e-15 78,-1.57898e-15 90,-12 90,-24 78,-36">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M48,-36C42,-36 36,-30 36,-24">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M36,-12C36,-6 42,-6.31594e-15 48,-5.52644e-15">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M78,-1.57898e-15C84,-7.89492e-16 90,-6 90,-12">
+<path style="fill: rgb(235, 235, 235); stroke: rgb(235, 235, 235);" d="M90,-24C90,-30 84,-36 78,-36">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="78,-36 48,-36 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M48,-36C42,-36 36,-30 36,-24">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="36,-24 36,-12 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M36,-12C36,-6 42,-6.31594e-15 48,-5.52644e-15">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="48,-5.52644e-15 78,-1.57898e-15 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M78,-1.57898e-15C84,-7.89492e-16 90,-6 90,-12">
+<polyline style="fill: none; stroke: rgb(235, 235, 235);" points="90,-12 90,-24 ">
+<path style="fill: none; stroke: rgb(235, 235, 235);" d="M90,-24C90,-30 84,-36 78,-36">
+<text text-anchor="middle" x="63" y="-14.4" style="font-family: Times New Roman;">325</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 307&#45;&gt;325 -->
+<g id="edge16" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M63,-72C63,-64 63,-55 63,-46">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="66.5001,-46 63,-36 59.5001,-46 66.5001,-46">
+</polygon>
+</path>
+</g>
+
+                
+                </path></g></path></g></path></g></path></g></path></g></path></g></path></g></path></g></polygon></g></svg></div>
+                <div name="hiergraph">
+                    
+                    
+<svg width="62pt" height="118pt" viewbox="0.00 0.00 62.00 118.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 114)">
+
+<polygon style="fill: white; stroke: white;" points="-4,4 -4,-114 58,-114 58,4 -4,4">
+<!-- 24 -->
+<g id="node1" class="node">
+<a xlink:href="/p/JavaScript/t/24" xlink:title="VERIFY -  Don't optimize variable names in with statements...." target="_blank">
+<polygon style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" points="42,-110 12,-110 1.06581e-14,-98 7.10543e-15,-86 12,-74 42,-74 54,-86 54,-98 42,-110">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M12,-110C6,-110 1.24345e-14,-104 1.06581e-14,-98">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M7.10543e-15,-86C5.32907e-15,-80 6,-74 12,-74">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M42,-74C48,-74 54,-80 54,-86">
+<path style="fill: rgb(255, 252, 225); stroke: rgb(255, 252, 225);" d="M54,-98C54,-104 48,-110 42,-110">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="42,-110 12,-110 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M12,-110C6,-110 1.24345e-14,-104 1.06581e-14,-98">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="1.06581e-14,-98 7.10543e-15,-86 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M7.10543e-15,-86C5.32907e-15,-80 6,-74 12,-74">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="12,-74 42,-74 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M42,-74C48,-74 54,-80 54,-86">
+<polyline style="fill: none; stroke: rgb(255, 252, 225);" points="54,-86 54,-98 ">
+<path style="fill: none; stroke: rgb(255, 252, 225);" d="M54,-98C54,-104 48,-110 42,-110">
+<text text-anchor="middle" x="27" y="-88.4" style="font-family: Times New Roman;">24</text>
+</path></polyline></path></polyline></path></polyline></path></polyline></path></path></path></path></polygon></a>
+</g>
+<!-- 337 -->
+<g id="node3" class="node">
+<a xlink:title="337" target="_blank">
+<ellipse style="fill: white; stroke: black;" cx="27" cy="-19" rx="27" ry="18.3848">
+<text text-anchor="middle" x="27" y="-15.4" style="font-family: Times New Roman;">337</text>
+</ellipse></a>
+</g>
+<!-- 24&#45;&gt;337 -->
+<g id="edge2" class="edge">
+<path style="fill: none; stroke: rgb(31, 219, 253); stroke-width: 0.3;" d="M27,-74C27,-66 27,-57 27,-48">
+<polygon style="fill: rgb(31, 219, 253); stroke: rgb(31, 219, 253);" points="30.5001,-48 27,-38 23.5001,-48 30.5001,-48">
+</polygon>
+</path>
+</g>
+
+                </polygon></g></svg></div>
+            </div>
+            <div class="ml10 mr10">
+                <div class="m2 p5" style="border: 1px solid gray; background: rgb(250, 250, 250) none repeat scroll 0% 0%; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; top: 1.2em; margin-left: 0px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" name="tckboard">
+                    
+    
+    <div class="w100 ralign fgcrimson fntbold pr10">
+        Created by, <a href="http://127.0.0.1:5000/u/abhilashabg">abhilashabg</a>,
+        on Wed, Apr 14, 2010
+    </div>
+    <div class="disptable">
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Summary</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_0" id="dijit_InlineEditBox_0" tabindex="0" role="button" name="summary" class="fntbold inedit">Revert part of r147883 that breaks ABI  	* config...</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <span class="togglest floatr pointer fgblue">Change-status</span>
+    <div class="viewst">
+    <div class="disptable">
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">status</span>
+            </div>
+            <div class="p5 disptcell">
+                <span name="tck_statusname" class="fntbold undrln">
+                    REOPEN</span>
+            </div>
+            <div class="p5 disptcell">
+                <span class="">Duedate</span>
+            </div>
+            <div class="p5 disptcell">
+                <span name="due_date" class="fntbold">
+                    Wed, May 05, 2010
+                </span>
+            </div>
+            <div class="p5 disptcell">
+                <span class="">Owner</span>
+            </div>
+            <div class="p5 disptcell">
+                <span name="owner" class="fntbold">ajantagc</span>
+            </div>
+            <div class="p5 ml50 disptcell">
+                <span class="fggreen">( 20.00 days left )</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="changest dispnone">
+        
+    
+    <form widgetid="createtstat" id="createtstat" method="post" action="/p/GCC/t/337?form=submit&amp;formname=createtstat&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="owner" value="1" type="hidden">
+
+    <div style="display: table;">
+    <div style="display: table-row;">
+        <div class="p5" style="display: table-cell;">
+            <div class="dispinln">status :</div>
+        </div>
+        <div class="p5" style="display: table-cell;">
+            <div class="dispinln">
+                
+    
+    <select id="tck_statusname" name="tck_statusname">
+            <option value="accept">accept</option>
+            <option value="assign">assign</option>
+            <option value="duplicate">duplicate</option>
+            <option value="fixed">fixed</option>
+            <option value="new">new</option>
+            <option value="open">open</option>
+            <option value="reopen" selected="selected">reopen</option>
+            <option value="review">review</option>
+            <option value="verify">verify</option>
+            <option value="wontfix">wontfix</option>
+    </select>
+
+            </div>
+        </div>
+        <div class="p5" style="display: table-cell;">
+            <div class="dispinln" style="width: 12em;">due date :</div>
+        </div>
+        <div class="p5" style="display: table-cell;">
+            <div class="fdtbox dispinln" style="margin: 0px; float: none; text-align: center;">
+                
+    
+    <div widgetid="tsduedate" role="presentation" class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitDateTextBox" id="widget_tsduedate" dojoattachevent="onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse" wairole="presentation"><div style="overflow: hidden;"><div class="dijitReset dijitValidationIcon"><br></div><div class="dijitReset dijitValidationIconText">Χ</div><div class="dijitReset dijitInputField"><input value="05/05/2010" aria-required="false" tabindex="0" id="tsduedate" aria-invalid="false" aria-valuenow="Wed May 05 2010 00:00:00 GMT+0530 (IST)" class="dijitReset" dojoattachpoint="textbox,focusNode" autocomplete="off" type="text"><input value="2010-05-05" name="due_date" type="hidden"></div></div></div>
+
+            </div>
+        </div>
+        <div class="p5" style="display: table-cell;">
+            <div class="dispinln">
+    
+    <span widgetid="dijit_form_Button_3" class="dijit dijitReset dijitLeft dijitInline dijitButton" dojoattachevent="onclick:_onButtonClick,onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse"><span class="dijitReset dijitRight dijitInline"><span class="dijitReset dijitInline dijitButtonNode"><button style="-moz-user-select: none;" tabindex="0" id="dijit_form_Button_3" aria-labelledby="dijit_form_Button_3_label" role="button" class="dijitReset dijitStretch dijitButtonContents" dojoattachpoint="titleNode,focusNode" type="submit" value="" wairole="button" waistate="labelledby-dijit_form_Button_3_label"><span class="dijitReset dijitInline" dojoattachpoint="iconNode"><span class="dijitReset dijitToggleButtonIconChar">✓</span></span><span class="dijitReset dijitInline dijitButtonText" id="dijit_form_Button_3_label" dojoattachpoint="containerNode">Change</span></button></span></span></span>
+</div>
+        </div>
+    </div>
+    </div>
+    </form>
+
+    </div>
+    <hr>
+    <div class="disptable">
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Type</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_1" id="dijit_InlineEditBox_1" tabindex="0" role="button" name="tck_typename" class="fntbold inedit">document</span>
+            </div>
+            <div class="p5 disptcell">
+                <span class=""> Severity</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_2" id="dijit_InlineEditBox_2" tabindex="0" role="button" name="tck_severityname" class="fntbold inedit">major</span>
+            </div>
+        </div>
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Component</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_3" id="dijit_InlineEditBox_3" tabindex="0" role="button" name="component_id" class="fntbold inedit"><span style="font-family: wingdings; text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+            </div>
+            <div class="p5 disptcell">
+                <span class=""> Milestone</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_4" id="dijit_InlineEditBox_4" tabindex="0" role="button" name="milestone_id" class="fntbold inedit">GCC-milestone6</span>
+            </div>
+            <div class="p5 disptcell">
+                <span class=""> Version</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_5" id="dijit_InlineEditBox_5" tabindex="0" role="button" name="version_id" class="fntbold inedit">GCC-ver1</span>
+            </div>
+        </div>
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Prompting</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_6" id="dijit_InlineEditBox_6" tabindex="0" role="button" name="promptuser" class="fntbold inedit">ajantagc</span>
+            </div>
+        </div>
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Parent</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_7" id="dijit_InlineEditBox_7" tabindex="0" role="button" name="parent_id" class="fntbold inedit">24</span>
+            </div>
+            <div class="p5 disptcell">
+                <span class=""> Children</span>
+            </div>
+            <div class="p5 disptcell">
+                <span class="fntbold"></span>
+            </div>
+        </div>
+        <div class="disptrow">
+            <div class="p5 disptcell">
+                <span class="">Blockers</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_8" id="dijit_InlineEditBox_8" tabindex="0" role="button" name="blockedby_ids" class="fntbold inedit"><span style="font-family: wingdings; text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;✍&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+            </div>
+            <div class="p5 disptcell">
+                <span class=""> Blocking</span>
+            </div>
+            <div class="p5 disptcell">
+                <span widgetid="dijit_InlineEditBox_9" id="dijit_InlineEditBox_9" tabindex="0" role="button" name="blocking_ids" class="fntbold inedit">184, 315, 275, 86, 126</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="p5">
+        <div class="fntbold">Description</div>
+        <div class=""><blockquote>
+            <span widgetid="dijit_InlineEditBox_10" id="dijit_InlineEditBox_10" tabindex="0" role="button" name="description" class="inedit">Revert part of r147883 that breaks ABI<br><br>	* config/mips/mips.c (mips_print_operand) &amp;lt;REG, MEM, default&amp;gt;:<br>	Check for invalid values of LETTER.<br><br><br>	PR c++/40013<br>	* pt.c (tsubst): If magic NOP_EXPR with side-effects has no type,<br>	set it from its operand's type after tsubst_expr.<br><br>	* g++.dg/ext/vla7.C: New test.<br><br><br>	PR fortran/22423<br><br>	* io/transfer.c (read_block_direct): Avoid warning.<br>	* runtime/string.c (compare0): Avoid warning.<br><br><br><br>	PR fortran/40168<br>	* trans-expr.c (gfc_trans_zero_assign): For local array<br>	destinations use an assignment from an empty constructor.<br><br>	* gfortran.dg/array_memset_2.f90: Adjust.<br><br><br><br>	* tree-ssa-pre.c (eliminate): Use TODO_update_ssa_only_virtuals,<br>	not TODO_update_ssa.</span>
+        </blockquote></div>
+    </div>
+    
+    <form widgetid="tcksummary" id="tcksummary" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="summary" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tcktype" id="tcktype" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="tck_typename" value="document" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckseverity" id="tckseverity" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="tck_severityname" value="major" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckcomponent" id="tckcomponent" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="component_id" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckmilestone" id="tckmilestone" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="milestone_id" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckversion" id="tckversion" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="version_id" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckpromptuser" id="tckpromptuser" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="promptuser" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckparent" id="tckparent" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="parent_id" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckblockedby" id="tckblockedby" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="blockedby_ids" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckblocking" id="tckblocking" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="blocking_ids" type="hidden">
+
+    </form>
+
+    
+    <form widgetid="tckdescription" id="tckdescription" method="post" action="/p/GCC/t?form=submit&amp;formname=configtck&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="description" type="hidden">
+
+    </form>
+
+
+                </div>
+            </div>
+            <div class="commentbox ml10 mr10">
+                <div class="bclear"><a name="comments"></a></div>
+                <div widgetid="tcomments" id="tcomments" class="commentcontainer bclear">  <div class="posr floatr pointer fgblue p5"> | Conversation</div>  <div class="posr floatr pointer fgblue p5">AddComment</div>  <h3 class="p5 bggray1" style="border-top: 1px solid rgb(214, 214, 214);" ;="">      <a name="comments">18 Comments</a>  </h3><div id="createtcmt_cntnr" style="border: 1px dotted gray;" class="dispnone bclear mb10 pl3 pt3 w80">
+                    <div class="posr fntbold">Add your comment :</div>
+                    
+    <form widgetid="createtcmt" id="createtcmt" method="post" action="/p/GCC/t/337?form=submit&amp;formname=createtcmt&amp;view=js" dojoattachpoint="containerNode" dojoattachevent="onreset:_onReset,onsubmit:_onSubmit">
+    
+    
+    <input name="user_id" value="1" type="hidden">
+
+    
+    
+    <input name="project_id" value="2" type="hidden">
+
+    
+    
+    <input name="ticket_id" value="337" type="hidden">
+
+    
+    
+    <input name="commentby" value="admin" type="hidden">
+
+    <div class="w100 form">
+        <div class="w80">
+            
+    <div class="w100 mb5 fntitalic fntbold fggray">
+        Use wiki markup to compose ticket comment.
+        <a href="http://127.0.0.1:5000/help/zwiki">Zwiki reference</a>
+    </div>
+
+            
+    
+    <textarea class="dijitTextArea" style="overflow-y: hidden; overflow-x: auto; -moz-box-sizing: border-box; height: auto;" value="" widgetid="crtcmt_text" tabindex="0" id="crtcmt_text" rows="1" name="text" dojoattachpoint="focusNode,containerNode,textbox" autocomplete="off"></textarea>
+
+        </div>
+        <div>
+    
+    <span widgetid="dijit_form_Button_0" class="dijit dijitReset dijitLeft dijitInline dijitButton" dojoattachevent="onclick:_onButtonClick,onmouseenter:_onMouse,onmouseleave:_onMouse,onmousedown:_onMouse"><span class="dijitReset dijitRight dijitInline"><span class="dijitReset dijitInline dijitButtonNode"><button style="-moz-user-select: none;" tabindex="0" id="dijit_form_Button_0" aria-labelledby="dijit_form_Button_0_label" role="button" class="dijitReset dijitStretch dijitButtonContents" dojoattachpoint="titleNode,focusNode" type="submit" value="" wairole="button" waistate="labelledby-dijit_form_Button_0_label"><span class="dijitReset dijitInline" dojoattachpoint="iconNode"><span class="dijitReset dijitToggleButtonIconChar">✓</span></span><span class="dijitReset dijitInline dijitButtonText" id="dijit_form_Button_0_label" dojoattachpoint="containerNode">Add</span></button></span></span></span>
+</div>
+    </div>
+    </form>
+
+                </div>  <div><div cmtid="3228" widgetid="zeta_Comment_0" id="zeta_Comment_0" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(0, 0, 0);" class="nodec fntbold" href="http://127.0.0.1:5000/u/abhilashabg">abhilashabg</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:27 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> gcse.c (gcse_constant_p): Fix typo in last change.</li></ul>
+
+</div></div></div></div><div cmtid="3229" widgetid="zeta_Comment_1" id="zeta_Comment_1" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(0, 0, 255);" class="nodec fntbold" href="http://127.0.0.1:5000/u/abuca">abuca</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:27 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>PR target/39531
+</p><p></p><ul><li style=""> config/m68k/m68k.c (output_andsi3): Mask
+off sign bit copiesbefore calling exact_log2.(output_iorsi3):
+Likewise.(output_xorsi3): Likewise.</li></ul>
+
+</div></div></div></div><div cmtid="3230" widgetid="zeta_Comment_2" id="zeta_Comment_2" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(138, 43, 226);" class="nodec fntbold" href="http://127.0.0.1:5000/u/balakrishnanjk">balakrishnanjk</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:27 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> include/parallel/settings.h (get): Mark const.</li><li style=""> libsupc++/unwind-cxx.h (__cxa_call_terminate): Mark throw ().</li><li style=""> libsupc++/eh_call.cc (__cxa_call_terminate): Mark throw ().</li><li style=""> config/io/basic_file_stdio.cc (sys_open, is_open, fd, seekoff): Mark	throw ().</li><li style="">
+config/io/basic_file_stdio.h (__basic_file, sys_open): Mark throw ().
+(is_open, fd): Mark pure and throw (). (seekoff): Mark throw ().</li></ul>
+
+</div></div></div></div><div cmtid="3231" widgetid="zeta_Comment_3" id="zeta_Comment_3" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(165, 42, 42);" class="nodec fntbold" href="http://127.0.0.1:5000/u/inaoe">inaoe</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:28 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>Fix typo in comment in previous commit.
+</p>
+
+</div></div></div></div><div cmtid="3232" widgetid="zeta_Comment_4" id="zeta_Comment_4" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(222, 184, 135);" class="nodec fntbold" href="http://127.0.0.1:5000/u/admin">admin</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:28 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> config/mips/mips.md (*extenddi_truncate&lt;mode&gt;,</li><li style="">extendsi_truncate&lt;mode&gt;):
+Emit exts if supported. Add attribute defintions.
+(*extendhi_truncateqi): New define_insn_and_sptit.</li></ul>
+<p>testsuite/
+</p><p></p><ul><li style=""> gcc.target/mips/octeon-exts-6.c: New test.</li><li style=""> gcc.target/mips/extend-1.c: New test.</li><li style=""> gcc.target/mips/octeon-exts-2.c: Adjust to not match sign-extension	EXTS.</li><li style=""> gcc.target/mips/octeon-exts-5.c: Likewise.</li></ul>
+
+</div></div></div></div><div cmtid="3233" widgetid="zeta_Comment_5" id="zeta_Comment_5" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(95, 158, 160);" class="nodec fntbold" href="http://127.0.0.1:5000/u/nachikde">nachikde</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:29 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style="">
+config/i386/i386.c (memory_address_length): Handle %r12 the same as
+%rsp and %r13 the same as %rbp. For %rsp and %rbp also check REGNO.
+(ix86_attr_length_address_default): For MODE_SI lea in 64-bit mode look
+through optional ZERO_EXTEND and SUBREG.</li><li style="">
+config/i386/i386.md (R12_REG): New define_constant. (prefix_data16):
+For sse unit set also for MODE_TI insns. (prefix_rex): For -m32 always
+return 0. For TYPE_IMOVX insns set if operand 1 is ext_QIreg_operand.
+(modrm): For TYPE_IMOV clear only if not MODE_DI. For
+TYPE_{ALU{,1},ICMP,TEST} insn clear if there is non-shortened
+immediate. (*movdi_extzv_1, zero_extendhidi2, zero_extendqidi2): Change
+mode from MODE_DI to MODE_SI. (movdi_1_rex64): Override modrm and
+length_immediate attributes only for movabs (TYPE_IMOV, alternative 2).
+(zero_extendsidi2_rex64): Clear prefix_0f attribute if TYPE_IMOVX.
+(*float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_mixed_interunit,</li><li style="">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_mixed_nointerunit,</li><li style="">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_sse_interunit,</li><li style="">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_sse_nointerunit):
+Set prefix_rex attribute if DImode. (*adddi_1_rex64, *adddi_2_rex64,
+*adddi_3_rex64, *adddi_5_rex64,</li><li style="">addsi_1, *addsi_1_zext, *addsi_2, *addsi_2_zext, *addsi_3,</li><li style="">addsi_3_zext, *addsi_5, *addhi_1_lea, *addhi_1, *addhi_2, *addhi_3,</li><li style="">addhi_5,
+*addqi_1_lea, *addqi_1): Override length_immediate attribute to 1 if
+TYPE_ALU and operand 2 is const128_operand.
+(pro_epilogue_adjust_stack_1, pro_epilogue_adjust_stack_rex64):
+Likewise. For TYPE_IMOV clear length_immediate attribute.
+(*ashldi3_1_rex64, *ashldi3_cmp_rex64, *ashldi3_cconly_rex64,</li><li style="">ashlsi3_1, *ashlsi3_1_zext, *ashlsi3_cmp, **ashlsi3_cconly,</li><li style="">ashlsi3_cmp_zext, *ashlhi3_1_lea, *ashlhi3_1, *ashlhi3_cmp,</li><li style="">ashlhi3_cconly, *ashlqi3_1_lea, *ashlqi3_1, *ashlqi3_cmp,</li><li style="">ashlqi3_cconly):
+Override length_immediate attribute to 0 if TYPE_ALU or one operand
+TYPE_ISHIFT. (*ashrdi3_1_one_bit_rex64, *ashrdi3_one_bit_cmp_rex64,</li><li style="">ashrdi3_one_bit_cconly_rex64, *ashrsi3_1_one_bit,</li><li style="">ashrsi3_1_one_bit_zext, *ashrsi3_one_bit_cmp,</li><li style="">ashrsi3_one_bit_cconly, *ashrsi3_one_bit_cmp_zext,</li><li style="">ashrhi3_1_one_bit, *ashrhi3_one_bit_cmp, *ashrhi3_one_bit_cconly,</li><li style="">ashrqi3_1_one_bit, *ashrqi3_1_one_bit_slp, *ashrqi3_one_bit_cmp,</li><li style="">ashrqi3_one_bit_cconly, *lshrdi3_1_one_bit_rex64,</li><li style="">lshrdi3_cmp_one_bit_rex64, *lshrdi3_cconly_one_bit_rex64,</li><li style="">lshrsi3_1_one_bit, *lshrsi3_1_one_bit_zext, *lshrsi3_one_bit_cmp,</li><li style="">lshrsi3_one_bit_cconly, *lshrsi3_cmp_one_bit_zext,</li><li style="">lshrhi3_1_one_bit, *lshrhi3_one_bit_cmp, *lshrhi3_one_bit_cconly,</li><li style="">lshrqi3_1_one_bit, *lshrqi3_1_one_bit_slp, *lshrqi2_one_bit_cmp,</li><li style="">lshrqi2_one_bit_cconly, *rotlsi3_1_one_bit_rex64, *rotlsi3_1_one_bit,</li><li style="">rotlsi3_1_one_bit_zext, *rotlhi3_1_one_bit, *rotlqi3_1_one_bit_slp,</li><li style="">rotlqi3_1_one_bit, *rotrdi3_1_one_bit_rex64, *rotrsi3_1_one_bit,</li><li style="">rotrsi3_1_one_bit_zext, *rotrhi3_one_bit, *rotrqi3_1_one_bit,</li><li style="">rotrqi3_1_one_bit_slp):
+Override length_immediate attribute to 0, set mode attribute, don't
+override length attribute. (*btsq, *btrq, *btcq, *btdi_rex64, *btsi):
+Set prefix_0f attribute to 1. (return_internal_long): Set length
+attribute to 2 instead of 1. (*strmovqi_rex_1, *strsetqi_rex_1,
+*rep_stosqi_rex64,</li><li style="">cmpstrnqi_nz_rex_1, *cmpstrnqi_rex_1, *strlenqi_rex_1): Clear	prefix_rex attribute.</li><li style="">
+config/i386/predicates.md (ext_QIreg_operand, const128_operand): New
+predicates. (memory_displacement_only_operand): Always return 0 for
+TARGET_64BIT.</li></ul>
+
+</div></div></div></div><div cmtid="3234" widgetid="zeta_Comment_6" id="zeta_Comment_6" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(138, 43, 226);" class="nodec fntbold" href="http://127.0.0.1:5000/u/balakrishnanjk">balakrishnanjk</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:29 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>	PR tree-optimization/40081
+	Revert
+</p><p></p><ul><li style=""> tree-sra.c (instantiate_element):
+Instantiate scalar replacements using the main variant of the element
+type. Do not fiddle with TREE_THIS_VOLATILE or TREE_SIDE_EFFECTS.</li></ul>
+<p></p><ul><li style=""> tree-sra.c (sra_type_can_be_decomposed_p): Do not decompose	structs with volatile fields.</li></ul>
+
+</div></div></div></div><div cmtid="3235" widgetid="zeta_Comment_7" id="zeta_Comment_7" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(127, 255, 0);" class="nodec fntbold" href="http://127.0.0.1:5000/u/balakrishnanto">balakrishnanto</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:29 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>Daily bump.
+</p>
+</div></div></div></div><div cmtid="3236" widgetid="zeta_Comment_8" id="zeta_Comment_8" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(210, 105, 30);" class="nodec fntbold" href="http://127.0.0.1:5000/u/abhahi">abhahi</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:30 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style="">
+config/rs6000/linux-unwind.h (get_regs): Remove type puns. Change the
+type of `pc' to an array of unsigned ints and update all users.
+Constify frame24.</li></ul>
+
+</div></div></div></div><div cmtid="3237" widgetid="zeta_Comment_9" id="zeta_Comment_9" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(95, 158, 160);" class="nodec fntbold" href="http://127.0.0.1:5000/u/nachikde">nachikde</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:30 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style="">
+sem_ch8.adb (Analyze_Subprogram_Renaming): Improve error message on
+box-defaulted operator in an instantiation, when the type of the
+operands is not directly visible.</li></ul>
+
+<p></p><ul><li style=""> sem_aggr.adb (Valid_Limited_Ancestor): Undo
+previous change. (Resolve_Extension_Aggregate): Call
+Check_Parameterless_Call after the analysis of the ancestor part.
+Remove prohibition against limited interpretations of the ancestor
+expression in the case of Ada 2005. Revise error message in overloaded
+case, adding a message to cover the Ada 2005 case.</li></ul>
+
+<p></p><ul><li style=""> xoscons.adb: Minor reformatting</li></ul>
+
+<p></p><ul><li style=""> sem_ch13.adb
+(Analyze_Attribute_Definition_Clause): Do not ignore
+attribute_definition_clauses for the following attributes when the
+-gnatI switch is used: External_Tag, Input, Output, Read, Storage_Pool,
+Storage_Size, Write. Otherwise, we get spurious errors (for example,
+missing Read attribute on remote types).</li></ul>
+<p></p><ul><li style=""> gnat_ugn.texi: Document the change, and add a stern warning.</li></ul>
+
+<p></p><ul><li style=""> sem_attr.adb (Check_Local_Access): Indicate
+that value tracing is disabled not just for the current scope, but for
+the innermost dynamic scope as well.</li></ul>
+
+
+</div></div></div></div><div cmtid="3238" widgetid="zeta_Comment_10" id="zeta_Comment_10" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(165, 42, 42);" class="nodec fntbold" href="http://127.0.0.1:5000/u/inaoe">inaoe</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:30 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>Minor clean ups.
+</p>
+
+</div></div></div></div><div cmtid="3239" widgetid="zeta_Comment_11" id="zeta_Comment_11" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(255, 127, 80);" class="nodec fntbold" href="http://127.0.0.1:5000/u/anonymous">anonymous</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:31 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> freeze.adb (Freeze_Record_Type): Improve error msg for bad size	clause.</li></ul>
+
+<p></p><ul><li style=""> g-socthi-vms.adb (C_Recvmsg, C_Sendmsg): Convert Msg to appropriate	packed type, since on OpenVMS, struct msghdr is packed.</li></ul>
+
+<p></p><ul><li style=""> sem_ch8.adb (Analyze_Object_Renaming): If the
+object is a function call returning an unconstrained composite value,
+create the proper subtype for it, as is done for object dclarations
+with unconstrained nominal subtypes. Perform this transformation
+regarless of whether call comes from source.</li></ul>
+
+
+</div></div></div></div><div cmtid="3240" widgetid="zeta_Comment_12" id="zeta_Comment_12" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(165, 42, 42);" class="nodec fntbold" href="http://127.0.0.1:5000/u/inaoe">inaoe</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:31 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>	PR fortran/39688
+</p><p></p><ul><li style=""> decl.c (gfc_match_import): Use 'sym-&gt;name' instead of 'name'.	They differ if the symbol has been use-renamed.</li></ul>
+
+
+<p>	PR fortran/39688
+</p><p></p><ul><li style=""> gfortran.dg/import7.f90: New.</li></ul>
+
+
+</div></div></div></div><div cmtid="3241" widgetid="zeta_Comment_13" id="zeta_Comment_13" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(255, 127, 80);" class="nodec fntbold" href="http://127.0.0.1:5000/u/anonymous">anonymous</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:32 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> inclhack.def (glibc_tgmath): Correct bypass.</li><li style=""> fixincl.x: Regenerate.</li></ul>
+
+</div></div></div></div><div cmtid="3242" widgetid="zeta_Comment_14" id="zeta_Comment_14" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(100, 149, 237);" class="nodec fntbold" href="http://127.0.0.1:5000/u/rabinderuc">rabinderuc</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:32 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> gcc.target/i386/pr39543-2.c: Skip if ilp32 &amp;&amp; pic.</li></ul>
+
+
+</div></div></div></div><div cmtid="3243" widgetid="zeta_Comment_15" id="zeta_Comment_15" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(222, 184, 135);" class="nodec fntbold" href="http://127.0.0.1:5000/u/admin">admin</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:32 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>Fix typo in ChangeLog
+</p>
+</div></div></div></div><div cmtid="3244" widgetid="zeta_Comment_16" id="zeta_Comment_16" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(95, 158, 160);" class="nodec fntbold" href="http://127.0.0.1:5000/u/nachikde">nachikde</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:33 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p>Add support for arm1156tf-s
+</p>
+</div></div></div></div><div cmtid="3245" widgetid="zeta_Comment_17" id="zeta_Comment_17" class="comment mt5 mb10 mr2" style="border-left: 3px solid rgb(214, 214, 214);">    <div class="pl5 bggray1 cmthdr" style="border-top: 1px solid rgb(214, 214, 214); height: 1.5em;"><div class="posr floatr ml5 pointer fgblue"> | Reply</div><div class="posr floatr ml5 pointer fgblue">Fold</div><a style="color: rgb(138, 43, 226);" class="nodec fntbold" href="http://127.0.0.1:5000/u/balakrishnanjk">balakrishnanjk</a><span class="ml2 fntitalic">, on 14 Apr 2010, 04:59:33 PM</span></div>    <div class="pl10 mr10 cmttext"><div class="wikiblk"><div style="white-space: normal;"><p></p><ul><li style=""> cgraph.c (dump_cgraph_node): Dump size/time/benefit.</li><li style="">
+cgraph.h (struct inline_summary): New filed self_wize,
+size_inlining_benefit, self_time and time_inlining_benefit. (struct
+cgraph_global_info): Replace insns by time ans size fields.</li><li style="">
+ipa-cp (ipcp_cloning_candidate_p): Base estimate on size
+(ipcp_estimate_growth, ipcp_insert_stage): Likewise.
+(ipcp_update_callgraph): Do not touch function bodies.</li><li style="">
+ipa-inline.c: Include except.h MAX_TIME: New constant. (overall_insns):
+Remove (overall_size, max_benefit): New static variables.
+(cgraph_estimate_time_after_inlining): New function.
+(cgraph_estimate_size_after_inlining): Rewrite using benefits.
+(cgraph_clone_inlined_nodes): Update size. (cgraph_mark_inline_edge):
+Update size. (cgraph_estimate_growth): Use size info.
+(cgraph_check_inline_limits): Check size. (cgraph_default_inline_p):
+Likewise. (cgraph_edge_badness): Compute badness based on benefit and
+size cost. (cgraph_decide_recursive_inlining): Check size.
+(cgraph_decide_inlining_of_small_function): Update size; dump sizes and
+times. (cgraph_decide_inlining): Likewise.
+(cgraph_decide_inlining_incrementally): Likewise; honor
+PARAM_EARLY_INLINING_INSNS. (likely_eliminated_by_inlining_p): New
+predicate. (estimate_function_body_sizes): New function.
+(compute_inline_parameters): Use it.</li><li style=""> except.c (must_not_throw_labels): New function.</li><li style=""> except.h (must_not_throw_labels): Declare.</li><li style=""> tree-inline.c (init_inline_once): Kill inlining_weigths</li><li style=""> tree-ssa-structalias.c: Avoid uninitialized warning.</li><li style="">
+params.def (PARAM_MAX_INLINE_INSNS_SINGLE): Reduce to 300.
+(PARAM_MAX_INLINE_INSNS_AUTO): Reduce to 60. (PARAM_INLINE_CALL_COST):
+Remove. (PARAM_EARLY_INLINING_INSNS): New. doc/invoke.texi
+(max-inline-insns-auto, early-inlining-insns): Update.
+(inline-call-cost): Remove. (early-inlining-insns): New.</li></ul>
+
+</div></div></div></div></div></div>
+                
+                
+                
+            </div>
+        </div>
+        <div class="disptcell calign vtop" style="border-left: 4px solid rgb(242, 242, 242); width: 13%;">
+            
+    
+    <div class="p3" style="border-bottom: 2px solid rgb(242, 242, 242);">
+        <div class="fntbold">Status Flow</div>
+        <div>(in reverse chonology)</div>
+    </div>
+    
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">reopen</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/ajantagc">ajantagc</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 12.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">open</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/ajantagc">ajantagc</a></div>
+        <div class="p2">
+            Fri, Apr 23, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fgred p2">overrun by 1.00 day</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fggray p2 fntbold">fixed</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/balakrishnanjk">balakrishnanjk</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 6.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fggray p2 fntbold">duplicate</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/indudeepdk">indudeepdk</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 75.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">assign</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/balakrishnanjk">balakrishnanjk</a></div>
+        <div class="p2">
+            Sun, Jun 13, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fgred p2">overrun by 5.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">accept</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/abhahi">abhahi</a></div>
+        <div class="p2">
+            Thu, May 13, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fgred p2">overrun by 4.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fggray p2 fntbold">wontfix</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/abhilashabg">abhilashabg</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 9.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">verify</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/sabeerpb">sabeerpb</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 18.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">review</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/abhahi">abhahi</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+        
+    
+    <div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+        <div class="fggreen p2">beaten by 17.00 days</div>
+        <div>
+            <div style="border-right: 2px solid rgb(242, 242, 242); width: 49%; height: 1em;"> 
+            </div>
+        </div>
+    </div>
+
+        
+        
+    
+    <div class="p3">
+        <div class="fgblue p2 fntbold">new</div>
+        <div class="p2">by, <a href="http://127.0.0.1:5000/u/abhilashabg">abhilashabg</a></div>
+        <div class="p2">
+            Wed, Apr 14, 2010
+        </div>
+    </div>
+
+
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        items_tckcomments = {"items": [{"text": "\n\t* gcse.c (gcse_constant_p): Fix typo in last change.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> gcse.c (gcse_constant_p): Fix typo in last change.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3228, "commentbyurl": "/u/abhilashabg", "commentby": "abhilashabg", "datestr": "14 Apr 2010, 04:59:27 PM", "commentbyicon": ""}, {"text": "\nPR target/39531\n* config/m68k/m68k.c (output_andsi3): Mask off sign bit copies\nbefore calling exact_log2.\n(output_iorsi3): Likewise.\n(output_xorsi3): Likewise.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>PR target/39531\n</p><p><ul><li style=\"\"> config/m68k/m68k.c (output_andsi3): Mask off sign bit copiesbefore calling exact_log2.(output_iorsi3): Likewise.(output_xorsi3): Likewise.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3229, "commentbyurl": "/u/abuca", "commentby": "abuca", "datestr": "14 Apr 2010, 04:59:27 PM", "commentbyicon": ""}, {"text": "\n\t* include/parallel/settings.h (get): Mark const.\n\t* libsupc++/unwind-cxx.h (__cxa_call_terminate): Mark throw ().\n\t* libsupc++/eh_call.cc (__cxa_call_terminate): Mark throw ().\n\t* config/io/basic_file_stdio.cc (sys_open, is_open, fd, seekoff): Mark\n\tthrow ().\n\t* config/io/basic_file_stdio.h (__basic_file, sys_open): Mark throw ().\n\t(is_open, fd): Mark pure and throw ().\n\t(seekoff): Mark throw ().\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> include/parallel/settings.h (get): Mark const.</li><li style=\"\"> libsupc++/unwind-cxx.h (__cxa_call_terminate): Mark throw ().</li><li style=\"\"> libsupc++/eh_call.cc (__cxa_call_terminate): Mark throw ().</li><li style=\"\"> config/io/basic_file_stdio.cc (sys_open, is_open, fd, seekoff): Mark\tthrow ().</li><li style=\"\"> config/io/basic_file_stdio.h (__basic_file, sys_open): Mark throw ().\t(is_open, fd): Mark pure and throw ().\t(seekoff): Mark throw ().</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3230, "commentbyurl": "/u/balakrishnanjk", "commentby": "balakrishnanjk", "datestr": "14 Apr 2010, 04:59:27 PM", "commentbyicon": ""}, {"text": "\nFix typo in comment in previous commit.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>Fix typo in comment in previous commit.\n</p>\n\n</div></div>", "ticket_comment_id": 3231, "commentbyurl": "/u/inaoe", "commentby": "inaoe", "datestr": "14 Apr 2010, 04:59:28 PM", "commentbyicon": ""}, {"text": "\n\t* config/mips/mips.md (*extenddi_truncate<mode>,\n\t*extendsi_truncate<mode>): Emit exts if supported.  Add attribute\n\tdefintions.\n\t(*extendhi_truncateqi): New define_insn_and_sptit.\n\ntestsuite/\n\t* gcc.target/mips/octeon-exts-6.c: New test.\n\t* gcc.target/mips/extend-1.c: New test.\n\t* gcc.target/mips/octeon-exts-2.c: Adjust to not match sign-extension\n\tEXTS.\n\t* gcc.target/mips/octeon-exts-5.c: Likewise.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> config/mips/mips.md (*extenddi_truncate&lt;mode&gt;,</li><li style=\"\">extendsi_truncate&lt;mode&gt;): Emit exts if supported.  Add attribute\tdefintions.\t(*extendhi_truncateqi): New define_insn_and_sptit.</li></ul></p>\n<p>testsuite/\n</p><p><ul><li style=\"\"> gcc.target/mips/octeon-exts-6.c: New test.</li><li style=\"\"> gcc.target/mips/extend-1.c: New test.</li><li style=\"\"> gcc.target/mips/octeon-exts-2.c: Adjust to not match sign-extension\tEXTS.</li><li style=\"\"> gcc.target/mips/octeon-exts-5.c: Likewise.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3232, "commentbyurl": "/u/admin", "commentby": "admin", "datestr": "14 Apr 2010, 04:59:28 PM", "commentbyicon": ""}, {"text": "\n\t* config/i386/i386.c (memory_address_length): Handle %r12\n\tthe same as %rsp and %r13 the same as %rbp.  For %rsp and %rbp\n\talso check REGNO.\n\t(ix86_attr_length_address_default): For MODE_SI lea in 64-bit\n\tmode look through optional ZERO_EXTEND and SUBREG.\n\t* config/i386/i386.md (R12_REG): New define_constant.\n\t(prefix_data16): For sse unit set also for MODE_TI insns.\n\t(prefix_rex): For -m32 always return 0.  For TYPE_IMOVX\n\tinsns set if operand 1 is ext_QIreg_operand.\n\t(modrm): For TYPE_IMOV clear only if not MODE_DI.  For\n\tTYPE_{ALU{,1},ICMP,TEST} insn clear if there is non-shortened\n\timmediate.\n\t(*movdi_extzv_1, zero_extendhidi2, zero_extendqidi2): Change\n\tmode from MODE_DI to MODE_SI.\n\t(movdi_1_rex64): Override modrm and length_immediate attributes\n\tonly for movabs (TYPE_IMOV, alternative 2).\n\t(zero_extendsidi2_rex64): Clear prefix_0f attribute if TYPE_IMOVX.\n\t(*float<SSEMODEI24:mode><MODEF:mode>2_mixed_interunit,\n\t*float<SSEMODEI24:mode><MODEF:mode>2_mixed_nointerunit,\n\t*float<SSEMODEI24:mode><MODEF:mode>2_sse_interunit,\n\t*float<SSEMODEI24:mode><MODEF:mode>2_sse_nointerunit): Set\n\tprefix_rex attribute if DImode.\n\t(*adddi_1_rex64, *adddi_2_rex64, *adddi_3_rex64, *adddi_5_rex64,\n\t*addsi_1, *addsi_1_zext, *addsi_2, *addsi_2_zext, *addsi_3,\n\t*addsi_3_zext, *addsi_5, *addhi_1_lea, *addhi_1, *addhi_2, *addhi_3,\n\t*addhi_5, *addqi_1_lea, *addqi_1): Override length_immediate\n\tattribute to 1 if TYPE_ALU and operand 2 is const128_operand.\n\t(pro_epilogue_adjust_stack_1, pro_epilogue_adjust_stack_rex64):\n\tLikewise.  For TYPE_IMOV clear length_immediate attribute.\n\t(*ashldi3_1_rex64, *ashldi3_cmp_rex64, *ashldi3_cconly_rex64,\n\t*ashlsi3_1, *ashlsi3_1_zext, *ashlsi3_cmp, **ashlsi3_cconly,\n\t*ashlsi3_cmp_zext, *ashlhi3_1_lea, *ashlhi3_1, *ashlhi3_cmp,\n\t*ashlhi3_cconly, *ashlqi3_1_lea, *ashlqi3_1, *ashlqi3_cmp,\n\t*ashlqi3_cconly): Override length_immediate attribute to 0 if TYPE_ALU\n\tor one operand TYPE_ISHIFT.\n\t(*ashrdi3_1_one_bit_rex64, *ashrdi3_one_bit_cmp_rex64,\n\t*ashrdi3_one_bit_cconly_rex64, *ashrsi3_1_one_bit,\n\t*ashrsi3_1_one_bit_zext, *ashrsi3_one_bit_cmp,\n\t*ashrsi3_one_bit_cconly, *ashrsi3_one_bit_cmp_zext,\n\t*ashrhi3_1_one_bit, *ashrhi3_one_bit_cmp, *ashrhi3_one_bit_cconly,\n\t*ashrqi3_1_one_bit, *ashrqi3_1_one_bit_slp, *ashrqi3_one_bit_cmp,\n\t*ashrqi3_one_bit_cconly, *lshrdi3_1_one_bit_rex64,\n\t*lshrdi3_cmp_one_bit_rex64, *lshrdi3_cconly_one_bit_rex64,\n\t*lshrsi3_1_one_bit, *lshrsi3_1_one_bit_zext, *lshrsi3_one_bit_cmp,\n\t*lshrsi3_one_bit_cconly, *lshrsi3_cmp_one_bit_zext,\n\t*lshrhi3_1_one_bit, *lshrhi3_one_bit_cmp, *lshrhi3_one_bit_cconly,\n\t*lshrqi3_1_one_bit, *lshrqi3_1_one_bit_slp, *lshrqi2_one_bit_cmp,\n\t*lshrqi2_one_bit_cconly, *rotlsi3_1_one_bit_rex64, *rotlsi3_1_one_bit,\n\t*rotlsi3_1_one_bit_zext, *rotlhi3_1_one_bit, *rotlqi3_1_one_bit_slp,\n\t*rotlqi3_1_one_bit, *rotrdi3_1_one_bit_rex64, *rotrsi3_1_one_bit,\n\t*rotrsi3_1_one_bit_zext, *rotrhi3_one_bit, *rotrqi3_1_one_bit,\n\t*rotrqi3_1_one_bit_slp): Override length_immediate attribute to 0,\n\tset mode attribute, don't override length attribute.\n\t(*btsq, *btrq, *btcq, *btdi_rex64, *btsi): Set prefix_0f attribute\n\tto 1.\n\t(return_internal_long): Set length attribute to 2 instead of 1.\n\t(*strmovqi_rex_1, *strsetqi_rex_1, *rep_stosqi_rex64,\n\t*cmpstrnqi_nz_rex_1, *cmpstrnqi_rex_1, *strlenqi_rex_1): Clear\n\tprefix_rex attribute.\n\t* config/i386/predicates.md (ext_QIreg_operand,\n\tconst128_operand): New predicates.\n\t(memory_displacement_only_operand): Always return 0 for\n\tTARGET_64BIT.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> config/i386/i386.c (memory_address_length): Handle %r12\tthe same as %rsp and %r13 the same as %rbp.  For %rsp and %rbp\talso check REGNO.\t(ix86_attr_length_address_default): For MODE_SI lea in 64-bit\tmode look through optional ZERO_EXTEND and SUBREG.</li><li style=\"\"> config/i386/i386.md (R12_REG): New define_constant.\t(prefix_data16): For sse unit set also for MODE_TI insns.\t(prefix_rex): For -m32 always return 0.  For TYPE_IMOVX\tinsns set if operand 1 is ext_QIreg_operand.\t(modrm): For TYPE_IMOV clear only if not MODE_DI.  For\tTYPE_{ALU{,1},ICMP,TEST} insn clear if there is non-shortened\timmediate.\t(*movdi_extzv_1, zero_extendhidi2, zero_extendqidi2): Change\tmode from MODE_DI to MODE_SI.\t(movdi_1_rex64): Override modrm and length_immediate attributes\tonly for movabs (TYPE_IMOV, alternative 2).\t(zero_extendsidi2_rex64): Clear prefix_0f attribute if TYPE_IMOVX.\t(*float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_mixed_interunit,</li><li style=\"\">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_mixed_nointerunit,</li><li style=\"\">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_sse_interunit,</li><li style=\"\">float&lt;SSEMODEI24:mode&gt;&lt;MODEF:mode&gt;2_sse_nointerunit): Set\tprefix_rex attribute if DImode.\t(*adddi_1_rex64, *adddi_2_rex64, *adddi_3_rex64, *adddi_5_rex64,</li><li style=\"\">addsi_1, *addsi_1_zext, *addsi_2, *addsi_2_zext, *addsi_3,</li><li style=\"\">addsi_3_zext, *addsi_5, *addhi_1_lea, *addhi_1, *addhi_2, *addhi_3,</li><li style=\"\">addhi_5, *addqi_1_lea, *addqi_1): Override length_immediate\tattribute to 1 if TYPE_ALU and operand 2 is const128_operand.\t(pro_epilogue_adjust_stack_1, pro_epilogue_adjust_stack_rex64):\tLikewise.  For TYPE_IMOV clear length_immediate attribute.\t(*ashldi3_1_rex64, *ashldi3_cmp_rex64, *ashldi3_cconly_rex64,</li><li style=\"\">ashlsi3_1, *ashlsi3_1_zext, *ashlsi3_cmp, **ashlsi3_cconly,</li><li style=\"\">ashlsi3_cmp_zext, *ashlhi3_1_lea, *ashlhi3_1, *ashlhi3_cmp,</li><li style=\"\">ashlhi3_cconly, *ashlqi3_1_lea, *ashlqi3_1, *ashlqi3_cmp,</li><li style=\"\">ashlqi3_cconly): Override length_immediate attribute to 0 if TYPE_ALU\tor one operand TYPE_ISHIFT.\t(*ashrdi3_1_one_bit_rex64, *ashrdi3_one_bit_cmp_rex64,</li><li style=\"\">ashrdi3_one_bit_cconly_rex64, *ashrsi3_1_one_bit,</li><li style=\"\">ashrsi3_1_one_bit_zext, *ashrsi3_one_bit_cmp,</li><li style=\"\">ashrsi3_one_bit_cconly, *ashrsi3_one_bit_cmp_zext,</li><li style=\"\">ashrhi3_1_one_bit, *ashrhi3_one_bit_cmp, *ashrhi3_one_bit_cconly,</li><li style=\"\">ashrqi3_1_one_bit, *ashrqi3_1_one_bit_slp, *ashrqi3_one_bit_cmp,</li><li style=\"\">ashrqi3_one_bit_cconly, *lshrdi3_1_one_bit_rex64,</li><li style=\"\">lshrdi3_cmp_one_bit_rex64, *lshrdi3_cconly_one_bit_rex64,</li><li style=\"\">lshrsi3_1_one_bit, *lshrsi3_1_one_bit_zext, *lshrsi3_one_bit_cmp,</li><li style=\"\">lshrsi3_one_bit_cconly, *lshrsi3_cmp_one_bit_zext,</li><li style=\"\">lshrhi3_1_one_bit, *lshrhi3_one_bit_cmp, *lshrhi3_one_bit_cconly,</li><li style=\"\">lshrqi3_1_one_bit, *lshrqi3_1_one_bit_slp, *lshrqi2_one_bit_cmp,</li><li style=\"\">lshrqi2_one_bit_cconly, *rotlsi3_1_one_bit_rex64, *rotlsi3_1_one_bit,</li><li style=\"\">rotlsi3_1_one_bit_zext, *rotlhi3_1_one_bit, *rotlqi3_1_one_bit_slp,</li><li style=\"\">rotlqi3_1_one_bit, *rotrdi3_1_one_bit_rex64, *rotrsi3_1_one_bit,</li><li style=\"\">rotrsi3_1_one_bit_zext, *rotrhi3_one_bit, *rotrqi3_1_one_bit,</li><li style=\"\">rotrqi3_1_one_bit_slp): Override length_immediate attribute to 0,\tset mode attribute, don't override length attribute.\t(*btsq, *btrq, *btcq, *btdi_rex64, *btsi): Set prefix_0f attribute\tto 1.\t(return_internal_long): Set length attribute to 2 instead of 1.\t(*strmovqi_rex_1, *strsetqi_rex_1, *rep_stosqi_rex64,</li><li style=\"\">cmpstrnqi_nz_rex_1, *cmpstrnqi_rex_1, *strlenqi_rex_1): Clear\tprefix_rex attribute.</li><li style=\"\"> config/i386/predicates.md (ext_QIreg_operand,\tconst128_operand): New predicates.\t(memory_displacement_only_operand): Always return 0 for\tTARGET_64BIT.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3233, "commentbyurl": "/u/nachikde", "commentby": "nachikde", "datestr": "14 Apr 2010, 04:59:29 PM", "commentbyicon": ""}, {"text": "\n\n\tPR tree-optimization/40081\n\tRevert\n\t* tree-sra.c (instantiate_element): Instantiate scalar replacements\n\tusing the main variant of the element type.  Do not fiddle with\n\tTREE_THIS_VOLATILE or TREE_SIDE_EFFECTS.\n\n\t* tree-sra.c (sra_type_can_be_decomposed_p): Do not decompose\n\tstructs with volatile fields.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>\tPR tree-optimization/40081\n\tRevert\n</p><p><ul><li style=\"\"> tree-sra.c (instantiate_element): Instantiate scalar replacements\tusing the main variant of the element type.  Do not fiddle with\tTREE_THIS_VOLATILE or TREE_SIDE_EFFECTS.</li></ul></p>\n<p><ul><li style=\"\"> tree-sra.c (sra_type_can_be_decomposed_p): Do not decompose\tstructs with volatile fields.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3234, "commentbyurl": "/u/balakrishnanjk", "commentby": "balakrishnanjk", "datestr": "14 Apr 2010, 04:59:29 PM", "commentbyicon": ""}, {"text": "\nDaily bump.\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>Daily bump.\n</p>\n</div></div>", "ticket_comment_id": 3235, "commentbyurl": "/u/balakrishnanto", "commentby": "balakrishnanto", "datestr": "14 Apr 2010, 04:59:29 PM", "commentbyicon": ""}, {"text": "\n\t* config/rs6000/linux-unwind.h (get_regs): Remove type\n\tpuns. Change the type of `pc' to an array of unsigned ints and\n\tupdate all users.  Constify frame24.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> config/rs6000/linux-unwind.h (get_regs): Remove type\tpuns. Change the type of `pc' to an array of unsigned ints and\tupdate all users.  Constify frame24.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3236, "commentbyurl": "/u/abhahi", "commentby": "abhahi", "datestr": "14 Apr 2010, 04:59:30 PM", "commentbyicon": ""}, {"text": "\n\n\t* sem_ch8.adb (Analyze_Subprogram_Renaming): Improve error message on\n\tbox-defaulted operator in an instantiation, when the type of the\n\toperands is not directly visible.\n\n\n\t* sem_aggr.adb (Valid_Limited_Ancestor): Undo previous change.\n\t(Resolve_Extension_Aggregate): Call Check_Parameterless_Call after the\n\tanalysis of the ancestor part. Remove prohibition against limited\n\tinterpretations of the ancestor expression in the case of Ada 2005.\n\tRevise error message in overloaded case, adding a message to cover\n\tthe Ada 2005 case.\n\n\n\t* xoscons.adb: Minor reformatting\n\n\n\t* sem_ch13.adb (Analyze_Attribute_Definition_Clause): Do not ignore\n\tattribute_definition_clauses for the following attributes when the\n\t-gnatI switch is used: External_Tag, Input, Output, Read, Storage_Pool,\n\tStorage_Size, Write. Otherwise, we get spurious errors (for example,\n\tmissing Read attribute on remote types).\n\n\t* gnat_ugn.texi: Document the change, and add a stern warning.\n\n\n\t* sem_attr.adb (Check_Local_Access): Indicate that value tracing is\n\tdisabled not just for the current scope, but for the innermost dynamic\n\tscope as well.\n\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> sem_ch8.adb (Analyze_Subprogram_Renaming): Improve error message on\tbox-defaulted operator in an instantiation, when the type of the\toperands is not directly visible.</li></ul></p>\n\n<p><ul><li style=\"\"> sem_aggr.adb (Valid_Limited_Ancestor): Undo previous change.\t(Resolve_Extension_Aggregate): Call Check_Parameterless_Call after the\tanalysis of the ancestor part. Remove prohibition against limited\tinterpretations of the ancestor expression in the case of Ada 2005.\tRevise error message in overloaded case, adding a message to cover\tthe Ada 2005 case.</li></ul></p>\n\n<p><ul><li style=\"\"> xoscons.adb: Minor reformatting</li></ul></p>\n\n<p><ul><li style=\"\"> sem_ch13.adb (Analyze_Attribute_Definition_Clause): Do not ignore\tattribute_definition_clauses for the following attributes when the\t-gnatI switch is used: External_Tag, Input, Output, Read, Storage_Pool,\tStorage_Size, Write. Otherwise, we get spurious errors (for example,\tmissing Read attribute on remote types).</li></ul></p>\n<p><ul><li style=\"\"> gnat_ugn.texi: Document the change, and add a stern warning.</li></ul></p>\n\n<p><ul><li style=\"\"> sem_attr.adb (Check_Local_Access): Indicate that value tracing is\tdisabled not just for the current scope, but for the innermost dynamic\tscope as well.</li></ul></p>\n\n\n</div></div>", "ticket_comment_id": 3237, "commentbyurl": "/u/nachikde", "commentby": "nachikde", "datestr": "14 Apr 2010, 04:59:30 PM", "commentbyicon": ""}, {"text": "\nMinor clean ups.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>Minor clean ups.\n</p>\n\n</div></div>", "ticket_comment_id": 3238, "commentbyurl": "/u/inaoe", "commentby": "inaoe", "datestr": "14 Apr 2010, 04:59:30 PM", "commentbyicon": ""}, {"text": "\n\n\t* freeze.adb (Freeze_Record_Type): Improve error msg for bad size\n\tclause.\n\n\n\t* g-socthi-vms.adb (C_Recvmsg, C_Sendmsg): Convert Msg to appropriate\n\tpacked type, since on OpenVMS, struct msghdr is packed.\n\n\n\t* sem_ch8.adb (Analyze_Object_Renaming): If the object is a function\n\tcall returning an unconstrained composite value, create the proper\n\tsubtype for it, as is done for object dclarations with unconstrained\n\tnominal subtypes. Perform this transformation regarless of whether\n\tcall comes from source.\n\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> freeze.adb (Freeze_Record_Type): Improve error msg for bad size\tclause.</li></ul></p>\n\n<p><ul><li style=\"\"> g-socthi-vms.adb (C_Recvmsg, C_Sendmsg): Convert Msg to appropriate\tpacked type, since on OpenVMS, struct msghdr is packed.</li></ul></p>\n\n<p><ul><li style=\"\"> sem_ch8.adb (Analyze_Object_Renaming): If the object is a function\tcall returning an unconstrained composite value, create the proper\tsubtype for it, as is done for object dclarations with unconstrained\tnominal subtypes. Perform this transformation regarless of whether\tcall comes from source.</li></ul></p>\n\n\n</div></div>", "ticket_comment_id": 3239, "commentbyurl": "/u/anonymous", "commentby": "anonymous", "datestr": "14 Apr 2010, 04:59:31 PM", "commentbyicon": ""}, {"text": "\n\n\tPR fortran/39688\n\t* decl.c (gfc_match_import): Use 'sym->name' instead of 'name'.\n\tThey differ if the symbol has been use-renamed.\n\n\n\n\tPR fortran/39688\n\t* gfortran.dg/import7.f90: New.\n\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>\tPR fortran/39688\n</p><p><ul><li style=\"\"> decl.c (gfc_match_import): Use 'sym-&gt;name' instead of 'name'.\tThey differ if the symbol has been use-renamed.</li></ul></p>\n\n\n<p>\tPR fortran/39688\n</p><p><ul><li style=\"\"> gfortran.dg/import7.f90: New.</li></ul></p>\n\n\n</div></div>", "ticket_comment_id": 3240, "commentbyurl": "/u/inaoe", "commentby": "inaoe", "datestr": "14 Apr 2010, 04:59:31 PM", "commentbyicon": ""}, {"text": "\n\t* inclhack.def (glibc_tgmath): Correct bypass.\n\t* fixincl.x: Regenerate.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> inclhack.def (glibc_tgmath): Correct bypass.</li><li style=\"\"> fixincl.x: Regenerate.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3241, "commentbyurl": "/u/anonymous", "commentby": "anonymous", "datestr": "14 Apr 2010, 04:59:32 PM", "commentbyicon": ""}, {"text": "\n\t* gcc.target/i386/pr39543-2.c: Skip if ilp32 && pic.\n\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> gcc.target/i386/pr39543-2.c: Skip if ilp32 &amp;&amp; pic.</li></ul></p>\n\n\n</div></div>", "ticket_comment_id": 3242, "commentbyurl": "/u/rabinderuc", "commentby": "rabinderuc", "datestr": "14 Apr 2010, 04:59:32 PM", "commentbyicon": ""}, {"text": "\nFix typo in ChangeLog\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>Fix typo in ChangeLog\n</p>\n</div></div>", "ticket_comment_id": 3243, "commentbyurl": "/u/admin", "commentby": "admin", "datestr": "14 Apr 2010, 04:59:32 PM", "commentbyicon": ""}, {"text": "\nAdd support for arm1156tf-s\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p>Add support for arm1156tf-s\n</p>\n</div></div>", "ticket_comment_id": 3244, "commentbyurl": "/u/nachikde", "commentby": "nachikde", "datestr": "14 Apr 2010, 04:59:33 PM", "commentbyicon": ""}, {"text": "\n\t* cgraph.c (dump_cgraph_node): Dump size/time/benefit.\n\t* cgraph.h (struct inline_summary): New filed self_wize,\n\tsize_inlining_benefit, self_time and time_inlining_benefit.\n\t(struct cgraph_global_info): Replace insns by time ans size fields.\n\t* ipa-cp (ipcp_cloning_candidate_p): Base estimate on size\n\t(ipcp_estimate_growth, ipcp_insert_stage): Likewise.\n\t(ipcp_update_callgraph): Do not touch function bodies.\n\t* ipa-inline.c: Include except.h\n\tMAX_TIME: New constant.\n\t(overall_insns): Remove\n\t(overall_size, max_benefit): New static variables.\n\t(cgraph_estimate_time_after_inlining): New function.\n\t(cgraph_estimate_size_after_inlining): Rewrite using benefits.\n\t(cgraph_clone_inlined_nodes): Update size.\n\t(cgraph_mark_inline_edge): Update size.\n\t(cgraph_estimate_growth): Use size info.\n\t(cgraph_check_inline_limits): Check size.\n\t(cgraph_default_inline_p): Likewise.\n\t(cgraph_edge_badness): Compute badness based on benefit and size cost.\n\t(cgraph_decide_recursive_inlining): Check size.\n\t(cgraph_decide_inlining_of_small_function): Update size; dump sizes and times.\n\t(cgraph_decide_inlining): Likewise.\n\t(cgraph_decide_inlining_incrementally): Likewise; honor PARAM_EARLY_INLINING_INSNS.\n\t(likely_eliminated_by_inlining_p): New predicate.\n\t(estimate_function_body_sizes): New function.\n\t(compute_inline_parameters): Use it.\n\t* except.c (must_not_throw_labels): New function.\n\t* except.h (must_not_throw_labels): Declare.\n\t* tree-inline.c (init_inline_once): Kill inlining_weigths\n\t* tree-ssa-structalias.c: Avoid uninitialized warning.\n\t* params.def (PARAM_MAX_INLINE_INSNS_SINGLE): Reduce to 300.\n\t(PARAM_MAX_INLINE_INSNS_AUTO): Reduce to 60.\n\t(PARAM_INLINE_CALL_COST): Remove.\n\t(PARAM_EARLY_INLINING_INSNS): New.\n\tdoc/invoke.texi (max-inline-insns-auto, early-inlining-insns): Update.\n\t(inline-call-cost): Remove.\n\t(early-inlining-insns): New.\n\n", "html": "<div class=\"wikiblk\"><div style=\"white-space : normal; ; \"><p><ul><li style=\"\"> cgraph.c (dump_cgraph_node): Dump size/time/benefit.</li><li style=\"\"> cgraph.h (struct inline_summary): New filed self_wize,\tsize_inlining_benefit, self_time and time_inlining_benefit.\t(struct cgraph_global_info): Replace insns by time ans size fields.</li><li style=\"\"> ipa-cp (ipcp_cloning_candidate_p): Base estimate on size\t(ipcp_estimate_growth, ipcp_insert_stage): Likewise.\t(ipcp_update_callgraph): Do not touch function bodies.</li><li style=\"\"> ipa-inline.c: Include except.h\tMAX_TIME: New constant.\t(overall_insns): Remove\t(overall_size, max_benefit): New static variables.\t(cgraph_estimate_time_after_inlining): New function.\t(cgraph_estimate_size_after_inlining): Rewrite using benefits.\t(cgraph_clone_inlined_nodes): Update size.\t(cgraph_mark_inline_edge): Update size.\t(cgraph_estimate_growth): Use size info.\t(cgraph_check_inline_limits): Check size.\t(cgraph_default_inline_p): Likewise.\t(cgraph_edge_badness): Compute badness based on benefit and size cost.\t(cgraph_decide_recursive_inlining): Check size.\t(cgraph_decide_inlining_of_small_function): Update size; dump sizes and times.\t(cgraph_decide_inlining): Likewise.\t(cgraph_decide_inlining_incrementally): Likewise; honor PARAM_EARLY_INLINING_INSNS.\t(likely_eliminated_by_inlining_p): New predicate.\t(estimate_function_body_sizes): New function.\t(compute_inline_parameters): Use it.</li><li style=\"\"> except.c (must_not_throw_labels): New function.</li><li style=\"\"> except.h (must_not_throw_labels): Declare.</li><li style=\"\"> tree-inline.c (init_inline_once): Kill inlining_weigths</li><li style=\"\"> tree-ssa-structalias.c: Avoid uninitialized warning.</li><li style=\"\"> params.def (PARAM_MAX_INLINE_INSNS_SINGLE): Reduce to 300.\t(PARAM_MAX_INLINE_INSNS_AUTO): Reduce to 60.\t(PARAM_INLINE_CALL_COST): Remove.\t(PARAM_EARLY_INLINING_INSNS): New.\tdoc/invoke.texi (max-inline-insns-auto, early-inlining-insns): Update.\t(inline-call-cost): Remove.\t(early-inlining-insns): New.</li></ul></p>\n\n</div></div>", "ticket_comment_id": 3245, "commentbyurl": "/u/balakrishnanjk", "commentby": "balakrishnanjk", "datestr": "14 Apr 2010, 04:59:33 PM", "commentbyicon": ""}], "identifier": "ticket_comment_id", "label": "ticket_comment_id"}
+    </script>
+
+            </div>
+        </div> 
+    </div>
+
+        
+    <div class="bclear" id="footer">
+        <hr>
+        <a class="floatl" href="http://127.0.0.1:5000/"><img src="337_files/zeta-110x45.jpg" width="110" height="45"></a>
+        <div class="floatl" style="font-size: 11px; height: 45px;">
+            <div class="ml5 calign" style="border-bottom: 1px solid Gainsboro; height: 22px;">
+                <span style="vertical-align: -6px;">version : </span>
+                <span class="fntbold" style="vertical-align: -6px;">0.6b2</span>
+            </div>
+            <div class="ml5" style="height: 22px;">
+                <span class="fntbold" style="color: skyblue;">SKR</span>
+                <span class="fntbold" style="color: black;">Farms (P) Ltd</span>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <script type="text/javascript">
+        // Common initialization routine
+        function init_zeta() {
+            dojo.subscribe( 'flash', null, flashmsghandler );
+        }
+
+        // Initialize quick-links
+        function qlinks_menu() {
+            var qlMenu;
+            var tgtnodes = dojo.query( 'div#metanav span[name=quick-links]' )[0];
+            var quicklinks = [["users", "/u"], ["invite", "/u/inviteuser"]];
+
+            if ( tgtnodes ) {
+                pMenu = new zeta.Menu({
+                                targetNodes   :[ tgtnodes ],
+                                style: { fontSize: 'small', width: '6em', color: 'blue', }
+                        });
+                dojo.forEach( quicklinks,
+                    function( ql ) {
+                        purl = '<a href="' + ql[1] + '">' + ql[0] + '</a>'
+                        pMenu.addChild( new zeta.MenuItem(
+                                            { content: purl, class: 'fntbold hoverhighlight' }
+                                      ));
+                    }
+                );
+            }
+        }
+
+        // Initialize project menu
+        function project_menu() {
+            var pMenu;
+            var tgtnodes = dojo.query( 'div#metanav span[name=myprojects]' )[0];
+            var myprojects = [["GCC", "/p/GCC"], ["JavaScript", "/p/JavaScript"], ["dojo", "/p/dojo"], ["firefox", "/p/firefox"], ["mako", "/p/mako"], ["nose", "/p/nose"], ["ply", "/p/ply"], ["python", "/p/python"], ["sqlalchemy", "/p/sqlalchemy"]];
+
+            if ( tgtnodes ) {
+                pMenu = new zeta.Menu({
+                                targetNodes   :[ tgtnodes ],
+                                style: { fontSize: 'small',
+                                         color: 'blue',
+                                       }
+                        });
+                pMenu.addChild(
+                    new zeta.MenuItem(
+                        { content: '<a href="/p/newproject?form=request&amp;formname=createprj">New-project</a>',
+                          class: 'hoverhighlight' }
+                    )
+                );
+                pMenu.addChild( new zeta.MenuItem({ content: '<hr></hr>' }));
+                dojo.forEach( myprojects,
+                    function( p ) {
+                        purl = '<a href="' + p[1] + '">' + p[0] + '</a>'
+                        pMenu.addChild( new zeta.MenuItem(
+                                            { content: purl, class: 'fntbold hoverhighlight' }
+                                      ));
+                    }
+                );
+                pMenu.addChild( new zeta.MenuItem({ content: '<hr></hr>' }));
+                pMenu.addChild( new zeta.MenuItem(
+                                    { content: '<a href="/p">List-all</a>',
+                                      class: 'hoverhighlight'
+                                    }
+                              ));
+            }
+        }
+
+        dojo.addOnLoad( init_zeta );
+        dojo.addOnLoad( qlinks_menu );
+        dojo.addOnLoad( project_menu );
+
+        // Handlers for other elements in derived files.
+        dojoaddOnLoad( 'pagebartooltip' );
+        dojoaddOnLoad( 'contexttooltip' );
+
+        // Handler for search box.
+        dojo.addOnLoad( function() {
+            dojo.forEach( dojo.query( "span[name=searchbox] input[type=text]" ),
+                function( n ) {
+                    dojo.toggleClass( n, 'fggray2', true );
+                    dojo.connect( n, 'onfocus',
+                                  function( e ) {
+                                      dojo.attr( n, 'helpstr', n.value );
+                                      n.value = '';
+                                      dojo.toggleClass( n, 'fggray2', false );
+                                  }
+                                );
+                    dojo.connect( n, 'onblur',
+                                  function( e ) {
+                                      n.value = dojo.attr( n, 'helpstr' );
+                                      dojo.toggleClass( n, 'fggray2', true );
+                                  }
+                                );
+                }
+            );
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        dojo.addOnLoad( setup_ticket );
+        dojo.addOnLoad( function() {
+            dojo.subscribe(
+                'tckbrd_chbg',
+                function( name, bgcolor ) {
+                    n = dojo.query( 'div[name='+name+']' )[0];
+                    dojo.style( n, { background : bgcolor });
+                }
+            );
+        });
+        dojoaddOnLoad( 'initform_tckfav' );
+        dojoaddOnLoad( 'initform_votetck' );
+
+        dojo.addOnLoad( setup_userpanes );
+        dojo.addOnLoad( adjust_upheight );
+    </script>
+
+    <div widgetid="zeta_Menu_0" style="border: 2px solid rgb(239, 239, 239); background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-size: small; width: 6em; color: blue; position: fixed; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-top: 2px; padding-bottom: 2px; height: auto; display: none;" id="zeta_Menu_0"><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_0" class="fntbold hoverhighlight" id="zeta_MenuItem_0" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/u">users</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_1" class="fntbold hoverhighlight" id="zeta_MenuItem_1" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/u/inviteuser">invite</a></div></div><div widgetid="zeta_Menu_1" style="border: 2px solid rgb(239, 239, 239); background: rgb(255, 255, 255) none repeat scroll 0% 0%; font-size: small; color: blue; position: fixed; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-top: 2px; padding-bottom: 2px; height: auto; display: none;" id="zeta_Menu_1"><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_2" class="hoverhighlight" id="zeta_MenuItem_2" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/newproject?form=request&amp;formname=createprj">New-project</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_3" id="zeta_MenuItem_3" dojoattachevent="onclick:onClick"><hr></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_4" class="fntbold hoverhighlight" id="zeta_MenuItem_4" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/GCC">GCC</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_5" class="fntbold hoverhighlight" id="zeta_MenuItem_5" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/JavaScript">JavaScript</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_6" class="fntbold hoverhighlight" id="zeta_MenuItem_6" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/dojo">dojo</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_7" class="fntbold hoverhighlight" id="zeta_MenuItem_7" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/firefox">firefox</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_8" class="fntbold hoverhighlight" id="zeta_MenuItem_8" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/mako">mako</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_9" class="fntbold hoverhighlight" id="zeta_MenuItem_9" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/nose">nose</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_10" class="fntbold hoverhighlight" id="zeta_MenuItem_10" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/ply">ply</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_11" class="fntbold hoverhighlight" id="zeta_MenuItem_11" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/python">python</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_12" class="fntbold hoverhighlight" id="zeta_MenuItem_12" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p/sqlalchemy">sqlalchemy</a></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_13" id="zeta_MenuItem_13" dojoattachevent="onclick:onClick"><hr></div><div style="padding: 2px 5px;" widgetid="zeta_MenuItem_14" class="hoverhighlight" id="zeta_MenuItem_14" dojoattachevent="onclick:onClick"><a href="http://127.0.0.1:5000/p">List-all</a></div></div></body></html>
