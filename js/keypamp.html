@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <script type="text/javascript" src="./jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="./jquery.tmpl.js"></script>
+    <style type="text/css">
+      div#helpboard {
+        -moz-border-radius : 5px;
+        -webkit-border-radius : 5px;
+        border-radius : 5px;
+        background-color : black;
+        position : absolute;
+        text-align : left;
+        filter:alpha(opacity=80); /* for IE */
+        opacity:0.8;    /* CSS3 standard */
+        padding : 10px;
+        width : 50%;
+      }
+      div#helpboard table {
+        width : 100%;
+      }
+      div#helpboard td.key {
+        text-align : right;
+        font-weight : bold;
+        color : yellow;
+      }
+      div#helpboard td.help {
+        font-weight : bold;
+        color : white;
+      }
+    </style>
+    <script id="tmpl-helpline" type="text/x-jquery-tmpl">
+      <tr>
+        <td class="key"> ${key} </td> <td class="help"> ${text} </td>
+      </tr>
+    </script>
+    <script id="tmpl-helpcol" type="text/x-jquery-tmpl">
+      <td>
+        <table style="width:100%;"> {{tmpl($data) '#tmpl-helpline'}}
+        </table>
+      </td>
+    </script>
+  </head>
+  <body>
+    <div id="helpboard"><table><tr class="helpboard"></tr></table></div>
+    <ul>
+      <li>hello world</li>
+      <ul> <li>hello-world</li> </ul>
+    </ul>
+    <script type="text/javascript">
+      (function($) {
+        var helplines = [];
+        var showboard = function() {
+          var n_help = $('#helpboard');
+          var h = $(document).height();
+          var w = $(document).width();
+          var w_ = $(n_help).width();
+          w_ += (w-w_) * 0.5
+          //$(n_help).css( 'width', Math.ceil(w_) );
+          var w_ = $(n_help).width();
+          var h_ = $(n_help).height();
+          h_ = h_ > h*0.8 ? h*0.8 : h_;
+          $(n_help).css( 'max-height', Math.ceil(h*0.8) );
+          $(n_help).css( 'overflow', 'auto' );
+          $(n_help).css( 'left', Math.ceil((w-w_)/2) );
+          $(n_help).css( 'top', Math.ceil((h-h_)/2) );
+          $('#helpboard').fadeToggle(100);
+        };
+
+        var keymap_handler = function(e) {
+          var key = String([e.altKey, e.ctrlKey, e.shiftKey, e.keyCode]);
+          var kmap = e.data.jqnode.data('keymap');
+          var hndlr = kmap ? kmap[key] : null;
+          var h = $(document).height();
+          if( e.shiftKey && e.keyCode == 191) {  // Show helpboard
+            if(! helplines.length ) { return; }
+            var cols = Math.floor( helplines.length / Math.floor(h*0.8/30) ) + 1;
+            cols = cols > 2 ? 2 : cols;
+            var _maxrows = Math.floor(helplines.length / cols);
+            $('tr.helpboard').empty();          // Empty helpboard
+            for(i=0; i<helplines.length;) {
+              if((i+_maxrows) >= helplines.length) { break; }
+              lines = helplines.slice(i,_maxrows)
+                  $('#tmpl-helpcol').tmpl([lines]).appendTo( 'tr.helpboard' );
+              i += _maxrows;
+            }
+            lines = helplines.slice(i,helplines.length)
+            $('#tmpl-helpcol').tmpl([lines]).appendTo( 'tr.helpboard' );
+            showboard();
+          } else if(hndlr && hndlr.length==2) {
+            hndlr[0](e);
+          };
+        }
+
+        var makehelplines = function(kmap) {
+          var makehelpline = function(k, help) {
+            var key = '';
+            var k = k.split(',');
+            if(k.length != 4){ return ''; }
+            key += k[0] == 'true' ? 'Alt+' : '';
+            key += k[1] == 'true' ? 'Ctrl+' : '';
+            key += k[2] == 'true' ? 'Shift+' : '';
+            key += String.fromCharCode(k[3]).toLowerCase() + ' : ';
+            x = { 'key' : key, 'text' : help }
+            return x;
+          }
+          $.each(
+            kmap,
+            function(k,v){ 
+              if(k && kmap[k]) {
+                x = makehelpline(k, kmap[k][1]);
+                if(x) { helplines[helplines.length]=x }
+              }
+            }
+          );
+          return helplines;
+        }
+
+        $('#helpboard').hide();
+
+        $.fn.push_keymap = function( handlers ) {
+          var currkm = this.data('keymap');
+          var Newkm = function(){};
+          if(currkm) {
+            Newkm.prototype = currkm;
+            Newkm.prototype.constructor = Newkm;
+          } else {
+            Newkm.prototype.constructor = Newkm;
+          }
+          // Handlers is a map of 
+          // { 'altKey,ctrlKey,shiftKey,keyCode' : <handler> }
+          var kmap = new Newkm();
+          kmap.up = currkm ? currkm : null;
+          $.extend( kmap, handlers );
+          this.data('keymap', kmap);
+          if(! currkm ) {
+            this.bind( 'keydown.keymap', { jqnode: this }, keymap_handler );
+          }
+          // Compute helplines;
+          helplines = [];
+          helplines = makehelplines(kmap);
+          return this;
+        };
+
+        $.fn.pop_keymap = function() {
+          var kmap = this.data('keymap');
+          kmap ? this.data('keymap', kmap.up) : null;
+          kmap && (kmap.up == null) ? this.unbind( 'keydown.keymap' ) : null;
+          helplines = [];
+          helplines = kmap && kmap.up ? makehelplines(kmap.up) : [];
+          return this;
+        };
+
+      })( jQuery );
+
+      var h1 = {};
+      var h2 = {
+        'false,false,false,65' : 
+            [ function(e) { console.log(66); }, 'do this' ],
+        'false,false,false,66' : 
+            [ function(e) { console.log(67); }, 'do this' ],
+        'false,false,false,67' : 
+            [ function(e) { console.log(68); }, 'do this' ],
+        'false,false,false,68' : 
+            [ function(e) { console.log(69); }, 'do this' ],
+        'false,false,false,69' : 
+            [ function(e) { console.log(70); }, 'do this' ],
+        'false,false,false,71' : 
+            [ function(e) { console.log(71); }, 'do this' ],
+        'false,false,false,72' : 
+            [ function(e) { console.log(72); }, 'do this' ],
+        'false,false,false,73' : 
+            [ function(e) { console.log(73); }, 'do this' ],
+        'false,false,false,74' : 
+            [ function(e) { console.log(74); }, 'do this' ],
+        'false,false,false,75' : 
+            [ function(e) { console.log(75); }, 'do this' ],
+        'false,false,false,76' : 
+            [ function(e) { console.log(76); }, 'do this' ],
+        'false,false,false,77' : 
+            [ function(e) { console.log(77); }, 'do this' ],
+        'false,false,false,78' : 
+            [ function(e) { console.log(78); }, 'do this' ],
+        'false,false,false,79' : 
+            [ function(e) { console.log(79); }, 'do this' ],
+      };
+      var h3 = {
+        'false,false,false,80' :
+            [ function(e) { console.log(80); }, 'do that' ],
+        'false,false,false,81' :
+            [ function(e) { console.log(81); }, 'do that' ],
+        'false,false,false,82' :
+            [ function(e) { console.log(82); }, 'do that' ],
+        'false,false,false,83' :
+            [ function(e) { console.log(83); }, 'do that' ],
+        'false,false,false,84' :
+            [ function(e) { console.log(84); }, 'do that' ],
+        'false,false,false,85' :
+            [ function(e) { console.log(85); }, 'do that' ],
+        'false,false,false,86' :
+            [ function(e) { console.log(86); }, 'do that' ],
+        'false,false,false,87' :
+            [ function(e) { console.log(87); }, 'do that' ],
+        'false,false,false,88' :
+            [ function(e) { console.log(88); }, 'do that' ],
+        'false,false,false,89' :
+            [ function(e) { console.log(89); }, 'do that' ],
+        'false,false,false,90' :
+            [ function(e) { console.log(90); }, 'do that' ],
+        'false,false,false,91' :
+            [ function(e) { console.log(91); }, 'do that' ],
+        'false,false,false,92' :
+            [ function(e) { console.log(92); }, 'do that' ],
+        'false,false,false,93' :
+            [ function(e) { console.log(93); }, 'do that' ],
+      };
+      $(document).push_keymap(h1);
+      $(document).push_keymap(h2);
+      $(document).push_keymap(h3);
+    </script>
+  </body>
+</html>

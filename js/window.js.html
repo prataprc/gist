@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <style type="text/css">
+        div { border : thin solid #FF0000;}
+    </style>
+    </head>
+<body>
+
+<script type="text/javascript">
+    function test_alert() {
+        window.alert( "Ding Ding !!" )
+    }
+    function frames() {
+        window.alert( window.length )
+    }
+</script>
+
+<div onclick="test_alert()" id="one">alert</div>
+<div onclick="frames()" id="one">frames</div>
+
+</body>
+</html>

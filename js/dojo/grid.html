@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Dojo example</title>
+<style type="text/css">
+    @import "/home/pratap/dev/zeta/devenv/public/zdojo/release/dojo/resources/dojo.css";
+    @import "/home/pratap/dev/zeta/devenv/public/zdojo/release/dijit/themes/tundra/tundra.css";
+</style>
+<style type="text/css">
+    @import "/home/pratap/dev/zeta/devenv/public/zdojo/zdojoGrid.css";
+    @import "/home/pratap/dev/zeta/devenv/public/zdojo/zdojowikiGrid.css";
+
+    .dojoxGrid table {
+        margin: 0;
+    }
+</style>
+<script type="text/javascript" src="/home/pratap/dev/zeta/devenv/public/zdojo/release/dojo/dojo.js"
+        djConfig="parseOnLoad:true, isDebug: true"></script>
+<script type="text/javascript">
+    dojo.require("dojox.grid.DataGrid");
+    dojo.require("dojox.data.CsvStore");
+
+    // our test data store for this example:
+    var store4 = new dojox.data.CsvStore({ url: 'movies.csv' });
+
+    dojo.addOnLoad(function(){
+        // set the layout structure:
+        var layout4 = [
+            { field: 'Title', name: 'Title of Movie', width: '200px' },
+            { field: 'Year', name: 'Year', width: '50px' },
+            { field: 'Producer', name: 'Producer', width: 'auto' }
+        ];
+
+        // create a new grid:
+        var grid4 = new dojox.grid.DataGrid({
+            query: { Title: '*' },
+            store: store4,
+            clientSort: true,
+            rowSelector: '20px',
+            structure: layout4
+        }, dojo.create('div'));
+
+        // append the new grid to the div "gridContainer4":
+        dojo.byId("gridContainer4").appendChild(grid4.domNode);
+
+        // Call startup, in order to render the grid:
+        grid4.startup();
+    });
+</script>
+<body class="tundra">
+<div id"gridContainer4" style="width: 400px; height: 100px;"></div>
+</body>
+</html>

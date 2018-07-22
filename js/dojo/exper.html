@@ -1,0 +1,56 @@
+<html>
+<head>
+    <style type="text/css">
+        @import "/home/pratap/sandbox/dojo/dojotoolkit-svn/dojo/resources/dojo.css";
+        @import "/home/pratap/sandbox/dojo/dojotoolkit-svn/dijit/themes/tundra/tundra.css";
+        @import "/home/pratap/sandbox/dojo/zdojo.css";
+    </style>
+
+    <script type="text/javascript"
+            src="/home/pratap/sandbox/dojo/dojotoolkit-svn/dojo/dojo.js">
+    </script>
+    <script type="text/javascript">
+        dojo.require("dojo.fx");
+        dojo.require("dijit.dijit");
+        dojo.require("dijit._Widget");
+        dojo.require("dijit._Templated");
+        dojo.require("dijit._KeyNavContainer");
+    </script>
+    <script type="text/javascript" src="/home/pratap/sandbox/dojo/zeta/Menu.js"></script>
+    <script type="text/javascript" src="/home/pratap/sandbox/dojo/zeta/MenuItem.js"></script>
+    <script type="text/javascript" src="/home/pratap/sandbox/dojo/zeta/ConfigTabs.js"></script>
+    <script type="text/javascript">
+        dojo.addOnLoad( function() {
+            m = new zeta.Menu({ title:"menu", targetNodes : [ "mbar" ] });
+            m.addItem( new zeta.MenuItem({ content : '<a href="http://www.google.com">hey</a>' }) );
+            m.addItem( new zeta.MenuItem({ content : '<a href="http://www.google.com">hello</a>' }) );
+            m.addItem( new zeta.MenuItem({ content : '<a href="http://www.google.com">how are you</a>' }) );
+            m.addItem( new zeta.MenuItem({ content : '<hr></hr>', style: {margin: "0px" } }) );
+            m.addItem( new zeta.MenuItem({ content : 'bingo' }) );
+            dojo.setObject( 'm', m );
+        })
+        dojo.addOnLoad( function() {
+            ct = new zeta.ConfigTabs(
+                    { id: "preftabs",
+                      tabs: dojo.query( "[name=preftab]" )
+                    }, dojo.query( "div[name=preftabs]" )[0]
+                )
+        })
+    </script>
+</head>
+<body class="tundra">
+    <div style="margin: 10">
+        <div id="mbar"> hello <b>world</b> </div>
+    </div>
+    <div name="preftabs">
+        <div id="accinfo" name="preftab" title="AccountInfo" selected="true">
+            Hello world
+        </div>
+        <div id="chpass" name="preftab" title="ChangePassword">
+            How are you
+        </div>
+    </div>
+    <div id="vcs">
+    </div>
+</body>
+</html>

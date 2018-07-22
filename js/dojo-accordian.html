@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Accordion Demo</title>
+    <style type="text/css">
+        @import "http://o.aolcdn.com/dojo/1.0.0/dijit/themes/tundra/tundra.css";
+        @import "http://o.aolcdn.com/dojo/1.0.0/dojo/resources/dojo.css"
+    </style>
+    <script type="text/javascript" src="http://o.aolcdn.com/dojo/1.0.0/dojo/dojo.xd.js"
+        djConfig="parseOnLoad: true"></script>
+    <script type="text/javascript">
+       dojo.require("dojo.parser");
+       dojo.require("dijit.layout.AccordionContainer");
+     </script>
+</head>
+<body class="tundra">
+        <div dojoType="dijit.layout.AccordionContainer" duration="200"
+                style="margin-right: 30px; width: 400px; height: 300px; overflow: hidden">
+                <!-- content inline -->
+                <div dojoType="dijit.layout.AccordionPane" selected="true" title="Pane 1">
+                        <p >Nunc consequat nisi vitae quam. Suspendisse sed nunc. Proin ...</p >
+                </div>
+       
+                <!-- loading by indirect reference -->
+                <div dojoType="dijit.layout.AccordionPane" title="Pane 2 (lazy load)"
+                     href="/dojoroot/dijit/tests/layout/tab1.html" >
+                </div>
+       
+                <div dojoType="dijit.layout.AccordionPane" title="Pane 3">
+                    More content
+                    <ul>
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                    </ul>
+                </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Dojo example</title>
+    <style type="text/css">
+        @import "pathtodojo/dijit/themes/nihilo/nihilo.css";
+    </style>
+
+    <script type="text/javascript" src="pathtodojo/dojo/dojo.js"
+            djConfig="parseOnLoad:true, isDebug: true">
+    </script>
+    <script type="text/javascript">
+        dojo.require("dijit.form.Button");
+
+        // connect to button
+        dojo.addOnLoad(function(){
+            dojo.connect(dojo.byId("buttonOne"), "onclick", "loadCode");
+        });
+
+        function loadCode(){
+            alert("About to dojo.require dijit.layout.BorderContainer. Currently is is: "+dijit.layout.BorderContainer);
+            dojo.require("dijit.layout.BorderContainer");
+            // add a dojo.adOnLoad
+            dojo.addOnLoad(function(){
+                alert("This fires after BorderContainer is included. Now it is: "+dijit.layout.BorderContainer);
+            });
+        }
+    </script>
+</head>
+<body class="nihilo">
+    <button dojoType="dijit.form.Button" id="buttonOne">Click me!</button>
+</body>
+</html>
