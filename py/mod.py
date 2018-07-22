@@ -1,0 +1,3 @@
+print 'hello'
+x = 10
+print y
