@@ -1,0 +1,48 @@
+#! /usr/bin/env python
+
+# Initialise / Setup
+env = Environment()
+
+# Command-line Configuration
+
+# Setting Options
+
+# Setting up Construction Environment
+env.Append( CPPPATH=[ './include' ] )
+
+# Build Targers : Euler problem solutions.
+
+# Source
+c_1    = env.File( '1.c' )
+c_2    = env.File( '2.c' )
+c_3    = env.File( '3.c' )
+c_5    = env.File( '5.c' )
+c_6    = env.File( '6.c' )
+c_7    = env.File( '7.c' )
+c_8    = env.File( '8.c' )
+c_9    = env.File( '9.c' )
+c_10   = env.File( '10.c' )
+c_11   = env.File( '11.c' )
+c_12   = env.File( '12.c' )
+c_13   = env.File( '13.c' )
+c_14   = env.File( '14.c' )
+c_17   = env.File( '17.c' )
+c_18   = env.File( '18.c' )
+
+t_p1    = env.Program( target='1', source=[ p1_c ], LIBS='numerical' )
+t_p2    = env.Program( target='2', source=[ p2_c ] )
+t_p3    = env.Program( target='3', source=[ p3_c ], LIBS='numerical' )
+t_p5    = env.Program( target='5', source=[ p5_c ] )
+t_p6    = env.Program( target='6', source=[ p6_c ], LIBS='numerical' )
+t_p7    = env.Program( target='7', source=[ p7_c ], LIBS='numerical' )
+t_p8    = env.Program( target='8', source=[ p8_c ] )
+t_p9    = env.Program( target='9', source=[ p9_c ] )
+t_p11   = env.Program( target='11', source=[ p11_c ], LIBS='numerical' )
+t_p12   = env.Program( target='12', source=[ p12_c ], LIBS='numerical' )
+t_p13   = env.Program( target='13', source=[ p13_c ] )
+t_p14   = env.Program( target='14', source=[ p14_c ] )
+t_p17   = env.Program( target='17', source=[ p17_c ] )
+t_p18   = env.Program( target='18', source=[ p18_c ], LIBS='numerical' )
+
+return_trgt = ' '.join([ var for var in globals().keys() if var[-2:] == '_t' ])
+Return( return_trgt )

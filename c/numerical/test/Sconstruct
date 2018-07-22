@@ -1,0 +1,16 @@
+#! /usr/bin/env python
+
+# Initialise / Setup
+Import( 'env' )
+env = env.Clone()
+
+# Command-line Configuration
+# Setting Options
+# Setting up Construction Environment
+env.Append( CPPPATH=[ './include' ] )
+
+# Source
+
+# Targets
+
+alltargets = [ globals()[var] for var in globals().keys() if var[-2:] == '_t' ]

@@ -1,0 +1,26 @@
+#! /usr/bin/env python
+
+# Initialise / Setup
+Import( 'env' )
+env = env.Clone()       # Better to clone, instead of changing the parent env.
+
+# Command-line Configuration
+# Setting Options
+# Setting up Construction Environment
+env.Append( CPPPATH=[ './utils/include' ] )
+
+# Build Targets : Utility Programs
+# Source
+c_prime_main        = env.File( 'prime-main.c' )
+c_palindrome_main   = env.File( 'palindrome-main.c' )
+
+t_prime         = env.Program( 
+                    target='prime', 
+                    source=[ c_prime_main ],
+                    LIBS=['numerical'] )
+t_palindrome    = env.Program( 
+                    target='palindrome', 
+                    source=[ c_palindrome_main ],
+                    LIBS=['numerical'] )
+
+Return( 't_prime t_palindrome' )
