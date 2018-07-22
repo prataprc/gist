@@ -1,0 +1,11 @@
+Python documentation for kindle.
+   http://charlax.github.com/Python-Documentation-Kindle/
+
+Internal representation if unicode.
+    http://stackoverflow.com/questions/1838170/what-is-internal-representation-of-string-in-python-3-x
+
+Article about Python's super()
+    http://www.artima.com/weblogs/viewpost.jsp?thread=236278
+
+MRO
+    http://python-history.blogspot.in/2010/06/method-resolution-order.html
