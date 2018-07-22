@@ -1,0 +1,2 @@
+-record( rules, { elimit, remin, remax } ).
+-record( table, { dimension, table, r, c, count, rules } ).
