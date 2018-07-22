@@ -66,3 +66,5 @@ More than 1 GB
 [20] wiki-links - Wikipedia Links Data - Google Project Hosting
 [21] The ClueWeb12 Dataset
 [22] ClueWeb12 Related Data:
+[23] https://www.gutenberg.org/
+[24] https://www.ibiblio.org/
