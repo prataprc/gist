@@ -1,4 +1,5 @@
 *.swp
 *.pyc
+py/__pycache__
 rs/euler/target/
 rs/guessing_game/target/
