@@ -1,0 +1,9 @@
+if [ -z $2 ] ; then
+	find ./ -name "$1"
+else
+	if [ -z $3 ] ; then
+		find ./ -name "$1" -exec grep "$2" -Hn {} \;
+	else
+		find ./ -exec grep "$3" -Hn {} \;
+	fi	
+fi
