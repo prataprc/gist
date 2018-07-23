@@ -68,3 +68,7 @@ More than 1 GB
 [22] ClueWeb12 Related Data:
 [23] https://www.gutenberg.org/
 [24] https://www.ibiblio.org/
+[25] http://wikipedia.org
+[26] http://github.com
+[27] http://royalsociety.org
+[28] http://xbrl.org
