@@ -1,74 +1,111 @@
-I'll try to restrict my answers to datasets greater than 1 GB in size, and order
-my answers by the size of the dataset.
+**Data-Science:** If something can be described with
+[discrete mathematics][discrete-math] it can eventually be
+understood by computers.
 
-More than 1 TB
-* The 1000 Genomes project makes 260 TB of human genome data available [13]
-* The Internet Archive is making an 80 TB web crawl available for
-  research [17]
-* The TREC conference made the ClueWeb09 [3] dataset available a few years back.
-  You'll have to sign an agreement and pay a nontrivial fee (up to $610) to
-  cover the sneakernet data transfer. The data is about 5 TB compressed.
-* ClueWeb12 [21] is now available, as are the Freebase annotations, FACC1 [22]
-* CNetS at Indiana University makes a 2.5 TB click dataset available [19]
-* ICWSM made a large corpus of blog posts available for their 2011
-  conference [2]. You'll have to register (an actual form, not an online form),
-  but it's free. It's about 2.1 TB compressed.
-* The Proteome Commons makes several large datasets available. The largest,
-  the Personal Genome Project [11], is 1.1 TB in size. There are several others
-  over 100 GB in size.
+Following is a collection of datasets and source of datasets for data-sience.
 
-More than 1 GB
-* The Reference Energy Disaggregation Data Set [12] has data on home energy
+**a. More than 1 TB**
+
+* The 1000 Genomes project makes 260 TB of human genome [data][a.001] available.
+* The Internet Archive is making an 80 TB web crawl [available][a.002] for
+   research.
+* The TREC conference made the [ClueWeb09][a.003] and [ClueWeb12][a.004] dataset
+  vailable a few years back. You'll have to sign an agreement and pay a
+  nontrivial fee to cover the sneakernet data transfer.
+* CNetS at Indiana University makes a 2.5 TB click [dataset][a.005] available.
+* ICWSM made a large corpus of [blog posts][a.006] available for their 2011
+  conference. It's about 2.1 TB compressed.
+* The ImageNet [dataset][a.007] is pretty big.
+* [List of dataset][a.008] from Idiap Dataset Distribution Portal.
+* [List of dataset][a.009] from Yahoo research.
+* [Datasets][a.010] from github/google-research.
+* [Dataset][a.011] from [statistical computing][http://stat-computing.org/]
+
+**b. More than 1 TB**
+
+* Curated data from [lemur project][lemur], [WebAP][b.001], Yahoo Non-Factoid
+  Question [Dataset][b.002].
+* Freebase Annotations for ClueWeb [this][b.003] and [this][b.004].
+* Yandex has recently made a very large web search click [dataset][b.005]
+  available.
+* The Reference Energy Disaggregation [Data Set][b.006] has data on home energy
   use; it's about 500 GB compressed.
-* The Tiny Images dataset [10] has 227 GB of image data and 57 GB of metadata.
-* The ImageNet dataset [18] is pretty big.
-* The MOBIO dataset [14] is about 135 GB of video and audio data.
-* The Yahoo! Webscope program [7] makes several 1 GB+ datasets available to
-  academic researchers, including an 83 GB data set of Flickr image features
-  and the dataset used for the 2011 KDD Cup [9], from Yahoo! Music, which is
-  a bit over 1 GB.
-* Google made a dataset mapping words to Wikipedia URLs (i.e., concepts) [15].
-  The dataset is about 10 GB compressed.
-* Yandex has recently made a very large web search click dataset
-  available [1]. You'll have to register online for the contest to download.
-  It's about 5.6 GB compressed.
-* Freebase makes regular data dumps available [5]. The largest is their Quad
-  dump [4], which is about 3.6 GB compressed.
-* The Open American National Corpus [8] is about 4.8 GB uncompressed.
-* Wikipedia made a dataset containing information about edits available for a
-  recent Kaggle competition [6]. The training dataset is about 2.0 GB
-  uncompressed.
-* The Research and Innovative Technology Administration (RITA) has made
-  available a dataset about the on-time performance of domestic flights
-  operated by large carriers. The ASA compressed this dataset and makes
-  it available for download [16].
-* The wiki-links data made available by Google is about 1.75 GB total [20].
+* The Tiny Images [dataset][b.007] has 227 GB of image data and 57 GB of metadata.
+* Last and deprecated [data-dump][b.008] from Google's Freebase.
+  A [blog][freebase-wikidata] on why google moved from freebase to wikidata.
+* The Open American National Corpus [dataset][b.009].
 
-[1] http://imat-relpred.yandex.ru/en...
-[2] http://www.icwsm.org/2011/data.php
-[3] http://lemurproject.org/clueweb0...
-[4] http://wiki.freebase.com/wiki/Da...
-[5] http://download.freebase.com/dat...
-[6] http://www.kaggle.com/c/wikichal...
-[7] http://webscope.sandbox.yahoo.co...
-[8] http://americannationalcorpus.or...
-[9] http://kddcup.yahoo.com/datasets...
-[10] http://horatio.cs.nyu.edu/mit/ti...
-[11] https://proteomecommons.org/data...
-[12] http://redd.csail.mit.edu/
-[13] http://www.1000genomes.org/ftpse...
-[14] https://www.idiap.ch/dataset/mobio
-[15] http://www-nlp.stanford.edu/pubs...
-[16] http://stat-computing.org/dataex...
-[17] http://blog.archive.org/2012/10/...
-[18] http://www.image-net.org/index
-[19] http://cnets.indiana.edu/groups/...
-[20] wiki-links - Wikipedia Links Data - Google Project Hosting
-[21] The ClueWeb12 Dataset
-[22] ClueWeb12 Related Data:
-[23] https://www.gutenberg.org/
-[24] https://www.ibiblio.org/
-[25] http://wikipedia.org
-[26] http://github.com
-[27] http://royalsociety.org
-[28] http://xbrl.org
+**c. Wiki for one an all.**
+
+[Wikidata][c.001] is a free knowledge base that can be read and edited by
+both humans and machines.
+[Wikicommons][c.002] a repository of media files, images, audio, video, etc..
+[Wikipedia][c.003] the new age encyclopedia that world has come to depend on.
+[Wikivoyage][c.004] a world wide travel guide.
+[Wikisource][c.005] the free library, both in translated and original form.
+[Wikiquotes][c.006] uber-collection of quotes, gyaans, and punch-lines.
+[Wikinews][c.007] news, of the people, by the people, for the people.
+[Wikispecies][c.008] science as data.
+[Wiktionary][c.009] free dictionary in multiple languages.
+[Wikibooks][c.010] open content text books.
+[Wikiversity][c.011] an university for learning.
+
+**Kaggle** maintains a large set of datasets, competitions on data science
+along with kernel of derived data from datasets. Refer to following links:
+
+* How to use Kaggle https://www.kaggle.com/docs
+* https://www.kaggle.com/datasets
+* https://www.kaggle.com/kernels
+
+**Github**. Today the largest repository of computer programs are not with
+microsoft, ibm, google or intel. It is with open-source and they do
+social-coding with [github][http://github.com]. Github provides
+[REST API][https://developer.github.com/v3/] and,
+[GraphQL API][https://developer.github.com/v4/] to retrieve and hack with
+github's data, not to mention the millions of repositories that can be cloned
+and data-scienced.
+
+**[Project Gutenberg][gutenberg]** one of the earliest repository of all text
+books that are now free from copyright.
+
+**There is a long running archival project from http://archive.org.**
+
+**And finally a honorobal mention of [Royal-Society][https://royalsociety.org/]**
+
+[a.001]: https://aws.amazon.com/1000genomes/
+[a.002]: https://blog.archive.org/2012/10/26/80-terabytes-of-archived-web-crawl-data-available-for-research/
+[a.003]: https://www.lemurproject.org/clueweb09.php/
+[a.004]: https://www.lemurproject.org/clueweb12.php/
+[a.005]: http://cnets.indiana.edu/groups/nan/webtraffic/click-dataset/
+[a.006]: http://www.icwsm.org/2011/data.php
+[a.007]: http://www.image-net.org/index
+[a.008]: https://www.idiap.ch/dataset
+[a.009]: https://webscope.sandbox.yahoo.com/
+[a.010]: https://github.com/google-research-datasets
+[a.011]: http://stat-computing.org/dataexpo/
+
+[b.001]: https://ciir.cs.umass.edu/downloads/WebAP/index.html
+[b.002]: https://ciir.cs.umass.edu/downloads/nfL6/index.html
+[b.003]: http://lemurproject.org/clueweb09/FACC1/
+[b.004]: http://lemurproject.org/clueweb12/FACC1/
+[b.005]: http://imat-relpred.yandex.ru/en
+[b.006]: http://redd.csail.mit.edu/
+[b.007]: http://horatio.cs.nyu.edu/mit/tiny/data/index.html
+[b.008]: https://developers.google.com/freebase/
+[b.009]: http://www.anc.org/data/
+
+[c.001]: https://www.wikidata.org/wiki/Wikidata:Introduction
+[c.002]: https://commons.wikimedia.org/wiki/Commons:Welcome
+[c.003]: https://www.wikipedia.org/
+[c.004]: https://en.wikivoyage.org/wiki/Wikivoyage:About
+[c.005]: https://en.wikisource.org/wiki/Wikisource:What_is_Wikisource%3F
+[c.006]: https://en.wikiquote.org/wiki/Wikiquote:Wikiquote
+[c.007]: https://en.wikinews.org/wiki/Wikinews:Introduction
+[c.008]: https://species.wikimedia.org/wiki/Wikispecies:About
+[c.009]: https://en.wiktionary.org/wiki/Wiktionary:Welcome,_newcomers
+[c.010]: https://en.wikibooks.org/wiki/Wikibooks:What_is_Wikibooks
+[c.011]: https://en.wikiversity.org/wiki/Wikiversity:Welcome
+
+[lemur]: https://www.lemurproject.org/
+[freebase-wikidata]: https://plus.google.com/109936836907132434202/posts/bu3z2wVqcQc
+[gutenberg]: http://www.gutenberg.org/
