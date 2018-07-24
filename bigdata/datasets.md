@@ -19,7 +19,7 @@ Following is a collection of datasets and source of datasets for data-sience.
 * [List of dataset][a.008] from Idiap Dataset Distribution Portal.
 * [List of dataset][a.009] from Yahoo research.
 * [Datasets][a.010] from github/google-research.
-* [Dataset][a.011] from [statistical computing][http://stat-computing.org/]
+* [Dataset][a.011] from [statistical computing](http://stat-computing.org/)
 
 **b. More than 1 TB**
 
@@ -37,18 +37,18 @@ Following is a collection of datasets and source of datasets for data-sience.
 
 **c. Wiki for one an all.**
 
-[Wikidata][c.001] is a free knowledge base that can be read and edited by
-both humans and machines.
-[Wikicommons][c.002] a repository of media files, images, audio, video, etc..
-[Wikipedia][c.003] the new age encyclopedia that world has come to depend on.
-[Wikivoyage][c.004] a world wide travel guide.
-[Wikisource][c.005] the free library, both in translated and original form.
-[Wikiquotes][c.006] uber-collection of quotes, gyaans, and punch-lines.
-[Wikinews][c.007] news, of the people, by the people, for the people.
-[Wikispecies][c.008] science as data.
-[Wiktionary][c.009] free dictionary in multiple languages.
-[Wikibooks][c.010] open content text books.
-[Wikiversity][c.011] an university for learning.
+* [Wikidata][c.001] is a free knowledge base that can be read and edited by
+  both humans and machines.
+* [Wikicommons][c.002] a repository of media files, images, audio, video, etc..
+* [Wikipedia][c.003] the new age encyclopedia that world has come to depend on.
+* [Wikivoyage][c.004] a world wide travel guide.
+* [Wikisource][c.005] the free library, both in translated and original form.
+* [Wikiquotes][c.006] uber-collection of quotes, gyaans, and punch-lines.
+* [Wikinews][c.007] news, of the people, by the people, for the people.
+* [Wikispecies][c.008] science as data.
+* [Wiktionary][c.009] free dictionary in multiple languages.
+* [Wikibooks][c.010] open content text books.
+* [Wikiversity][c.011] an university for learning.
 
 **Kaggle** maintains a large set of datasets, competitions on data science
 along with kernel of derived data from datasets. Refer to following links:
@@ -59,9 +59,9 @@ along with kernel of derived data from datasets. Refer to following links:
 
 **Github**. Today the largest repository of computer programs are not with
 microsoft, ibm, google or intel. It is with open-source and they do
-social-coding with [github][http://github.com]. Github provides
-[REST API][https://developer.github.com/v3/] and,
-[GraphQL API][https://developer.github.com/v4/] to retrieve and hack with
+social-coding with [github](http://github.com). Github provides
+[REST API](https://developer.github.com/v3/) and,
+[GraphQL API](https://developer.github.com/v4/) to retrieve and hack with
 github's data, not to mention the millions of repositories that can be cloned
 and data-scienced.
 
@@ -70,7 +70,7 @@ books that are now free from copyright.
 
 **There is a long running archival project from http://archive.org.**
 
-**And finally a honorobal mention of [Royal-Society][https://royalsociety.org/]**
+**And finally a honorobal mention of https://royalsociety.org/**
 
 [a.001]: https://aws.amazon.com/1000genomes/
 [a.002]: https://blog.archive.org/2012/10/26/80-terabytes-of-archived-web-crawl-data-available-for-research/
@@ -109,3 +109,4 @@ books that are now free from copyright.
 [lemur]: https://www.lemurproject.org/
 [freebase-wikidata]: https://plus.google.com/109936836907132434202/posts/bu3z2wVqcQc
 [gutenberg]: http://www.gutenberg.org/
+[discrete-math]: https://en.wikipedia.org/wiki/Discrete_mathematics
