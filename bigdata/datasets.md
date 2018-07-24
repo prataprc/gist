@@ -21,7 +21,7 @@ Following is a collection of datasets and source of datasets for data-sience.
 * [Datasets][a.010] from github/google-research.
 * [Dataset][a.011] from [statistical computing](http://stat-computing.org/)
 
-**b. More than 1 TB**
+**b. Less than 1 TB**
 
 * Curated data from [lemur project][lemur], [WebAP][b.001], Yahoo Non-Factoid
   Question [Dataset][b.002].
