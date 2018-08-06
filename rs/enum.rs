@@ -1,16 +1,10 @@
-type Array<'a>=Vec<Json<'a>>;
-
-type Object<'a>=Vec<(&'a str,Json<'a>)>;
-
-#[derive(Debug)]
-enum Json<'a> {
+#[derive(Debug,Eq,PartialEq,PartialOrd,Ord)]
+enum Json {
     Nil,
-    True,
-    False,
-    Num(&'a str),
-    Str(&'a str),
-    Array,
-    Object,
+    Bool(bool),
+    Integer(i128),
+    String(String),
+    Array(Vec<Json>),
 }
 
 #[derive(Debug)]
@@ -23,22 +17,26 @@ fn main() {
     println!("");
     let a = Json::Nil;
     println!("{:?}", a);
-    let a = Json::True;
+    let a = Json::Bool(false);
     println!("{:?}", a);
-    let a = Json::False;
+    let a = Json::Integer(10);
     println!("{:?}", a);
-    let a = Json::Num("10");
+    let a = Json::String(r#""hello world""#.to_string());
     println!("{:?}", a);
-    let a = Json::Str(r#""hello world""#);
-    println!("{:?}", a);
-    let mut a: Array = Vec::new();
+    let mut a = Vec::new();
     a.push(Json::Nil);
-    a.push(Json::True);
+    a.push(Json::Bool(true));
     println!("{:?}", a);
-    let mut a: Object = Vec::new();
-    a.push(("key1", Json::Nil));
-    a.push(("key2", Json::False));
-    println!("{:?}", a);
+
+    println!("ordering");
+    let a = Json::Bool(true);
+    let b = Json::Bool(false);
+    let c = Json::Nil;
+    println!("Bool(true) ord Bool(false) {:?}", a.cmp(&b));
+    println!("Bool(false) ord Bool(true) {:?}", b.cmp(&a));
+    println!("Nil ord Bool(true) {:?}", c.cmp(&a));
+    println!("Nil ord Bool(false) {:?}", c.cmp(&b));
+
 
     println!("");
     let b = Other::None;
