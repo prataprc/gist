@@ -1,6 +1,7 @@
 use std::ops::Add;
 
 type X<T> = (u32, T);
+type Y<T> = (u32, T);
 
 fn main() {
     let x: X<i8> = (10, 20);

@@ -20,4 +20,8 @@ fn main() {
         let n = m;
         println!("for type Y address of n {:p}", &n);
     }
+
+    let x = 10;
+    let y = x;
+    println!("{} {}", x, y);
 }
