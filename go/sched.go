@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 import "time"
+import "runtime"
 
 func main() {
+	runtime.GOMAXPROCS(1)
 	go func() {
 		for true {
 			// noop
