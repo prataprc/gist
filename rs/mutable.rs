@@ -17,8 +17,8 @@ fn basic() {
     let mut x = 5;
     {
         let y = &mut x; // -+ &mut borrow starts here
-        *y += 1;        //  |
-    }                   // -+ ... and ends here
+        *y += 1; //  |
+    } // -+ ... and ends here
     let y = &mut x;
     x = 10;
     println!("basic {}", y);
@@ -34,7 +34,7 @@ fn basic() {
 //    x
 //}
 
-fn three_indirect(a: &mut(&mut(&mut i32))) {
+fn three_indirect(a: &mut (&mut (&mut i32))) {
     ***a = ***a + 1
 }
 
