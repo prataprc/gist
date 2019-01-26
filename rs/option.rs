@@ -1,5 +1,20 @@
 use std::mem;
 
+#[derive(Clone, Copy, PartialEq, PartialOrd, Eq, Ord, Debug, Hash)]
+pub enum Opt<T> {
+    None,
+    Some(T),
+}
+
+impl<T> Opt<T> {
+    fn as_ref(&self) -> Opt<&T> {
+        match self {
+            Opt::Some(x) => Opt::Some(x),
+            Opt::None => Opt::None
+        }
+    }
+}
+
 fn main() {
     let mut x = Some(4_u64);
     println!("x size of: {} x: {:p} &x: {:?}", mem::size_of::<Option<u64>>(), &x, x);
@@ -29,4 +44,8 @@ fn main() {
         &v => {println!("{} {}", v, v)}
     }
     println!("a: {:p} &a: {:?}", &a, a);
+
+    let o = Some(20);
+    println!("o.unwrap {}", o.unwrap());
+    println!("o {:?}", o);
 }
