@@ -15,6 +15,7 @@ fn main() {
     {
         let a = alloc_atomic();
         println!("in main atomic {:?}", a);
+
         let mut s = String::new();
         stdin().read_line(&mut s);
     }
@@ -35,8 +36,13 @@ fn main() {
         stdin().read_line(&mut s);
     }
 
-    let mut s = String::new();
-    stdin().read_line(&mut s);
+    {
+        let local = Box::new(Mytype(10));
+        let a = Mytype(20);
+        println!("deref {:p}", &local);
+        let another = *local;
+        println!("deref {:p} {:p}", &another, &a);
+    }
 }
 
 fn alloc_atomic() -> AtomicPtr<Mytype> {
