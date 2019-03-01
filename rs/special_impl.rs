@@ -1,9 +1,9 @@
-struct GenTup<T>(T,);
+struct GenTup<T>(T);
 
 // impl of GenTup specialized to `i32`
 impl GenTup<i32> {
     fn value(&self) -> &i32 {
-        let &GenTup (ref val) = self;
+        let &GenTup(ref val) = self;
         val
     }
 }
@@ -11,7 +11,7 @@ impl GenTup<i32> {
 // impl of GenTup specialized to `f64`
 impl GenTup<f64> {
     fn value(&self) -> &f64 {
-        let &GenTup (ref val) = self;
+        let &GenTup(ref val) = self;
         val
     }
 }
