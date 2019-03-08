@@ -158,6 +158,24 @@ def graph_dcplatency(stats) :
     ])
     print(py.plot(data, filename='dcp-latency-graph'))
 
+def graph_dcpstats(stats) :
+    bytes = []
+    print("composing plot ...")
+    prev_bytes = 0
+    for i, stat in enumerate(stats) :
+        #if i == 0 :
+        #    bytes.append(0)
+        #    prev_bytes = stat[0]
+        #else :
+        bytes.append(stat[0])
+
+    x = list(range(1, len(bytes)+1))
+    mode, line = "lines+markers", Line(shape='spline')
+    data = Data([
+        Scatter(x=x, y=bytes, mode=mode, name="bytes received", line=line),
+    ])
+    print(py.plot(data, filename='dcp-stats-graph'))
+
 def graph_allocation(stats) :
     allocs, total = [], []
     heapalloc, heapsys, heapidle, heapinuse, heaprels = [], [], [], [], []
@@ -305,6 +323,27 @@ def kind_dcplatency(logfile):
             if m : tryhandler(lambda : fn(m.group(), *m.groups()))
     graph_dcplatency(stats)
 
+def kind_dcpstats(logfile):
+    print("parsing lines ...")
+    stats = {} # bucket -> stats
+    def handler_bytes(i, line, bucket, topic, bytes) :
+        stats.setdefault(bucket, {}).setdefault(topic, []).append([int(bytes)])
+
+    matchers = [
+      [ re.compile(r'.*\[Info\] DCPT\[secidx:proj-(.*)-[MI].*dcp stats.*bytes:(.*) buff.*'),
+        handler_bytes ],
+    ]
+    for i, line in enumerate(open(logfile).readlines()) :
+        for regx, fn in matchers :
+            m = regx.match(line)
+            if m : tryhandler(lambda : fn(i, m.group(), *m.groups()))
+
+    if args.topic == "" or len(args.buckets) == 0 :
+        print("enter topic and buckets")
+    else :
+        bucket = args.buckets[0]
+        graph_endp(args.topic, bucket, stats[topic][bucket])
+
 def kind_idxstats(logfile) :
     print("parsing lines ...")
     stats = []
@@ -422,6 +461,8 @@ if len(args.kind) == 0 :
     print("please provide --kind")
 if args.kind[0] == "dcplatency" :
     kind_dcplatency(args.logfile[0])
+if args.kind[0] == "dcpstats" :
+    kind_dcpstats(args.logfile[0])
 elif args.kind[0] == "memstats" :
     kind_memstats(args.logfile[0])
 elif args.kind[0] == "idxstats" :
