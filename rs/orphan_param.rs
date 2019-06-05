@@ -14,7 +14,7 @@ impl<V> Value<V> {
 }
 
 fn main() {
-    let x = 0x20 | Value::VALUE_FLAG;
+    let x = 0x20 | Value::<()>::VALUE_FLAG;
     println!("{}", x);
 }
 //```
