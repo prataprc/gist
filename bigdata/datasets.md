@@ -72,6 +72,11 @@ books that are now free from copyright.
 
 **And finally a honorobal mention of https://royalsociety.org/**
 
+Links on geo-spatial data
+=========================
+
+https://towardsdatascience.com/getting-started-with-geospatial-works-1f7b47955438
+
 [a.001]: https://aws.amazon.com/1000genomes/
 [a.002]: https://blog.archive.org/2012/10/26/80-terabytes-of-archived-web-crawl-data-available-for-research/
 [a.003]: https://www.lemurproject.org/clueweb09.php/
