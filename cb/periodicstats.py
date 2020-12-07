@@ -6,12 +6,12 @@ import json
 import argparse
 import datetime
 
-import plotly
-import plotly.plotly as py
-from plotly.graph_objs import *
+import chart_studio
+import chart_studio.plotly as py
+from plotly.graph_objects import *
 
-import plotly 
-plotly.tools.set_credentials_file(username='prataprc', api_key='1EmeECM3x0Z0hHMO43rf')
+import chart_studio 
+chart_studio.tools.set_credentials_file(username='prataprc', api_key='spHsvzpHjz8z8W6ys8aT')
 
 parser = argparse.ArgumentParser(description='parse and plot stats')
 parser.add_argument('--kind', nargs=1, type=str, default="",
